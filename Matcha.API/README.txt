@@ -28,3 +28,7 @@ Helpers
 	AutoMapperProfiles
 Root
 	Startup
+
+I found two tutorials that can help with replacing this code:
+https://www.youtube.com/watch?v=1IFS33sPDhE#:~:text=first%20of%20all%20we%20have,you%20want%20to%20save%20this.
+https://www.youtube.com/watch?v=EyrKUSwi4uI
