@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>bin\Release\netcoreapp3.0\publish\</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Catherine.Murray\Desktop\Matcha\Project_7_Matcha\Matcha.API\bin\Release\netcoreapp3.0\publish\</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Data/Seed.cs">
