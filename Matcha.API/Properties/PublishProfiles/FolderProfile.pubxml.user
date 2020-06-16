@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>bin\Release\netcoreapp3.0\publish\</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Data/Seed.cs">
+      <publishTime>06/15/2020 21:13:20</publishTime>
+    </File>
+    <File Include="Data/UserSeedData.json">
+      <publishTime>06/15/2020 22:20:44</publishTime>
+    </File>
+    <File Include="Migrations/20200615033827_AddedUserEntity.cs">
+      <publishTime>06/15/2020 21:31:31</publishTime>
+    </File>
+    <File Include="Migrations/20200615033827_AddedUserEntity.Designer.cs">
+      <publishTime>06/15/2020 21:58:01</publishTime>
+    </File>
+    <File Include="Migrations/20200615064013_InitialCreate.cs">
+      <publishTime>06/15/2020 21:32:13</publishTime>
+    </File>
+    <File Include="Migrations/20200615064013_InitialCreate.Designer.cs">
+      <publishTime>06/15/2020 21:57:46</publishTime>
+    </File>
+    <File Include="Migrations/20200615071348_ExtendUserClassCorrection.cs">
+      <publishTime>06/15/2020 21:29:15</publishTime>
+    </File>
+    <File Include="Migrations/20200615071348_ExtendUserClassCorrection.Designer.cs">
+      <publishTime>06/15/2020 21:57:33</publishTime>
+    </File>
+    <File Include="Migrations/20200615081110_AddedPublicId.cs">
+      <publishTime>06/15/2020 21:28:08</publishTime>
+    </File>
+    <File Include="Migrations/20200615081110_AddedPublicId.Designer.cs">
+      <publishTime>06/15/2020 21:57:08</publishTime>
+    </File>
+    <File Include="Migrations/20200615094746_ExtendedUserClass.cs">
+      <publishTime>06/15/2020 21:30:43</publishTime>
+    </File>
+    <File Include="Migrations/20200615094746_ExtendedUserClass.Designer.cs">
+      <publishTime>06/15/2020 21:56:24</publishTime>
+    </File>
+    <File Include="Migrations/20200615141003_AddedLikeEntity.cs">
+      <publishTime>06/15/2020 21:25:19</publishTime>
+    </File>
+    <File Include="Migrations/20200615141003_AddedLikeEntity.Designer.cs">
+      <publishTime>06/15/2020 23:10:12</publishTime>
+    </File>
+    <File Include="Migrations/20200615150556_MessageEntityAdded.cs">
+      <publishTime>06/15/2020 21:26:58</publishTime>
+    </File>
+    <File Include="Migrations/20200615150556_MessageEntityAdded.Designer.cs">
+      <publishTime>06/15/2020 21:56:11</publishTime>
+    </File>
+    <File Include="Migrations/DataContextModelSnapshot.cs">
+      <publishTime>06/15/2020 21:22:21</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
