@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/DatingApp.API/bin/Debug/netcoreapp3.0/DatingApp.API.dll",
+            "program": "${workspaceFolder}/Matcha.API/bin/Debug/netcoreapp3.0/Matcha.API.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/DatingApp.API",
+            "cwd": "${workspaceFolder}/Matcha.API",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
