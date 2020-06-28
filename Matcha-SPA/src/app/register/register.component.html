@@ -20,6 +20,14 @@
         formControlName="gender"
       />Female
     </label>
+    <label class="radio-inline ml-3">
+      <input
+        class="mr-3"
+        type="radio"
+        value="other"
+        formControlName="gender"
+      />Other
+    </label>
   </div>
 
   <div class="form-group">
@@ -67,7 +75,7 @@
           registerForm.get('dateOfBirth').touched
       }"
       class="form-control"
-      placeholder="Date of Birth"
+      placeholder="Click to Select Date of Birth"
       formControlName="dateOfBirth"
       type="text"
       bsDatepicker
