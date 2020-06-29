@@ -15,7 +15,8 @@ export class MemberListComponent implements OnInit {
   user: User = JSON.parse(localStorage.getItem('user'));
   genderList = [
     { value: 'male', display: 'Males' },
-    { value: 'female', display: 'Females' }
+    { value: 'female', display: 'Females' },
+    { value: 'other', display: 'Other' }
   ];
   userParams: any = {};
   pagination: Pagination;
@@ -32,7 +33,13 @@ export class MemberListComponent implements OnInit {
       this.pagination = data['users'].pagination;
     });
 
-    this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
+    if (this.user.gender === 'female')
+      this.userParams.gender = 'female';
+    else if (this.user.gender === 'male')
+      this.userParams.gender = 'male';
+    else if (this.user.gender === 'other')
+      this.userParams.gender = 'other';
+    //this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
     this.userParams.minAge = 18;
     this.userParams.maxAge = 99;
     this.userParams.orderBy = 'lastActive';
@@ -44,7 +51,13 @@ export class MemberListComponent implements OnInit {
   }
 
   resetFilters() {
-    this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
+    if (this.user.gender === 'female')
+      this.userParams.gender = 'female';
+    else if (this.user.gender === 'male')
+      this.userParams.gender = 'male';
+    else if (this.user.gender === 'other')
+      this.userParams.gender = 'other';
+    //this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
     this.userParams.minAge = 18;
     this.userParams.maxAge = 99;
     this.loadUsers();

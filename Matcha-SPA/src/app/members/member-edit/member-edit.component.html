@@ -55,34 +55,34 @@
               <h4>Description</h4>
               <textarea
                 name="introduction"
-                rows="6"
+                rows="4"
                 class="form-control"
                 [(ngModel)]="user.introduction"
-              ></textarea>
+              ></textarea><br>
               <h4>Looking for</h4>
               <textarea
                 name="lookingFor"
-                rows="6"
+                rows="4"
                 class="form-control"
                 [(ngModel)]="user.lookingFor"
-              ></textarea>
+              ></textarea><br>
               <h4>Interests</h4>
               <textarea
                 name="interests"
-                rows="6"
+                rows="4"
                 class="form-control"
                 [(ngModel)]="user.interests"
-              ></textarea>
+              ></textarea><br>
               <h4>Location details:</h4>
               <div class="form-inline">
-                <label for="city">City</label>
+                <label for="city">&nbsp;&nbsp;City:&nbsp;&nbsp;&nbsp;</label>
                 <input
                   class="form-control"
                   type="text"
                   name="city"
                   [(ngModel)]="user.city"
                 />
-                <label for="city">Country</label>
+                <label for="city">&nbsp;&nbsp;Country:&nbsp;&nbsp;&nbsp;</label>
                 <input
                   class="form-control"
                   type="text"
@@ -103,3 +103,7 @@
     </div>
   </div>
 </div>
+<footer class="footer">
+  <div>created by madams, camurray & mcarter
+  </div>
+</footer>
