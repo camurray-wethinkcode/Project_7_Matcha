@@ -42,7 +42,10 @@ namespace Matcha.API.Controllers
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 Console.WriteLine(gender);
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -61,9 +64,13 @@ namespace Matcha.API.Controllers
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 Console.WriteLine(gender);
                 userParams.Gender = gender;
                 Console.WriteLine(gender);
+=======
+                userParams.Gender = gender;
+>>>>>>> Stashed changes
 =======
                 userParams.Gender = gender;
 >>>>>>> Stashed changes
