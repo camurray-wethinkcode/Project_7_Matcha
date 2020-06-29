@@ -40,7 +40,10 @@ namespace Matcha.API.Controllers
                 var gender = "test";
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 Console.WriteLine(gender);
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -53,9 +56,13 @@ namespace Matcha.API.Controllers
                   gender = "other";
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 Console.WriteLine(gender);
                 userParams.Gender = gender;
                 Console.WriteLine(gender);
+=======
+                userParams.Gender = gender;
+>>>>>>> Stashed changes
 =======
                 userParams.Gender = gender;
 >>>>>>> Stashed changes
