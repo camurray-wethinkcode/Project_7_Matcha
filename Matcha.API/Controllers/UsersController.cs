@@ -38,16 +38,23 @@ namespace Matcha.API.Controllers
             if (string.IsNullOrEmpty(userParams.Gender))
             {
                 var gender = "test";
+<<<<<<< Updated upstream
                 Console.WriteLine(gender);
+=======
+>>>>>>> Stashed changes
                 if (userFromRepo.Gender == "male")
                   gender = "male";
                 else if (userFromRepo.Gender == "female")
                   gender = "female";
                 else if (userFromRepo.Gender == "other")
                   gender = "other";
+<<<<<<< Updated upstream
                 Console.WriteLine(gender);
                 userParams.Gender = gender;
                 Console.WriteLine(gender);
+=======
+                userParams.Gender = gender;
+>>>>>>> Stashed changes
                 //userParams.Gender = userFromRepo.Gender == "male" ? "female" : "male";
             }
 
