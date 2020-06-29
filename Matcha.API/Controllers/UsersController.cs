@@ -39,7 +39,10 @@ namespace Matcha.API.Controllers
             {
                 var gender = "test";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 Console.WriteLine(gender);
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                 if (userFromRepo.Gender == "male")
@@ -49,9 +52,13 @@ namespace Matcha.API.Controllers
                 else if (userFromRepo.Gender == "other")
                   gender = "other";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 Console.WriteLine(gender);
                 userParams.Gender = gender;
                 Console.WriteLine(gender);
+=======
+                userParams.Gender = gender;
+>>>>>>> Stashed changes
 =======
                 userParams.Gender = gender;
 >>>>>>> Stashed changes
