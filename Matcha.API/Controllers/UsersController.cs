@@ -37,7 +37,15 @@ namespace Matcha.API.Controllers
 
             if (string.IsNullOrEmpty(userParams.Gender))
             {
-                userParams.Gender = userFromRepo.Gender == "male" ? "female" : "male";
+                var gender = "test";
+                if (userFromRepo.Gender == "male")
+                  gender = "male";
+                else if (userFromRepo.Gender == "female")
+                  gender = "female";
+                else if (userFromRepo.Gender == "other")
+                  gender = "other";
+                userParams.Gender = gender;
+                //userParams.Gender = userFromRepo.Gender == "male" ? "female" : "male";
             }
 
             var users = await _repo.GetUsers(userParams);
