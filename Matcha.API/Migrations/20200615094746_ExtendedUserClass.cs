@@ -18,6 +18,11 @@ namespace Matcha.API.Migrations
                 table: "Users",
                 nullable: true);
 
+            migrationBuilder.AddColumn<string>(
+                name: "Email",
+                table: "Users",
+                nullable: true);
+
             migrationBuilder.AddColumn<DateTime>(
                 name: "Created",
                 table: "Users",
@@ -93,6 +98,10 @@ namespace Matcha.API.Migrations
 
             migrationBuilder.DropColumn(
                 name: "Country",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "Email",
                 table: "Users");
 
             migrationBuilder.DropColumn(

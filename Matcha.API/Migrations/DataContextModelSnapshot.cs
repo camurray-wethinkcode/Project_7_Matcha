@@ -115,6 +115,9 @@ namespace Matcha.API.Migrations
                     b.Property<string>("Country")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Created")
                         .IsRequired()
                         .HasColumnType("TEXT");

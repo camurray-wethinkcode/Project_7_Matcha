@@ -29,6 +29,9 @@ namespace Matcha.API.Dtos
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
 
+        [Required]
+        public string Email { get; set; }
+
         public UserForRegisterDto()
         {
             Created = DateTime.Now;
