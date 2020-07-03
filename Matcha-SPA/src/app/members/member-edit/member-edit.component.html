@@ -32,7 +32,7 @@
             <p>{{ user.lastActive | timeAgo }}</p>
           </div>
           <div>
-            <strong>Member since</strong>
+            <strong>Member Since</strong>
             <p>{{ user.created | date: 'mediumDate' }}</p>
           </div>
         </div>
@@ -73,7 +73,7 @@
                 class="form-control"
                 [(ngModel)]="user.interests"
               ></textarea><br>
-              <h4>Location details:</h4>
+              <h4>Location Details:</h4>
               <div class="form-inline">
                 <label for="city">&nbsp;&nbsp;City:&nbsp;&nbsp;&nbsp;</label>
                 <input
@@ -89,8 +89,25 @@
                   name="country"
                   [(ngModel)]="user.country"
                 />
-              </div>
+              </div><br>
               <h4>Login Details:</h4>
+              <div class="form-inline">
+                <label for="username">&nbsp;&nbsp;Username:&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="username"
+                  [(ngModel)]="user.username"
+                />
+                <label for="knownAs">&nbsp;&nbsp;Known As:&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="knownAs"
+                  [(ngModel)]="user.knownAs"
+                />
+              </div><br>
+              <h4>Email & Password:</h4>
               <div class="form-inline">
                 <label for="email">&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;</label>
                 <input
@@ -99,12 +116,12 @@
                   name="email"
                   [(ngModel)]="user.email"
                 />
-                <label for="username">&nbsp;&nbsp;Username:&nbsp;&nbsp;&nbsp;</label>
+                <label for="password">&nbsp;&nbsp;Password:&nbsp;&nbsp;&nbsp;</label>
                 <input
                   class="form-control"
                   type="text"
-                  name="username"
-                  [(ngModel)]="user.username"
+                  name="password"
+                  [(ngModel)]="user.password"
                 />
               </div>
             </form>

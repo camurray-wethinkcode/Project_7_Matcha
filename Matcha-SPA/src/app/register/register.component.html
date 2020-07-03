@@ -231,8 +231,35 @@
       Passwords must match
     </div>
   </div>
+  <div class="div">
+              <h4>Description</h4>
+              <textarea
+                name="introduction"
+                rows="2"
+                class="form-control"
+                [(ngModel)]="user.introduction"
+              ></textarea><br>
+              <h4>Looking for</h4>
+              <textarea
+                name="lookingFor"
+                rows="2"
+                class="form-control"
+                [(ngModel)]="user.lookingFor"
+              ></textarea><br>
+              <h4>Interests</h4>
+              <textarea
+                name="interests"
+                rows="2"
+                class="form-control"
+                [(ngModel)]="user.interests"
+              ></textarea></div>
+          <div class="div">
+            <app-photo-editor
+              [photos]="user.photos"
+              (getMemberPhotoChange)="updateMainPhoto($event)"
+            ></app-photo-editor></div><br>
 
-  <div class="form-group text-center">
+  <div class="form-group">
     <button
       class="btn btn-success"
       [disabled]="!registerForm.valid"
@@ -244,4 +271,4 @@
       Cancel
     </button>
   </div>
-</form>
+</form><br><br><br>

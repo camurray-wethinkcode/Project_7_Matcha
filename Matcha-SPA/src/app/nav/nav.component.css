@@ -27,6 +27,8 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px;
-  background: lightgrey;
-  text-align: center;
+  background: whitesmoke;
+  text-align: left;
+  font-style: italic;
+  color: darkorange;
 }
