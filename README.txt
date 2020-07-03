@@ -2,6 +2,10 @@ We used this tutorial to build the skeleton of this app:
 
 https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/learn/lecture/8694276#overview
 
+And this tutorial to edit CRUD operations and replace Entity Framework with self written code:
+
+https://www.udemy.com/course/crud-application-using-c-sharp-and-sqlite/learn/lecture/13554544?start=150#overview
+
 Login details (paid course):
 murraylydie@gmail.com
 Mwawada666

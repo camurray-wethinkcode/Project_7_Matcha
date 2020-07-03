@@ -90,6 +90,23 @@
                   [(ngModel)]="user.country"
                 />
               </div>
+              <h4>Login Details:</h4>
+              <div class="form-inline">
+                <label for="email">&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="email"
+                  [(ngModel)]="user.email"
+                />
+                <label for="username">&nbsp;&nbsp;Username:&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="username"
+                  [(ngModel)]="user.username"
+                />
+              </div>
             </form>
           </tab>
           <tab heading="Edit Photos">
@@ -103,7 +120,5 @@
     </div>
   </div>
 </div>
-<footer class="footer">
-  <div>created by madams, camurray & mcarter
-  </div>
-</footer>
+<div><br><br><br><br>
+</div>
