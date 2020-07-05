@@ -41,7 +41,8 @@ export class RegisterComponent implements OnInit {
       {
         gender: ['male'],
         username: ['', Validators.required],
-        knownAs: ['', Validators.required],
+        name: ['', Validators.required],
+        surname: ['', Validators.required],
         dateOfBirth: [null, Validators.required],
         city: ['', Validators.required],
         country: ['', Validators.required],
@@ -71,7 +72,7 @@ export class RegisterComponent implements OnInit {
       this.user = Object.assign({}, this.registerForm.value);
       this.authService.register(this.user).subscribe(
         () => {
-          this.alertify.success('Registration succesful');
+          this.alertify.success('Registration successful');
         },
         error => {
           this.alertify.error(error);

@@ -16,7 +16,7 @@
         <img
           class="card-img-top img-thumbnail"
           src="{{ photoUrl || '../../../assets/user.png'}}"
-          alt="{{ user.knownAs }}"
+          alt="{{ user.username }}"
         />
         <div class="card-body">
           <div>
@@ -99,16 +99,6 @@
                   name="username"
                   [(ngModel)]="user.username"
                 />
-                <label for="knownAs">&nbsp;&nbsp;Known As:&nbsp;&nbsp;&nbsp;</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  name="knownAs"
-                  [(ngModel)]="user.knownAs"
-                />
-              </div><br>
-              <h4>Email & Password:</h4>
-              <div class="form-inline">
                 <label for="email">&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;</label>
                 <input
                   class="form-control"
@@ -116,12 +106,22 @@
                   name="email"
                   [(ngModel)]="user.email"
                 />
-                <label for="password">&nbsp;&nbsp;Password:&nbsp;&nbsp;&nbsp;</label>
+              </div><br>
+              <h4>Name & Surname:</h4>
+              <div class="form-inline">
+                <label for="name">&nbsp;&nbsp;Name:&nbsp;&nbsp;&nbsp;</label>
                 <input
                   class="form-control"
                   type="text"
-                  name="password"
-                  [(ngModel)]="user.password"
+                  name="name"
+                  [(ngModel)]="user.name"
+                />
+                <label for="surname">&nbsp;&nbsp;Surname:&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="surname"
+                  [(ngModel)]="user.surname"
                 />
               </div>
             </form>

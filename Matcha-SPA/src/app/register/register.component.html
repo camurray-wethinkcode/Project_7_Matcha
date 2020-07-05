@@ -49,21 +49,43 @@
     <input
       [ngClass]="{
         'is-invalid':
-          registerForm.get('knownAs').errors &&
-          registerForm.get('knownAs').touched
+          registerForm.get('name').errors &&
+          registerForm.get('name').touched
       }"
       class="form-control"
-      placeholder="Known as"
-      formControlName="knownAs"
+      placeholder="Name"
+      formControlName="name"
     />
     <div
       class="invalid-feedback"
       *ngIf="
-        registerForm.get('knownAs').touched &&
-        registerForm.get('knownAs').hasError('required')
+        registerForm.get('name').touched &&
+        registerForm.get('name').hasError('required')
       "
     >
-      Known as is required
+      Name is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        'is-invalid':
+          registerForm.get('surname').errors &&
+          registerForm.get('surname').touched
+      }"
+      class="form-control"
+      placeholder="Surname"
+      formControlName="surname"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        registerForm.get('surname').touched &&
+        registerForm.get('surname').hasError('required')
+      "
+    >
+      Surname is required
     </div>
   </div>
 

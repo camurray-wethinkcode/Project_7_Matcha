@@ -46,7 +46,12 @@ namespace Matcha.API.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "KnownAs",
+                name: "Name",
+                table: "Users",
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "Surname",
                 table: "Users",
                 nullable: true);
 
@@ -121,7 +126,11 @@ namespace Matcha.API.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "KnownAs",
+                name: "Name",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "Surname",
                 table: "Users");
 
             migrationBuilder.DropColumn(

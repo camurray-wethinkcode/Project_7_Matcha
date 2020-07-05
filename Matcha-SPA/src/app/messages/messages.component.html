@@ -55,14 +55,14 @@
                 src="{{ message?.senderPhotoUrl }}"
                 class="img-circle rounded-circle mr-1"
               />
-              <strong>{{ message.senderKnownAs }}</strong>
+              <strong>{{ message.senderUsername }}</strong>
             </div>
             <div *ngIf="messageContainer == 'Outbox'">
               <img
                 src="{{ message?.recipientPhotoUrl }}"
                 class="img-circle rounded-circle mr-1"
               />
-              <strong>{{ message.recipientKnownAs }}</strong>
+              <strong>{{ message.recipientUsername }}</strong>
             </div>
           </td>
           <td>{{ message.messageSent | timeAgo }}</td>

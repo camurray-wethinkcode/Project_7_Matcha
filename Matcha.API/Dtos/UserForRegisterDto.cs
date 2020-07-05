@@ -16,7 +16,10 @@ namespace Matcha.API.Dtos
         public string Gender { get; set; }
 
         [Required]
-        public string KnownAs { get; set; }
+        public string Name { get; set; }
+
+        [Required]
+        public string Surname { get; set; }
 
         [Required]
         public DateTime DateOfBirth { get; set; }
