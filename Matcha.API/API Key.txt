@@ -1,0 +1,6 @@
+Api Key
+AIzaSyDxYP-Q9T-jT26EEGdr7GXg24G0NH2Yd4s
+
+Replace "YOUR_API_KEY" with Api key
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+  type="text/javascript"></script>
