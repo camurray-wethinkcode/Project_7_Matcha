@@ -1,15 +1,15 @@
 Important Features
 
 1.Registration  and Siging-In
-	-email
+	-email - DONE
 	-username - DONE
-	-last & first name
+	-last & first name - DONE
 	-protected password - DONE
 	-verification email
 
 2.User profile
 	-gender - DONE
-	-sexual preference
+	-sexual preference - DONE
 	-bio - DONE
 	-list of interest(reusable TAGS) - DONE
 	-pictures max 5, 1 as a profile pic
@@ -30,7 +30,7 @@ Important Features
 	-sortable & filterable - DONE
 
 5.Profiles of other Users
-	-Must be able to like Pictures
+	-Must be able to like Pictures - DONE
 	-Message each other - DONE
 	-If users are friends/like each other they must able to see if they are online - DONE
 	-Last online - DONE
