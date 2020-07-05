@@ -1,9 +1,22 @@
 <div class="container mt-5">
   <div *ngIf="!registerMode" style="text-align: center">
-    <h1>Find your match</h1>
+    <h1>Find your match</h1><br>
     <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
     <div class="text-center">
       <button [hidden]="isShow" class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
+    </div><br>
+    <div>
+      <form [hidden]="isShow" (ngSubmit)="forgotPassword()">
+      <p [hidden]="isShow" class="lead">Enter your email here if you've forgotten your password:</p>
+      <input
+        [hidden]="isShow"
+        class="emailbox"
+        type="text"
+        placeholder="Email"
+        name="email"
+      /><br><br>
+      <button [hidden]="isShow" class="btn btn-primary btn-lg mr-2" type="submit">Forgot Password</button>
+      </form>
     </div>
   </div>
 

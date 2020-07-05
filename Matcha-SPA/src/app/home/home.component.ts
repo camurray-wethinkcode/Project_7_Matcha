@@ -22,6 +22,9 @@ export class HomeComponent implements OnInit {
     this.registerMode = true;
   }
 
+  forgotPassword() {
+  }
+
   cancelRegisterMode(registerMode: boolean) {
     this.registerMode = registerMode;
   }
