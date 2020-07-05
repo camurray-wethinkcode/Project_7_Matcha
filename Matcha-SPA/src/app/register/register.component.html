@@ -253,33 +253,72 @@
       Passwords must match
     </div>
   </div>
-  <div class="div">
-              <h4>Description</h4>
-              <textarea
-                name="introduction"
-                rows="2"
-                class="form-control"
-                [(ngModel)]="user.introduction"
-              ></textarea><br>
-              <h4>Looking for</h4>
-              <textarea
-                name="lookingFor"
-                rows="2"
-                class="form-control"
-                [(ngModel)]="user.lookingFor"
-              ></textarea><br>
-              <h4>Interests</h4>
-              <textarea
-                name="interests"
-                rows="2"
-                class="form-control"
-                [(ngModel)]="user.interests"
-              ></textarea></div>
-          <div class="div">
-            <app-photo-editor
-              [photos]="user.photos"
-              (getMemberPhotoChange)="updateMainPhoto($event)"
-            ></app-photo-editor></div><br>
+
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        'is-invalid':
+          registerForm.get('introduction').errors &&
+          registerForm.get('introduction').touched
+      }"
+      class="form-control"
+      placeholder="Description"
+      formControlName="introduction"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        registerForm.get('introduction').touched &&
+        registerForm.get('introduction').hasError('required')
+      "
+    >
+      Description is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        'is-invalid':
+          registerForm.get('lookingFor').errors &&
+          registerForm.get('lookingFor').touched
+      }"
+      class="form-control"
+      placeholder="Looking For"
+      formControlName="lookingFor"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        registerForm.get('lookingFor').touched &&
+        registerForm.get('lookingFor').hasError('required')
+      "
+    >
+      Looking For is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        'is-invalid':
+          registerForm.get('interests').errors &&
+          registerForm.get('interests').touched
+      }"
+      class="form-control"
+      placeholder="Interests"
+      formControlName="interests"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        registerForm.get('interests').touched &&
+        registerForm.get('interests').hasError('required')
+      "
+    >
+      Interests is required
+    </div>
+  </div><br>
 
   <div class="form-group">
     <button

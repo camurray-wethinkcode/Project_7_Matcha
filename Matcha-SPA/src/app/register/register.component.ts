@@ -10,6 +10,7 @@ import {
 import { BsDatepickerConfig } from 'ngx-bootstrap';
 import { User } from '../_models/user';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -55,7 +56,10 @@ export class RegisterComponent implements OnInit {
             Validators.maxLength(8)
           ]
         ],
-        confirmPassword: ['', Validators.required]
+        confirmPassword: ['', Validators.required],
+        introduction: ['', Validators.required],
+        lookingFor: ['', Validators.required],
+        interests: ['', Validators.required]
       },
       { validator: this.passwordMatchValidator }
     );

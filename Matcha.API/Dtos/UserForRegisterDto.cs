@@ -35,6 +35,15 @@ namespace Matcha.API.Dtos
         [Required]
         public string Email { get; set; }
 
+        [Required]
+        public string Introduction { get; set; }
+
+        [Required]
+        public string LookingFor { get; set; }
+
+        [Required]
+        public string Interests { get; set; }
+
         public UserForRegisterDto()
         {
             Created = DateTime.Now;
