@@ -112,7 +112,6 @@ namespace Matcha.API.Controllers
               return BadRequest("Failed to like user");
          }
 
-//this unlike route is not working 100% and needs help in the dating and idating files in the data folder in backend, frontend should be working fine
         [HttpPost("{id}/unlike/{recipientId}")]
          public async Task<IActionResult> UnlikeUser(int id, int recipientId)
          {
