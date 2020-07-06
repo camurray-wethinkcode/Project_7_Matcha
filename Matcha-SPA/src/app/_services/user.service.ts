@@ -19,7 +19,7 @@ export class UserService {
     page?,
     itemsPerPage?,
     userParams?,
-    likesParam?
+    likesParam?,
   ): Observable<PaginatedResult<User[]>> {
     const paginatedResult: PaginatedResult<User[]> = new PaginatedResult<
       User[]

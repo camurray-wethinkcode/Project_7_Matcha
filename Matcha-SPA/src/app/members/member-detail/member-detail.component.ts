@@ -19,6 +19,8 @@ import { TabsetComponent } from 'ngx-bootstrap';
 export class MemberDetailComponent implements OnInit {
   @ViewChild('memberTabs', {static: true}) memberTabs: TabsetComponent;
   user: User;
+  isClicked = false;
+  likeName = 'Like';
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
@@ -67,6 +69,18 @@ export class MemberDetailComponent implements OnInit {
 
   selectTab(tabId: number) {
     this.memberTabs.tabs[tabId].active = true;
+  }
+
+  toggleLike(id: number) {
+    this.isClicked = !this.isClicked;
+    if (this.isClicked === true) {
+      this.sendLike(this.user.id);
+      this.likeName = 'Unlike';
+    }
+    else {
+      this.sendUnlike(this.user.id);
+      this.likeName = 'Like';
+    }
   }
 
   sendLike(id: number) {
