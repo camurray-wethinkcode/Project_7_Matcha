@@ -19,7 +19,7 @@ export class UserService {
     page?,
     itemsPerPage?,
     userParams?,
-    likesParam?
+    likesParam?,
   ): Observable<PaginatedResult<User[]>> {
     const paginatedResult: PaginatedResult<User[]> = new PaginatedResult<
       User[]
@@ -84,6 +84,13 @@ export class UserService {
   sendLike(id: number, recipientId: number) {
     return this.http.post(
       this.baseUrl + 'users/' + id + '/like/' + recipientId,
+      {}
+    );
+  }
+
+  sendUnlike(id: number, recipientId: number) {
+    return this.http.post(
+      this.baseUrl + 'users/' + id + '/unlike/' + recipientId,
       {}
     );
   }

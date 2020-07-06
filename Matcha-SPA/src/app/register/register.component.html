@@ -20,6 +20,14 @@
         formControlName="gender"
       />Female
     </label>
+    <label class="radio-inline ml-3">
+      <input
+        class="mr-3"
+        type="radio"
+        value="other"
+        formControlName="gender"
+      />Other
+    </label>
   </div>
 
   <div class="form-group">
@@ -41,21 +49,43 @@
     <input
       [ngClass]="{
         'is-invalid':
-          registerForm.get('knownAs').errors &&
-          registerForm.get('knownAs').touched
+          registerForm.get('name').errors &&
+          registerForm.get('name').touched
       }"
       class="form-control"
-      placeholder="Known as"
-      formControlName="knownAs"
+      placeholder="Name"
+      formControlName="name"
     />
     <div
       class="invalid-feedback"
       *ngIf="
-        registerForm.get('knownAs').touched &&
-        registerForm.get('knownAs').hasError('required')
+        registerForm.get('name').touched &&
+        registerForm.get('name').hasError('required')
       "
     >
-      Known as is required
+      Name is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        'is-invalid':
+          registerForm.get('surname').errors &&
+          registerForm.get('surname').touched
+      }"
+      class="form-control"
+      placeholder="Surname"
+      formControlName="surname"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        registerForm.get('surname').touched &&
+        registerForm.get('surname').hasError('required')
+      "
+    >
+      Surname is required
     </div>
   </div>
 
@@ -67,7 +97,7 @@
           registerForm.get('dateOfBirth').touched
       }"
       class="form-control"
-      placeholder="Date of Birth"
+      placeholder="Click to Select Date of Birth"
       formControlName="dateOfBirth"
       type="text"
       bsDatepicker
@@ -124,6 +154,28 @@
       "
     >
       Country is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        'is-invalid':
+          registerForm.get('email').errors &&
+          registerForm.get('email').touched
+      }"
+      class="form-control"
+      placeholder="Email"
+      formControlName="email"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        registerForm.get('email').touched &&
+        registerForm.get('email').hasError('required')
+      "
+    >
+      Email is required
     </div>
   </div>
 
@@ -202,7 +254,73 @@
     </div>
   </div>
 
-  <div class="form-group text-center">
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        'is-invalid':
+          registerForm.get('introduction').errors &&
+          registerForm.get('introduction').touched
+      }"
+      class="form-control"
+      placeholder="Description"
+      formControlName="introduction"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        registerForm.get('introduction').touched &&
+        registerForm.get('introduction').hasError('required')
+      "
+    >
+      Description is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        'is-invalid':
+          registerForm.get('lookingFor').errors &&
+          registerForm.get('lookingFor').touched
+      }"
+      class="form-control"
+      placeholder="Looking For"
+      formControlName="lookingFor"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        registerForm.get('lookingFor').touched &&
+        registerForm.get('lookingFor').hasError('required')
+      "
+    >
+      Looking For is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        'is-invalid':
+          registerForm.get('interests').errors &&
+          registerForm.get('interests').touched
+      }"
+      class="form-control"
+      placeholder="Interests"
+      formControlName="interests"
+    />
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        registerForm.get('interests').touched &&
+        registerForm.get('interests').hasError('required')
+      "
+    >
+      Interests is required
+    </div>
+  </div><br>
+
+  <div class="form-group">
     <button
       class="btn btn-success"
       [disabled]="!registerForm.valid"
@@ -214,4 +332,4 @@
       Cancel
     </button>
   </div>
-</form>
+</form><br><br><br>

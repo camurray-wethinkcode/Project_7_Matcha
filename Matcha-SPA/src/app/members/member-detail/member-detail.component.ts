@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/_models/user';
 import { UserService } from 'src/app/_services/user.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
+import { AuthService } from 'src/app/_services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import {
   NgxGalleryOptions,
@@ -18,10 +19,13 @@ import { TabsetComponent } from 'ngx-bootstrap';
 export class MemberDetailComponent implements OnInit {
   @ViewChild('memberTabs', {static: true}) memberTabs: TabsetComponent;
   user: User;
+  isClicked = false;
+  likeName = 'Like';
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
   constructor(
+    private authService: AuthService,
     private userService: UserService,
     private alertify: AlertifyService,
     private route: ActivatedRoute
@@ -65,5 +69,33 @@ export class MemberDetailComponent implements OnInit {
 
   selectTab(tabId: number) {
     this.memberTabs.tabs[tabId].active = true;
+  }
+
+  toggleLike(id: number) {
+    this.isClicked = !this.isClicked;
+    if (this.isClicked === true) {
+      this.sendLike(this.user.id);
+      this.likeName = 'Unlike';
+    }
+    else {
+      this.sendUnlike(this.user.id);
+      this.likeName = 'Like';
+    }
+  }
+
+  sendLike(id: number) {
+    this.userService.sendLike(this.authService.decodedToken.nameid, id).subscribe(data => {
+      this.alertify.success('You have liked: ' + this.user.username);
+    }, error => {
+      this.alertify.error(error);
+    });
+  }
+
+  sendUnlike(id: number) {
+    this.userService.sendUnlike(this.authService.decodedToken.nameid, id).subscribe(data => {
+      this.alertify.success('You have unliked: ' + this.user.username);
+    }, error => {
+      this.alertify.error(error);
+    });
   }
 }

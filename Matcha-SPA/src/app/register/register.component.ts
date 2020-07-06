@@ -10,6 +10,7 @@ import {
 import { BsDatepickerConfig } from 'ngx-bootstrap';
 import { User } from '../_models/user';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -41,10 +42,12 @@ export class RegisterComponent implements OnInit {
       {
         gender: ['male'],
         username: ['', Validators.required],
-        knownAs: ['', Validators.required],
+        name: ['', Validators.required],
+        surname: ['', Validators.required],
         dateOfBirth: [null, Validators.required],
         city: ['', Validators.required],
         country: ['', Validators.required],
+        email: ['', Validators.required],
         password: [
           '',
           [
@@ -53,7 +56,10 @@ export class RegisterComponent implements OnInit {
             Validators.maxLength(8)
           ]
         ],
-        confirmPassword: ['', Validators.required]
+        confirmPassword: ['', Validators.required],
+        introduction: ['', Validators.required],
+        lookingFor: ['', Validators.required],
+        interests: ['', Validators.required]
       },
       { validator: this.passwordMatchValidator }
     );
@@ -70,7 +76,7 @@ export class RegisterComponent implements OnInit {
       this.user = Object.assign({}, this.registerForm.value);
       this.authService.register(this.user).subscribe(
         () => {
-          this.alertify.success('Registration succesful');
+          this.alertify.success('Registration successful');
         },
         error => {
           this.alertify.error(error);
