@@ -98,4 +98,8 @@ export class MemberDetailComponent implements OnInit {
       this.alertify.error(error);
     });
   }
+
+  reportUser(id: number) {
+    //add code here to set user's deactivated number from 0 to 1 in database to make them inactive
+  }
 }
