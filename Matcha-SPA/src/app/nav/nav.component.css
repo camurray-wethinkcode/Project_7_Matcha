@@ -7,3 +7,28 @@ img {
     border: 2px solid white;
     display: inline
 }
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 1em;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px;
+  background: whitesmoke;
+  text-align: left;
+  font-style: italic;
+  color: darkorange;
+}

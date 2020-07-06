@@ -16,7 +16,7 @@
         <img
           class="card-img-top img-thumbnail"
           src="{{ photoUrl || '../../../assets/user.png'}}"
-          alt="{{ user.knownAs }}"
+          alt="{{ user.username }}"
         />
         <div class="card-body">
           <div>
@@ -32,7 +32,7 @@
             <p>{{ user.lastActive | timeAgo }}</p>
           </div>
           <div>
-            <strong>Member since</strong>
+            <strong>Member Since</strong>
             <p>{{ user.created | date: 'mediumDate' }}</p>
           </div>
         </div>
@@ -55,39 +55,73 @@
               <h4>Description</h4>
               <textarea
                 name="introduction"
-                rows="6"
+                rows="4"
                 class="form-control"
                 [(ngModel)]="user.introduction"
-              ></textarea>
+              ></textarea><br>
               <h4>Looking for</h4>
               <textarea
                 name="lookingFor"
-                rows="6"
+                rows="4"
                 class="form-control"
                 [(ngModel)]="user.lookingFor"
-              ></textarea>
+              ></textarea><br>
               <h4>Interests</h4>
               <textarea
                 name="interests"
-                rows="6"
+                rows="4"
                 class="form-control"
                 [(ngModel)]="user.interests"
-              ></textarea>
-              <h4>Location details:</h4>
+              ></textarea><br>
+              <h4>Location Details:</h4>
               <div class="form-inline">
-                <label for="city">City</label>
+                <label for="city">&nbsp;&nbsp;City:&nbsp;&nbsp;&nbsp;</label>
                 <input
                   class="form-control"
                   type="text"
                   name="city"
                   [(ngModel)]="user.city"
                 />
-                <label for="city">Country</label>
+                <label for="city">&nbsp;&nbsp;Country:&nbsp;&nbsp;&nbsp;</label>
                 <input
                   class="form-control"
                   type="text"
                   name="country"
                   [(ngModel)]="user.country"
+                />
+              </div><br>
+              <h4>Login Details:</h4>
+              <div class="form-inline">
+                <label for="username">&nbsp;&nbsp;Username:&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="username"
+                  [(ngModel)]="user.username"
+                />
+                <label for="email">&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="email"
+                  [(ngModel)]="user.email"
+                />
+              </div><br>
+              <h4>Name & Surname:</h4>
+              <div class="form-inline">
+                <label for="name">&nbsp;&nbsp;Name:&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="name"
+                  [(ngModel)]="user.name"
+                />
+                <label for="surname">&nbsp;&nbsp;Surname:&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="surname"
+                  [(ngModel)]="user.surname"
                 />
               </div>
             </form>
@@ -102,4 +136,6 @@
       </div>
     </div>
   </div>
+</div>
+<div><br><br><br><br>
 </div>

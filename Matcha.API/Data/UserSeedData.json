@@ -4,7 +4,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile1",
+      "Name": "profile1",
+      "Surname" : "profile1",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -12,6 +13,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@1.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -25,7 +27,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile2",
+      "Name": "profile2",
+      "Surname" : "profile2",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -33,6 +36,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@2.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -46,7 +50,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile3",
+      "Name": "profile3",
+      "Surname" : "profile3",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -54,6 +59,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@3.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -67,7 +73,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile4",
+      "Name": "profile4",
+      "Surname" : "profile4",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -75,6 +82,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@4.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -88,7 +96,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile5",
+      "Name": "profile5",
+      "Surname" : "profile5",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -96,6 +105,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@5.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -109,7 +119,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile6",
+      "Name": "profile6",
+      "Surname" : "profile6",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -117,6 +128,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@6.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -130,7 +142,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile7",
+      "Name": "profile7",
+      "Surname" : "profile7",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -138,6 +151,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@7.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -151,7 +165,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile8",
+      "Name": "profile8",
+      "Surname" : "profile8",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -159,6 +174,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@8.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -172,7 +188,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile9",
+      "Name": "profile9",
+      "Surname" : "profile9",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -180,6 +197,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@9.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -193,7 +211,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile10",
+      "Name": "profile10",
+      "Surname" : "profile10",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -201,6 +220,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@10.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -214,7 +234,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile11",
+      "Name": "profile11",
+      "Surname" : "profile11",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -222,6 +243,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@11.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -235,7 +257,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile12",
+      "Name": "profile12",
+      "Surname" : "profile12",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -243,6 +266,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@12.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -256,7 +280,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile13",
+      "Name": "profile13",
+      "Surname" : "profile13",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -264,6 +289,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@13.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -277,7 +303,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile14",
+      "Name": "profile14",
+      "Surname" : "profile14",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -285,6 +312,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@14.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -298,7 +326,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile15",
+      "Name": "profile15",
+      "Surname" : "profile15",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -306,6 +335,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@15.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -319,7 +349,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile16",
+      "Name": "profile16",
+      "Surname" : "profile16",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -327,6 +358,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@16.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -340,7 +372,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile17",
+      "Name": "profile17",
+      "Surname" : "profile17",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -348,6 +381,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@17.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -361,7 +395,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile18",
+      "Name": "profile18",
+      "Surname" : "profile18",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -369,6 +404,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@18.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -382,7 +418,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile19",
+      "Name": "profile19",
+      "Surname" : "profile19",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -390,6 +427,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@19.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -403,7 +441,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile20",
+      "Name": "profile20",
+      "Surname" : "profile20",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -411,6 +450,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@20.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -424,7 +464,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile21",
+      "Name": "profile21",
+      "Surname" : "profile21",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -432,6 +473,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@21.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -445,7 +487,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile22",
+      "Name": "profile22",
+      "Surname" : "profile22",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -453,6 +496,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@22.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -466,7 +510,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile23",
+      "Name": "profile23",
+      "Surname" : "profile23",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -474,6 +519,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@23.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -487,7 +533,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile24",
+      "Name": "profile24",
+      "Surname" : "profile24",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -495,6 +542,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@24.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -508,7 +556,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile25",
+      "Name": "profile25",
+      "Surname" : "profile25",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -516,6 +565,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@25.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -529,7 +579,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile26",
+      "Name": "profile26",
+      "Surname" : "profile26",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -537,6 +588,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@26.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -550,7 +602,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile27",
+      "Name": "profile27",
+      "Surname" : "profile27",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -558,6 +611,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@27.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -571,7 +625,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile28",
+      "Name": "profile28",
+      "Surname" : "profile28",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -579,6 +634,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@28.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -592,7 +648,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile29",
+      "Name": "profile29",
+      "Surname" : "profile29",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -600,6 +657,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@29.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -613,7 +671,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile30",
+      "Name": "profile30",
+      "Surname" : "profile30",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -621,6 +680,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@30.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -634,7 +694,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile31",
+      "Name": "profile31",
+      "Surname" : "profile31",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -642,6 +703,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@31.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -655,7 +717,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile32",
+      "Name": "profile32",
+      "Surname" : "profile32",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -663,6 +726,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@32.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -676,7 +740,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile33",
+      "Name": "profile33",
+      "Surname" : "profile33",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -684,6 +749,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@33.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -697,7 +763,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile34",
+      "Name": "profile34",
+      "Surname" : "profile34",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -705,6 +772,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@34.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -718,7 +786,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile35",
+      "Name": "profile35",
+      "Surname" : "profile35",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -726,6 +795,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@35.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -739,7 +809,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile36",
+      "Name": "profile36",
+      "Surname" : "profile36",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -747,6 +818,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@36.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -760,7 +832,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile37",
+      "Name": "profile37",
+      "Surname" : "profile37",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -768,6 +841,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@37.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -781,7 +855,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile38",
+      "Name": "profile38",
+      "Surname" : "profile38",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -789,6 +864,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@38.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -802,7 +878,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile39",
+      "Name": "profile39",
+      "Surname" : "profile39",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -810,6 +887,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@39.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -823,7 +901,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile40",
+      "Name": "profile40",
+      "Surname" : "profile40",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -831,6 +910,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@40.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -844,7 +924,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile41",
+      "Name": "profile41",
+      "Surname" : "profile41",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -852,6 +933,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@41.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -865,7 +947,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile42",
+      "Name": "profile42",
+      "Surname" : "profile42",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -873,6 +956,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@42.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -886,7 +970,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile43",
+      "Name": "profile43",
+      "Surname" : "profile43",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -894,6 +979,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@43.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -907,7 +993,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile44",
+      "Name": "profile44",
+      "Surname" : "profile44",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -915,6 +1002,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@44.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -928,7 +1016,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile45",
+      "Name": "profile45",
+      "Surname" : "profile45",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -936,6 +1025,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@45.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -949,7 +1039,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile46",
+      "Name": "profile46",
+      "Surname" : "profile46",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -957,6 +1048,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@46.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -970,7 +1062,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile47",
+      "Name": "profile47",
+      "Surname" : "profile47",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -978,6 +1071,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@47.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -991,7 +1085,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile48",
+      "Name": "profile48",
+      "Surname" : "profile48",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -999,6 +1094,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@48.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1012,7 +1108,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile49",
+      "Name": "profile49",
+      "Surname" : "profile49",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1020,6 +1117,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@49.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1033,7 +1131,8 @@
       "Gender": "female",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile50",
+      "Name": "profile50",
+      "Surname" : "profile50",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1041,6 +1140,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@50.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1054,7 +1154,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile51",
+      "Name": "profile51",
+      "Surname" : "profile51",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1062,6 +1163,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@51.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1075,7 +1177,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile52",
+      "Name": "profile52",
+      "Surname" : "profile52",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1083,6 +1186,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@52.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1096,7 +1200,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile53",
+      "Name": "profile53",
+      "Surname" : "profile53",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1104,6 +1209,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@53.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1117,7 +1223,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile54",
+      "Name": "profile54",
+      "Surname" : "profile54",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1125,6 +1232,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@54.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1138,7 +1246,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile55",
+      "Name": "profile55",
+      "Surname" : "profile55",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1146,6 +1255,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@55.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1159,7 +1269,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile56",
+      "Name": "profile56",
+      "Surname" : "profile56",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1167,6 +1278,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@56.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1180,7 +1292,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile57",
+      "Name": "profile57",
+      "Surname" : "profile57",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1188,6 +1301,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@57.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1201,7 +1315,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile58",
+      "Name": "profile58",
+      "Surname" : "profile58",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1209,6 +1324,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@58.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1222,7 +1338,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile59",
+      "Name": "profile59",
+      "Surname" : "profile59",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1230,6 +1347,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@59.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1243,7 +1361,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile60",
+      "Name": "profile60",
+      "Surname" : "profile60",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1251,6 +1370,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@60.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1264,7 +1384,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile61",
+      "Name": "profile61",
+      "Surname" : "profile61",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1272,6 +1393,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@61.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1285,7 +1407,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile62",
+      "Name": "profile62",
+      "Surname" : "profile62",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1293,6 +1416,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@62.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1306,7 +1430,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile63",
+      "Name": "profile63",
+      "Surname" : "profile63",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1314,6 +1439,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@63.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1327,7 +1453,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile64",
+      "Name": "profile64",
+      "Surname" : "profile64",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1335,6 +1462,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@64.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1348,7 +1476,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile65",
+      "Name": "profile65",
+      "Surname" : "profile65",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1356,6 +1485,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@65.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1369,7 +1499,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile66",
+      "Name": "profile66",
+      "Surname" : "profile66",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1377,6 +1508,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@66.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1390,7 +1522,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile67",
+      "Name": "profile67",
+      "Surname" : "profile67",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1398,6 +1531,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@67.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1411,7 +1545,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile68",
+      "Name": "profile68",
+      "Surname" : "profile68",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1419,6 +1554,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@68.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1432,7 +1568,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile69",
+      "Name": "profile69",
+      "Surname" : "profile69",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1440,6 +1577,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@69.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1453,7 +1591,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile70",
+      "Name": "profile70",
+      "Surname" : "profile70",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1461,6 +1600,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@70.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1474,7 +1614,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile71",
+      "Name": "profile71",
+      "Surname" : "profile71",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1482,6 +1623,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@71.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1495,7 +1637,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile72",
+      "Name": "profile72",
+      "Surname" : "profile72",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1503,6 +1646,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@72.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1516,7 +1660,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile73",
+      "Name": "profile73",
+      "Surname" : "profile73",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1524,6 +1669,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@73.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1537,7 +1683,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile74",
+      "Name": "profile74",
+      "Surname" : "profile74",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1545,6 +1692,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@74.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1558,7 +1706,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile75",
+      "Name": "profile75",
+      "Surname" : "profile75",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1566,6 +1715,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@75.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1579,7 +1729,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile76",
+      "Name": "profile76",
+      "Surname" : "profile76",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1587,6 +1738,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@76.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1600,7 +1752,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile77",
+      "Name": "profile77",
+      "Surname" : "profile77",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1608,6 +1761,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@77.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1621,7 +1775,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile78",
+      "Name": "profile78",
+      "Surname" : "profile78",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1629,6 +1784,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@78.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1642,7 +1798,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile79",
+      "Name": "profile79",
+      "Surname" : "profile79",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1650,6 +1807,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@79.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1663,7 +1821,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile80",
+      "Name": "profile80",
+      "Surname" : "profile80",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1671,6 +1830,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@80.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1684,7 +1844,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile81",
+      "Name": "profile81",
+      "Surname" : "profile81",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1692,6 +1853,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@81.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1705,7 +1867,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile82",
+      "Name": "profile82",
+      "Surname" : "profile82",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1713,6 +1876,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@82.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1726,7 +1890,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile83",
+      "Name": "profile83",
+      "Surname" : "profile83",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1734,6 +1899,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@83.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1747,7 +1913,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile84",
+      "Name": "profile84",
+      "Surname" : "profile84",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1755,6 +1922,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@84.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1768,7 +1936,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile85",
+      "Name": "profile85",
+      "Surname" : "profile85",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1776,6 +1945,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@85.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1789,7 +1959,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile86",
+      "Name": "profile86",
+      "Surname" : "profile86",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1797,6 +1968,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@86.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1810,7 +1982,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile87",
+      "Name": "profile87",
+      "Surname" : "profile87",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1818,6 +1991,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@87.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1831,7 +2005,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile88",
+      "Name": "profile88",
+      "Surname" : "profile88",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1839,6 +2014,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@88.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1852,7 +2028,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile89",
+      "Name": "profile89",
+      "Surname" : "profile89",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1860,6 +2037,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@89.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1873,7 +2051,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile90",
+      "Name": "profile90",
+      "Surname" : "profile90",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1881,6 +2060,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@90.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1894,7 +2074,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile91",
+      "Name": "profile91",
+      "Surname" : "profile91",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1902,6 +2083,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@91.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1915,7 +2097,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile92",
+      "Name": "profile92",
+      "Surname" : "profile92",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1923,6 +2106,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@92.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1936,7 +2120,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile93",
+      "Name": "profile93",
+      "Surname" : "profile93",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1944,6 +2129,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@93.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1957,7 +2143,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile94",
+      "Name": "profile94",
+      "Surname" : "profile94",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1965,6 +2152,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@94.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1978,7 +2166,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile95",
+      "Name": "profile95",
+      "Surname" : "profile95",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -1986,6 +2175,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@95.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1999,7 +2189,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile96",
+      "Name": "profile96",
+      "Surname" : "profile96",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -2007,6 +2198,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@96.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -2020,7 +2212,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile97",
+      "Name": "profile97",
+      "Surname" : "profile97",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -2028,6 +2221,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@97.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -2041,7 +2235,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile98",
+      "Name": "profile98",
+      "Surname" : "profile98",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -2049,6 +2244,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@98.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -2062,7 +2258,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile99",
+      "Name": "profile99",
+      "Surname" : "profile99",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -2070,6 +2267,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@99.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -2083,7 +2281,8 @@
       "Gender": "male",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
-      "KnownAs": "profile100",
+      "Name": "profile100",
+      "Surname" : "profile100",
       "Created": "2017-08-02",
       "LastActive": "2017-08-02",
       "Introduction": "Some text here.\r\n",
@@ -2091,6 +2290,7 @@
       "Interests": "Some text here.",
       "City": "Cape Town",
       "Country": "South Africa",
+      "Email": "email@100.com",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",

@@ -1,0 +1,5 @@
+On registration, a user needs to receive an email with a verification link that they need to click on to activate their profile.
+
+I suggest we add a boolean to the database and deny authorisation on login attempt until the link has been clicked and the boolean changed.
+
+A user must also receive an email whenever they receive a new match (like) or a message telling them what they received and from who.

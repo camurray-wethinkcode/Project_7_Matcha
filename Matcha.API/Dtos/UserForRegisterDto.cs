@@ -16,7 +16,10 @@ namespace Matcha.API.Dtos
         public string Gender { get; set; }
 
         [Required]
-        public string KnownAs { get; set; }
+        public string Name { get; set; }
+
+        [Required]
+        public string Surname { get; set; }
 
         [Required]
         public DateTime DateOfBirth { get; set; }
@@ -28,6 +31,18 @@ namespace Matcha.API.Dtos
         public string Country { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
+
+        [Required]
+        public string Email { get; set; }
+
+        [Required]
+        public string Introduction { get; set; }
+
+        [Required]
+        public string LookingFor { get; set; }
+
+        [Required]
+        public string Interests { get; set; }
 
         public UserForRegisterDto()
         {
