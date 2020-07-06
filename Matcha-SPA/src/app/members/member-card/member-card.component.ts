@@ -11,10 +11,24 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 })
 export class MemberCardComponent implements OnInit {
   @Input() user: User;
+  likeName = 'Like';
+  isClicked = false;
 
   constructor(private authService: AuthService, private userService: UserService, private alertify: AlertifyService) { }
 
   ngOnInit() {
+  }
+
+  toggleLike(id: number) {
+    this.isClicked = !this.isClicked;
+    if (this.isClicked === true) {
+      this.sendLike(this.user.id);
+      this.likeName = 'Unlike';
+    }
+    else {
+      this.sendUnlike(this.user.id);
+      this.likeName = 'Like';
+    }
   }
 
   sendLike(id: number) {

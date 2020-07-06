@@ -24,7 +24,7 @@ Important Features
 
 4.Advance Research
 	-Search others by age gap - DONE
-	-Fame Rating 
+	-Fame Rating (we'll use likes)
 	-Location
 	-Similar TAGS
 	-sortable & filterable - DONE
@@ -34,7 +34,7 @@ Important Features
 	-Message each other - DONE
 	-If users are friends/like each other they must able to see if they are online - DONE
 	-Last online - DONE
-	-Block or Report a user
+	-Block or Report a user (add a deactived field to db)
 
 6.Chat
 	-Two Users must be able chat with each other - DONE

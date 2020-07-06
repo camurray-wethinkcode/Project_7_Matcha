@@ -87,6 +87,7 @@ namespace Matcha.API.Controllers
         [HttpPost("{id}/like/{recipientId}")]
          public async Task<IActionResult> LikeUser(int id, int recipientId)
          {
+             //every time a user has been liked, we also want to increment his/her fame rating in the db -- help?
              if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                  return Unauthorized();
 
