@@ -37,7 +37,15 @@ namespace Matcha.API.Controllers
 
             if (string.IsNullOrEmpty(userParams.Gender))
             {
-                userParams.Gender = userFromRepo.Gender == "male" ? "female" : "male";
+                var gender = "test";
+                if (userFromRepo.Gender == "male")
+                  gender = "male";
+                else if (userFromRepo.Gender == "female")
+                  gender = "female";
+                else if (userFromRepo.Gender == "other")
+                  gender = "other";
+                userParams.Gender = gender;
+                //userParams.Gender = userFromRepo.Gender == "male" ? "female" : "male";
             }
 
             var users = await _repo.GetUsers(userParams);
@@ -102,6 +110,25 @@ namespace Matcha.API.Controllers
                  return Ok();
 
               return BadRequest("Failed to like user");
+         }
+
+        [HttpPost("{id}/unlike/{recipientId}")]
+         public async Task<IActionResult> UnlikeUser(int id, int recipientId)
+         {
+             if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                 return Unauthorized();
+
+              var like = await _repo.GetLike(id, recipientId);
+
+              if (like == null)
+                 return BadRequest("You haven't liked this user");
+
+              _repo.Delete<Like>(like);
+
+              if (await _repo.SaveAll())
+                 return Ok();
+
+              return BadRequest("Failed to unlike user");
          }
     }
 }

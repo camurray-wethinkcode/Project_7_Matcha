@@ -17,7 +17,7 @@
           </span>
           <div class="chat-body">
             <div class="header">
-              <strong class="primary-font">{{ message.senderKnownAs }}</strong>
+              <strong class="primary-font">{{ message.senderUsername }}</strong>
               <small class="text-muted float-right">
                 <span class="fa fa-clock-o">{{
                   message.messageSent | timeAgo
@@ -33,7 +33,7 @@
           <span class="chat-img float-right">
             <img
               src="{{ message.senderPhotoUrl }}"
-              alt="{{ message.senderKnownAs }}"
+              alt="{{ message.senderUsername }}"
               class="rounded-circle"
             />
           </span>
@@ -51,7 +51,7 @@
                 >
               </small>
               <strong class="primary-font float-right">{{
-                message.senderKnownAs
+                message.senderUsername
               }}</strong>
             </div>
             <p>{{ message.content }}</p>
