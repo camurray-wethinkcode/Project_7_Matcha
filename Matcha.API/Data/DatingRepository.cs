@@ -32,6 +32,8 @@ namespace Matcha.API.Data
                 u.LikerId == userId && u.LikeeId == recipientId);
         }
 
+//we need to add code here that unlikes someone and works similar to the like function above, please help
+
         public async Task<Photo> GetMainPhotoForUser(int userId)
         {
             return await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);

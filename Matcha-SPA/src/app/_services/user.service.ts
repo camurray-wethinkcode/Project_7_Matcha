@@ -88,6 +88,13 @@ export class UserService {
     );
   }
 
+  sendUnlike(id: number, recipientId: number) {
+    return this.http.post(
+      this.baseUrl + 'users/' + id + '/unlike/' + recipientId,
+      {}
+    );
+  }
+
   getMessages(id: number, page?, itemsPerPage?, messageContainer?) {
     const paginatedResult: PaginatedResult<Message[]> = new PaginatedResult<
       Message[]
