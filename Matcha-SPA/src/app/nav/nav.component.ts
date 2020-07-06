@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class NavComponent implements OnInit {
   model: any = {};
   photoUrl: string;
+  unread: number = 2;
 
   constructor(
     public authService: AuthService,
