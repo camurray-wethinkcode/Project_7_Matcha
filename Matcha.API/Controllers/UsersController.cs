@@ -124,15 +124,6 @@ namespace Matcha.API.Controllers
               if (like == null)
                  return BadRequest("You haven't liked this user");
 
-              if (await _repo.GetUser(recipientId) == null)
-                 return NotFound();
-
-              like = new Like
-             {
-                 LikerId = id,
-                 LikeeId = recipientId
-             };
-
               _repo.Delete<Like>(like);
 
               if (await _repo.SaveAll())
