@@ -76,4 +76,12 @@ export class MemberDetailComponent implements OnInit {
       this.alertify.error(error);
     });
   }
+
+  sendUnlike(id: number) {
+    this.userService.sendUnlike(this.authService.decodedToken.nameid, id).subscribe(data => {
+      this.alertify.success('You have unliked: ' + this.user.username);
+    }, error => {
+      this.alertify.error(error);
+    });
+  }
 }
