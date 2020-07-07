@@ -23,11 +23,16 @@
             <strong>Member since</strong>
             <p>{{user.created | date: 'mediumDate'}}</p>
           </div>
+          <div>
+            <strong>Fame Rating</strong>
+            <p>{{user.fameRating}}</p>
+          </div>
         </div>
         <div class="card-footer">
           <div class="btn-group d-flex">
-            <button class="btn btn-primary w-100" (click)="toggleLike(user.id)">{{  this.likeName  }}</button>
+            <button class="btn btn-primary w-100" (click)="toggleLike(user.id)">{{ this.likeName }}</button>
             <button class="btn btn-success w-100" (click)="selectTab(3)">Message</button>
+            <button class="btn btn-primary w-100" (click)="reportUser(user.id)">Report</button>
           </div>
         </div>
       </div>

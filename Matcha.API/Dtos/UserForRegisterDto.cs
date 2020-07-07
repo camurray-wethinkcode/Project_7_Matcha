@@ -44,6 +44,8 @@ namespace Matcha.API.Dtos
         [Required]
         public string Interests { get; set; }
 
+        public int FameRating { get; set; }
+        public int Deactivated { get; set; }
         public UserForRegisterDto()
         {
             Created = DateTime.Now;

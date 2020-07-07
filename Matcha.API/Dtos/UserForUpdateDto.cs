@@ -11,5 +11,7 @@ namespace Matcha.API.Dtos
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Password { get; set; }
+        public int FameRating { get; set; }
+        public int Deactivated { get; set; }
     }
 }

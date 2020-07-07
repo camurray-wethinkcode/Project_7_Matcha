@@ -17,5 +17,7 @@ export interface User {
   introduction?: string;
   lookingFor?: string;
   email: string;
+  fameRating: number;
+  deactivated: number;
   photos?: Photo[];
 }
