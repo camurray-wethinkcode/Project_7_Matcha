@@ -41,6 +41,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group(
       {
         gender: ['male'],
+        sexuality: ['heterosexual'],
         username: ['', Validators.required],
         name: ['', Validators.required],
         surname: ['', Validators.required],

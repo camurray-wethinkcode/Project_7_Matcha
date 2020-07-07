@@ -70,6 +70,9 @@ namespace Matcha.API.Migrations
                     b.Property<string>("Gender")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Sexuality")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Introduction")
                         .HasColumnType("TEXT");
 
