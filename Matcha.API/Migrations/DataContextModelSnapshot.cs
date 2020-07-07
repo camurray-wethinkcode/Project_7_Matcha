@@ -126,6 +126,9 @@ namespace Matcha.API.Migrations
                     b.Property<string>("Gender")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Sexuality")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Interests")
                         .HasColumnType("TEXT");
 
@@ -156,6 +159,12 @@ namespace Matcha.API.Migrations
 
                     b.Property<string>("Username")
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("FameRating")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Deactivated")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

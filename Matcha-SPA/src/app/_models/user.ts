@@ -7,6 +7,7 @@ export interface User {
   surname: string;
   age: number;
   gender: string;
+  sexuality: string;
   created: Date;
   lastActive: any;
   photoUrl: string;
@@ -17,5 +18,7 @@ export interface User {
   introduction?: string;
   lookingFor?: string;
   email: string;
+  fameRating: number;
+  deactivated: number;
   photos?: Photo[];
 }

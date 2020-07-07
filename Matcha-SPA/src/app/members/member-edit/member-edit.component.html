@@ -28,12 +28,24 @@
             <p>{{ user.age }}</p>
           </div>
           <div>
+            <strong>Gender</strong>
+            <p>{{ user.gender }}</p>
+          </div>
+          <div>
+            <strong>Sexuality</strong>
+            <p>{{ user.sexuality }}</p>
+          </div>
+          <div>
             <strong>Last Active</strong>
             <p>{{ user.lastActive | timeAgo }}</p>
           </div>
           <div>
             <strong>Member Since</strong>
             <p>{{ user.created | date: 'mediumDate' }}</p>
+          </div>
+          <div>
+            <strong>Fame Rating</strong>
+            <p>{{ user.fameRating}}</p>
           </div>
         </div>
         <div class="card-footer">

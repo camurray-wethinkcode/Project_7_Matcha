@@ -2,6 +2,7 @@
     {
       "Username": "profile1",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile1",
@@ -14,6 +15,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@1.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -25,6 +28,7 @@
     {
       "Username": "profile2",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile2",
@@ -37,6 +41,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@2.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -48,6 +54,7 @@
     {
       "Username": "profile3",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile3",
@@ -60,6 +67,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@3.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -71,6 +80,7 @@
     {
       "Username": "profile4",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile4",
@@ -83,6 +93,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@4.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -94,6 +106,7 @@
     {
       "Username": "profile5",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile5",
@@ -106,6 +119,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@5.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -117,6 +132,7 @@
     {
       "Username": "profile6",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile6",
@@ -129,6 +145,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@6.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -140,6 +158,7 @@
     {
       "Username": "profile7",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile7",
@@ -152,6 +171,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@7.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -163,6 +184,7 @@
     {
       "Username": "profile8",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile8",
@@ -175,6 +197,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@8.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -186,6 +210,7 @@
     {
       "Username": "profile9",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile9",
@@ -198,6 +223,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@9.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -209,6 +236,7 @@
     {
       "Username": "profile10",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile10",
@@ -221,6 +249,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@10.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -232,6 +262,7 @@
     {
       "Username": "profile11",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile11",
@@ -244,6 +275,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@11.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -255,6 +288,7 @@
     {
       "Username": "profile12",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile12",
@@ -267,6 +301,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@12.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -278,6 +314,7 @@
     {
       "Username": "profile13",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile13",
@@ -290,6 +327,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@13.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -301,6 +340,7 @@
     {
       "Username": "profile14",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile14",
@@ -313,6 +353,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@14.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -324,6 +366,7 @@
     {
       "Username": "profile15",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile15",
@@ -336,6 +379,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@15.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -347,6 +392,7 @@
     {
       "Username": "profile16",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile16",
@@ -359,6 +405,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@16.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -370,6 +418,7 @@
     {
       "Username": "profile17",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile17",
@@ -382,6 +431,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@17.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -393,6 +444,7 @@
     {
       "Username": "profile18",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile18",
@@ -405,6 +457,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@18.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -416,6 +470,7 @@
     {
       "Username": "profile19",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile19",
@@ -428,6 +483,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@19.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -439,6 +496,7 @@
     {
       "Username": "profile20",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile20",
@@ -451,6 +509,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@20.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -462,6 +522,7 @@
     {
       "Username": "profile21",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile21",
@@ -474,6 +535,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@21.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -485,6 +548,7 @@
     {
       "Username": "profile22",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile22",
@@ -497,6 +561,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@22.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -508,6 +574,7 @@
     {
       "Username": "profile23",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile23",
@@ -520,6 +587,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@23.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -531,6 +600,7 @@
     {
       "Username": "profile24",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile24",
@@ -543,6 +613,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@24.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -554,6 +626,7 @@
     {
       "Username": "profile25",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile25",
@@ -566,6 +639,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@25.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -577,6 +652,7 @@
     {
       "Username": "profile26",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile26",
@@ -589,6 +665,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@26.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -600,6 +678,7 @@
     {
       "Username": "profile27",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile27",
@@ -612,6 +691,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@27.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -623,6 +704,7 @@
     {
       "Username": "profile28",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile28",
@@ -635,6 +717,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@28.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -646,6 +730,7 @@
     {
       "Username": "profile29",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile29",
@@ -658,6 +743,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@29.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -669,6 +756,7 @@
     {
       "Username": "profile30",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile30",
@@ -681,6 +769,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@30.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -692,6 +782,7 @@
     {
       "Username": "profile31",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile31",
@@ -704,6 +795,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@31.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -715,6 +808,7 @@
     {
       "Username": "profile32",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile32",
@@ -727,6 +821,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@32.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -738,6 +834,7 @@
     {
       "Username": "profile33",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile33",
@@ -750,6 +847,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@33.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -761,6 +860,7 @@
     {
       "Username": "profile34",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile34",
@@ -773,6 +873,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@34.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -784,6 +886,7 @@
     {
       "Username": "profile35",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile35",
@@ -796,6 +899,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@35.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -807,6 +912,7 @@
     {
       "Username": "profile36",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile36",
@@ -819,6 +925,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@36.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -830,6 +938,7 @@
     {
       "Username": "profile37",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile37",
@@ -842,6 +951,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@37.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -853,6 +964,7 @@
     {
       "Username": "profile38",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile38",
@@ -865,6 +977,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@38.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -876,6 +990,7 @@
     {
       "Username": "profile39",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile39",
@@ -888,6 +1003,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@39.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -899,6 +1016,7 @@
     {
       "Username": "profile40",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile40",
@@ -911,6 +1029,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@40.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -922,6 +1042,7 @@
     {
       "Username": "profile41",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile41",
@@ -934,6 +1055,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@41.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -945,6 +1068,7 @@
     {
       "Username": "profile42",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile42",
@@ -957,6 +1081,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@42.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -968,6 +1094,7 @@
     {
       "Username": "profile43",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile43",
@@ -980,6 +1107,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@43.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -991,6 +1120,7 @@
     {
       "Username": "profile44",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile44",
@@ -1003,6 +1133,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@44.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1014,6 +1146,7 @@
     {
       "Username": "profile45",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile45",
@@ -1026,6 +1159,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@45.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1037,6 +1172,7 @@
     {
       "Username": "profile46",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile46",
@@ -1049,6 +1185,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@46.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1060,6 +1198,7 @@
     {
       "Username": "profile47",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile47",
@@ -1072,6 +1211,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@47.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1083,6 +1224,7 @@
     {
       "Username": "profile48",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile48",
@@ -1095,6 +1237,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@48.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1106,6 +1250,7 @@
     {
       "Username": "profile49",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile49",
@@ -1118,6 +1263,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@49.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1129,6 +1276,7 @@
     {
       "Username": "profile50",
       "Gender": "female",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile50",
@@ -1141,6 +1289,8 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@50.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
           "url": "https://randomuser.me/api/portraits/women/3.jpg",
@@ -1152,6 +1302,7 @@
     {
       "Username": "profile51",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile51",
@@ -1164,9 +1315,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@51.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1175,6 +1328,7 @@
     {
       "Username": "profile52",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile52",
@@ -1187,9 +1341,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@52.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1198,6 +1354,7 @@
     {
       "Username": "profile53",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile53",
@@ -1210,9 +1367,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@53.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1221,6 +1380,7 @@
     {
       "Username": "profile54",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile54",
@@ -1233,9 +1393,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@54.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1244,6 +1406,7 @@
     {
       "Username": "profile55",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile55",
@@ -1256,9 +1419,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@55.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1267,6 +1432,7 @@
     {
       "Username": "profile56",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile56",
@@ -1279,9 +1445,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@56.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1290,6 +1458,7 @@
     {
       "Username": "profile57",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile57",
@@ -1302,9 +1471,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@57.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1313,6 +1484,7 @@
     {
       "Username": "profile58",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile58",
@@ -1325,9 +1497,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@58.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1336,6 +1510,7 @@
     {
       "Username": "profile59",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile59",
@@ -1348,9 +1523,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@59.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1359,6 +1536,7 @@
     {
       "Username": "profile60",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile60",
@@ -1371,9 +1549,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@60.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1382,6 +1562,7 @@
     {
       "Username": "profile61",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile61",
@@ -1394,9 +1575,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@61.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1405,6 +1588,7 @@
     {
       "Username": "profile62",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile62",
@@ -1417,9 +1601,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@62.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1428,6 +1614,7 @@
     {
       "Username": "profile63",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile63",
@@ -1440,9 +1627,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@63.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1451,6 +1640,7 @@
     {
       "Username": "profile64",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile64",
@@ -1463,9 +1653,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@64.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1474,6 +1666,7 @@
     {
       "Username": "profile65",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile65",
@@ -1486,9 +1679,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@65.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1497,6 +1692,7 @@
     {
       "Username": "profile66",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile66",
@@ -1509,9 +1705,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@66.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1520,6 +1718,7 @@
     {
       "Username": "profile67",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile67",
@@ -1532,9 +1731,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@67.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1543,6 +1744,7 @@
     {
       "Username": "profile68",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile68",
@@ -1555,9 +1757,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@68.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1566,6 +1770,7 @@
     {
       "Username": "profile69",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile69",
@@ -1578,9 +1783,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@69.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1589,6 +1796,7 @@
     {
       "Username": "profile70",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile70",
@@ -1601,9 +1809,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@70.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1612,6 +1822,7 @@
     {
       "Username": "profile71",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile71",
@@ -1624,9 +1835,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@71.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1635,6 +1848,7 @@
     {
       "Username": "profile72",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile72",
@@ -1647,9 +1861,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@72.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1658,6 +1874,7 @@
     {
       "Username": "profile73",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile73",
@@ -1670,9 +1887,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@73.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1681,6 +1900,7 @@
     {
       "Username": "profile74",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile74",
@@ -1693,9 +1913,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@74.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1704,6 +1926,7 @@
     {
       "Username": "profile75",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile75",
@@ -1716,9 +1939,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@75.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1727,6 +1952,7 @@
     {
       "Username": "profile76",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile76",
@@ -1739,9 +1965,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@76.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1750,6 +1978,7 @@
     {
       "Username": "profile77",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile77",
@@ -1762,9 +1991,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@77.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1773,6 +2004,7 @@
     {
       "Username": "profile78",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile78",
@@ -1785,9 +2017,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@78.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1796,6 +2030,7 @@
     {
       "Username": "profile79",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile79",
@@ -1808,9 +2043,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@79.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1819,6 +2056,7 @@
     {
       "Username": "profile80",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile80",
@@ -1831,9 +2069,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@80.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1842,6 +2082,7 @@
     {
       "Username": "profile81",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile81",
@@ -1854,9 +2095,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@81.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1865,6 +2108,7 @@
     {
       "Username": "profile82",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile82",
@@ -1877,9 +2121,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@82.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1888,6 +2134,7 @@
     {
       "Username": "profile83",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile83",
@@ -1900,9 +2147,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@83.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1911,6 +2160,7 @@
     {
       "Username": "profile84",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile84",
@@ -1923,9 +2173,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@84.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1934,6 +2186,7 @@
     {
       "Username": "profile85",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile85",
@@ -1946,9 +2199,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@85.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1957,6 +2212,7 @@
     {
       "Username": "profile86",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile86",
@@ -1969,9 +2225,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@86.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -1980,6 +2238,7 @@
     {
       "Username": "profile87",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile87",
@@ -1992,9 +2251,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@87.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2003,6 +2264,7 @@
     {
       "Username": "profile88",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile88",
@@ -2015,9 +2277,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@88.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2026,6 +2290,7 @@
     {
       "Username": "profile89",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile89",
@@ -2038,9 +2303,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@89.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2049,6 +2316,7 @@
     {
       "Username": "profile90",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile90",
@@ -2061,9 +2329,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@90.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2072,6 +2342,7 @@
     {
       "Username": "profile91",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile91",
@@ -2084,9 +2355,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@91.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2095,6 +2368,7 @@
     {
       "Username": "profile92",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile92",
@@ -2107,9 +2381,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@92.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2118,6 +2394,7 @@
     {
       "Username": "profile93",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile93",
@@ -2130,9 +2407,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@93.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2141,6 +2420,7 @@
     {
       "Username": "profile94",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile94",
@@ -2153,9 +2433,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@94.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2164,6 +2446,7 @@
     {
       "Username": "profile95",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile95",
@@ -2176,9 +2459,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@95.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2187,6 +2472,7 @@
     {
       "Username": "profile96",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile96",
@@ -2199,9 +2485,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@96.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2210,6 +2498,7 @@
     {
       "Username": "profile97",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile97",
@@ -2222,9 +2511,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@97.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2233,6 +2524,7 @@
     {
       "Username": "profile98",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile98",
@@ -2245,9 +2537,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@98.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2256,6 +2550,7 @@
     {
       "Username": "profile99",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile99",
@@ -2268,9 +2563,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@99.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }
@@ -2279,6 +2576,7 @@
     {
       "Username": "profile100",
       "Gender": "male",
+      "Sexuality" : "heterosexual",
       "DateOfBirth": "1994-02-21",
       "Password": "password",
       "Name": "profile100",
@@ -2291,9 +2589,11 @@
       "City": "Cape Town",
       "Country": "South Africa",
       "Email": "email@100.com",
+      "FameRating": "0",
+      "Deactivated": "0",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/3.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Some text here."
         }

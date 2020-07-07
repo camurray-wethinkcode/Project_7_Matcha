@@ -16,6 +16,14 @@
             <p>{{user.age}}</p>
           </div>
           <div>
+            <strong>Gender</strong>
+            <p>{{user.gender}}</p>
+          </div>
+          <div>
+            <strong>Sexuality</strong>
+            <p>{{user.sexuality}}</p>
+          </div>
+          <div>
             <strong>Last Active</strong>
             <p>{{user.lastActive | timeAgo}}</p>
           </div>
@@ -23,11 +31,16 @@
             <strong>Member since</strong>
             <p>{{user.created | date: 'mediumDate'}}</p>
           </div>
+          <div>
+            <strong>Fame Rating</strong>
+            <p>{{user.fameRating}}</p>
+          </div>
         </div>
         <div class="card-footer">
           <div class="btn-group d-flex">
-            <button class="btn btn-primary w-100" (click)="toggleLike(user.id)">{{  this.likeName  }}</button>
+            <button class="btn btn-primary w-100" (click)="toggleLike(user.id)">{{ this.likeName }}</button>
             <button class="btn btn-success w-100" (click)="selectTab(3)">Message</button>
+            <button class="btn btn-primary w-100" (click)="reportUser(user.id)">Report</button>
           </div>
         </div>
       </div>
