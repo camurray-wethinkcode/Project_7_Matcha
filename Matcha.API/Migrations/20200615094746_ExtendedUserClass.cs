@@ -41,6 +41,11 @@ namespace Matcha.API.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
+                name: "Sexuality",
+                table: "Users",
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
                 name: "Introduction",
                 table: "Users",
                 nullable: true);
@@ -52,6 +57,16 @@ namespace Matcha.API.Migrations
 
             migrationBuilder.AddColumn<string>(
                 name: "Surname",
+                table: "Users",
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "FameRating",
+                table: "Users",
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "Deactivated",
                 table: "Users",
                 nullable: true);
 
@@ -122,6 +137,10 @@ namespace Matcha.API.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
+                name: "Sexuality",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
                 name: "Introduction",
                 table: "Users");
 
@@ -131,6 +150,14 @@ namespace Matcha.API.Migrations
 
             migrationBuilder.DropColumn(
                 name: "Surname",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "FameRating",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "Deactivated",
                 table: "Users");
 
             migrationBuilder.DropColumn(
