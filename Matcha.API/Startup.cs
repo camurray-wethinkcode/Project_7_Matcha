@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Coravel;
 using Matcha.API.Data;
 using Matcha.API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -79,6 +80,10 @@ namespace Matcha.API
                     };
                 });
             services.AddScoped<LogUserActivity>();
+
+            // Mailer services
+            services.AddScoped<IMailer, Mailer>();
+            services.AddMailer(new ConfigurationBuilder().AddJsonFile("appsettings.json", false).Build());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
