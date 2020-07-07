@@ -15,7 +15,7 @@ Important Features
 	-pictures max 5, 1 as a profile pic
 	-modify information - DONE
 	-user must be able to able to see who checked their profile
-	-fame rating (we'll use likes)
+	-fame rating (we'll use likes) - Buggy
 	-GPS location
 
 3.Browsing
@@ -24,7 +24,7 @@ Important Features
 
 4.Advance Research
 	-Search others by age gap - DONE
-	-Fame Rating (we'll use likes)
+	-Fame Rating (we'll use likes) - Buggy
 	-Location
 	-Similar TAGS
 	-sortable & filterable - DONE

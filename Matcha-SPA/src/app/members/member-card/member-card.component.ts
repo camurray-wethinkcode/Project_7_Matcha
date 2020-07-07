@@ -13,7 +13,6 @@ export class MemberCardComponent implements OnInit {
   @Input() user: User;
   likeName = 'Like';
   isClicked = false;
-
   constructor(private authService: AuthService, private userService: UserService, private alertify: AlertifyService) { }
 
   ngOnInit() {
@@ -32,6 +31,16 @@ export class MemberCardComponent implements OnInit {
   }
 
   sendLike(id: number) {
+    this.userService.getUser(this.authService.decodedToken.nameid).subscribe(data => {
+      data.fameRating = data.fameRating + 1;
+      this.userService.updateUser(this.authService.decodedToken.nameid, data).subscribe(data => {
+        this.alertify.success('You have increased your fame!');
+      }, error => {
+        this.alertify.error('Something went wrong');
+      })
+    }, error => {
+      console.log('Nope');
+    });
     this.userService.sendLike(this.authService.decodedToken.nameid, id).subscribe(data => {
       this.alertify.success('You have liked: ' + this.user.username);
     }, error => {
