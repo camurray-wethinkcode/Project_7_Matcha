@@ -46,7 +46,7 @@ namespace Matcha.API.Helpers
         private string GetTemplate(string templateName)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "Matcha.API.Helpers.EmailTemplates." + templateName;
+            var resourceName = "Matcha.API.Helpers.EmailTemplates." + templateName + ".html";
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             using (StreamReader reader = new StreamReader(stream))
