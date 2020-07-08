@@ -20,10 +20,12 @@ namespace Matcha.API.Controllers
     {
         private readonly IDatingRepository _repo;
         private readonly IMapper _mapper;
-        public UsersController(IDatingRepository repo, IMapper mapper)
+        private readonly IMailer _mailer;
+        public UsersController(IDatingRepository repo, IMapper mapper, IMailer mailer)
         {
             _mapper = mapper;
             _repo = repo;
+            _mailer = mailer;
         }
 
         [HttpGet]
@@ -85,50 +87,74 @@ namespace Matcha.API.Controllers
         }
 
         [HttpPost("{id}/like/{recipientId}")]
-         public async Task<IActionResult> LikeUser(int id, int recipientId)
-         {
-             if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-                 return Unauthorized();
+        public async Task<IActionResult> LikeUser(int id, int recipientId)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
 
-              var like = await _repo.GetLike(id, recipientId);
+            var like = await _repo.GetLike(id, recipientId);
 
-              if (like != null)
-                 return BadRequest("You already like this user");
+            if (like != null)
+                return BadRequest("You already like this user");
 
-              if (await _repo.GetUser(recipientId) == null)
-                 return NotFound();
+            if (await _repo.GetUser(recipientId) == null)
+                return NotFound();
 
-              like = new Like
-             {
-                 LikerId = id,
-                 LikeeId = recipientId
-             };
+            like = new Like
+            {
+                LikerId = id,
+                LikeeId = recipientId
+            };
 
-              _repo.Add<Like>(like);
+            _repo.Add<Like>(like);
 
-              if (await _repo.SaveAll())
-                 return Ok();
+            var likedUser = await _repo.GetUser(recipientId);
+            var likedByUser = await _repo.GetUser(id);
 
-              return BadRequest("Failed to like user");
-         }
+            await _mailer.SendLikeMail(
+                new MailUser
+                {
+                    Email = likedUser.Email,
+                    Name = likedUser.Name
+                },
+                likedByUser.Name
+            );
+
+            if (await _repo.SaveAll())
+                return Ok();
+
+            return BadRequest("Failed to like user");
+        }
 
         [HttpPost("{id}/unlike/{recipientId}")]
-         public async Task<IActionResult> UnlikeUser(int id, int recipientId)
-         {
-             if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-                 return Unauthorized();
+        public async Task<IActionResult> UnlikeUser(int id, int recipientId)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
 
-              var like = await _repo.GetLike(id, recipientId);
+            var like = await _repo.GetLike(id, recipientId);
 
-              if (like == null)
-                 return BadRequest("You haven't liked this user");
+            if (like == null)
+                return BadRequest("You haven't liked this user");
 
-              _repo.Delete<Like>(like);
+            _repo.Delete<Like>(like);
 
-              if (await _repo.SaveAll())
-                 return Ok();
+            var unlikedUser = await _repo.GetUser(recipientId);
+            var unlikedByUser = await _repo.GetUser(id);
 
-              return BadRequest("Failed to unlike user");
-         }
+            await _mailer.SendUnlikeMail(
+                new MailUser
+                {
+                    Email = unlikedUser.Email,
+                    Name = unlikedUser.Name
+                },
+                unlikedByUser.Name
+            );
+
+            if (await _repo.SaveAll())
+                return Ok();
+
+            return BadRequest("Failed to unlike user");
+        }
     }
 }
