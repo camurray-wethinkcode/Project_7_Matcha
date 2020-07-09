@@ -4,6 +4,7 @@ import { UserService } from 'src/app/_services/user.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { AuthService } from 'src/app/_services/auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import {
   NgxGalleryOptions,
   NgxGalleryImage,
@@ -19,6 +20,7 @@ import { TabsetComponent } from 'ngx-bootstrap';
 export class MemberDetailComponent implements OnInit {
   @ViewChild('memberTabs', {static: true}) memberTabs: TabsetComponent;
   user: User;
+  userParams: any = {};
   isClicked = false;
   likeName = 'Like';
   galleryOptions: NgxGalleryOptions[];
@@ -28,7 +30,8 @@ export class MemberDetailComponent implements OnInit {
     private authService: AuthService,
     private userService: UserService,
     private alertify: AlertifyService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -109,7 +112,15 @@ export class MemberDetailComponent implements OnInit {
     });
   }
 
+  blockUser(id: number) {
+    localStorage.setItem('blockedlist', id.toString());
+    this.alertify.success('User added to blocked list and will no longer appear in search');
+    this.router.navigate(['/home']);
+  }
+
   reportUser(id: number) {
-    //add code here to set user's deactivated number from 0 to 1 in database to make them inactive
+    localStorage.setItem('reportedlist', id.toString());
+    this.alertify.success('User reported');
+    this.router.navigate(['/home']);
   }
 }

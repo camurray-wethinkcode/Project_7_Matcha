@@ -4,6 +4,20 @@
     <UserSecretsId>b7d355c7-6699-4a3a-84c1-73666f147595</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Helpers\EmailTemplates\LikeTemplate.html" />
+    <None Remove="Helpers\EmailTemplates\MessagedTemplate.html" />
+    <None Remove="Helpers\EmailTemplates\RegisterTemplate.html" />
+    <None Remove="Helpers\EmailTemplates\UnlikeTemplate.html" />
+    <None Remove="Helpers\EmailTemplates\ViewedTemplate.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Helpers\EmailTemplates\LikeTemplate.html" />
+    <EmbeddedResource Include="Helpers\EmailTemplates\MessagedTemplate.html" />
+    <EmbeddedResource Include="Helpers\EmailTemplates\RegisterTemplate.html" />
+    <EmbeddedResource Include="Helpers\EmailTemplates\UnlikeTemplate.html" />
+    <EmbeddedResource Include="Helpers\EmailTemplates\ViewedTemplate.html" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Coravel.Mailer" Version="3.0.0-preview1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0"/>

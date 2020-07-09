@@ -5,18 +5,18 @@ Important Features
 	-username - DONE
 	-last & first name - DONE
 	-protected password - DONE
-	-verification email
+	-verification email - MISSING
 
 2.User profile
 	-gender - DONE
 	-sexual preference - DONE
 	-bio - DONE
 	-list of interest(reusable TAGS) - DONE
-	-pictures max 5, 1 as a profile pic
+	-pictures max 5, 1 as a profile pic - DONE
 	-modify information - DONE
-	-user must be able to able to see who checked their profile
-	-fame rating (we'll use likes) - Buggy
-	-GPS location
+	-user must be able to able to see who checked their profile - MISSING
+	-fame rating (we'll use likes) - DONE
+	-GPS location - DONE
 
 3.Browsing
 	-User must be able to look for possible matches - DONE
@@ -24,9 +24,9 @@ Important Features
 
 4.Advance Research
 	-Search others by age gap - DONE
-	-Fame Rating (we'll use likes) - Buggy
-	-Location
-	-Similar TAGS
+	-Fame Rating (we'll use likes) - DONE
+	-Location - MISSING
+	-Similar TAGS - MISSING
 	-sortable & filterable - DONE
 
 5.Profiles of other Users
@@ -34,15 +34,16 @@ Important Features
 	-Message each other - DONE
 	-If users are friends/like each other they must able to see if they are online - DONE
 	-Last online - DONE
-	-Block or Report a user (add a deactived field to db)
+	-Block - DONE
+        -Report a user (add a deactived field to db) - DONE
 
 6.Chat
 	-Two Users must be able chat with each other - DONE
 
 7.Notifications
-	-Get notifications when a user has Liked
-	-Checked recieved messages
-	-A user must be able to see, from any page that a notification hasn’t been read
+	-Get notifications when a user has Liked - MISSING
+	-Checked recieved messages - MISSING
+	-A user must be able to see, from any page that a notification hasn’t been read - MISSING
 
 
 BONUS PARTS

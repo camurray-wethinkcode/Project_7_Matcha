@@ -61,6 +61,8 @@
   <div class="form-group">
     <input
       type="text"
+      required="required"
+      pattern="[A-Za-z0-9]{1,20}"
       [ngClass]="{
         'is-invalid':
           registerForm.get('username').errors &&
@@ -69,12 +71,15 @@
       class="form-control"
       formControlName="username"
       placeholder="Username"
+      title="Username should contain only A-Z, a-z, 0-9 & be between 1 & 20 characters"
     />
     <div class="invalid-feedback">Please choose a username</div>
   </div>
 
   <div class="form-group">
     <input
+      required="required"
+      pattern="[A-Za-z-]{1,20}"
       [ngClass]="{
         'is-invalid':
           registerForm.get('name').errors &&
@@ -82,6 +87,7 @@
       }"
       class="form-control"
       placeholder="Name"
+      title="Name should contain only A-Z, a-z, 0-9 & - & be between 1 & 20 characters"
       formControlName="name"
     />
     <div
@@ -97,6 +103,8 @@
 
   <div class="form-group">
     <input
+      required="required"
+      pattern="[A-Za-z-]{1,20}"
       [ngClass]="{
         'is-invalid':
           registerForm.get('surname').errors &&
@@ -104,6 +112,7 @@
       }"
       class="form-control"
       placeholder="Surname"
+      title="Surname should contain only A-Z, a-z, 0-9 & - & be between 1 & 20 characters"
       formControlName="surname"
     />
     <div
@@ -119,6 +128,7 @@
 
   <div class="form-group">
     <input
+      required="required"
       [ngClass]="{
         'is-invalid':
           registerForm.get('dateOfBirth').errors &&
@@ -126,6 +136,7 @@
       }"
       class="form-control"
       placeholder="Click to Select Date of Birth"
+      title="Click to select date of birth from the calendar"
       formControlName="dateOfBirth"
       type="text"
       bsDatepicker
@@ -144,12 +155,15 @@
 
   <div class="form-group">
     <input
+      required="required"
+      pattern="[A-Za-z- ]{1,20}"
       [ngClass]="{
         'is-invalid':
           registerForm.get('city').errors && registerForm.get('city').touched
       }"
       class="form-control"
       placeholder="City"
+      title="City should contain only A-Z, a-z & - & be between 1 & 20 characters"
       formControlName="city"
     />
     <div
@@ -165,6 +179,8 @@
 
   <div class="form-group">
     <input
+      required="required"
+      pattern="[A-Za-z- ]{1,20}"
       [ngClass]="{
         'is-invalid':
           registerForm.get('country').errors &&
@@ -172,6 +188,7 @@
       }"
       class="form-control"
       placeholder="Country"
+      title="Country should contain only A-Z, a-z, - & be between 1 & 20 characters"
       formControlName="country"
     />
     <div
@@ -187,6 +204,8 @@
 
   <div class="form-group">
     <input
+      required="required"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
       [ngClass]="{
         'is-invalid':
           registerForm.get('email').errors &&
@@ -194,6 +213,7 @@
       }"
       class="form-control"
       placeholder="Email"
+      title="Please enter a valid email with an @ & atleast .xx"
       formControlName="email"
     />
     <div
@@ -209,6 +229,8 @@
 
   <div class="form-group">
     <input
+      required="required"
+      pattern="(?=^.{6,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[a-z]).*$"
       type="password"
       [ngClass]="{
         'is-invalid':
@@ -216,8 +238,9 @@
           registerForm.get('password').touched
       }"
       class="form-control"
+      title="Please enter a complex password, atleast one capital letter, one lowercase letter, one number & one special character"
       formControlName="password"
-      placeholder="Password"
+      placeholder="Password must contain a lowercase & capital letter, number & special character"
     />
     <div
       class="invalid-feedback"
@@ -235,7 +258,7 @@
         registerForm.get('password').touched
       "
     >
-      Password must be at least 4 characters
+      Password must be at least 6 characters
     </div>
     <div
       class="invalid-feedback"
@@ -244,12 +267,14 @@
         registerForm.get('password').touched
       "
     >
-      Password cannot exceed 8 characters
+      Password cannot exceed 30 characters
     </div>
   </div>
 
   <div class="form-group">
     <input
+      required="required"
+      pattern="(?=^.{6,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[a-z]).*$"
       [ngClass]="{
         'is-invalid':
           (registerForm.get('confirmPassword').errors &&
@@ -261,6 +286,7 @@
       class="form-control"
       formControlName="confirmPassword"
       placeholder="Confirm Password"
+      title="Please enter a complex password, atleast one capital letter, one lowercase letter, one number & one special character"
     />
     <div
       class="invalid-feedback"
@@ -284,6 +310,8 @@
 
   <div class="form-group">
     <input
+      required="required"
+      pattern="[A-Za-z, .-]{1,50}"
       [ngClass]="{
         'is-invalid':
           registerForm.get('introduction').errors &&
@@ -291,6 +319,7 @@
       }"
       class="form-control"
       placeholder="Description"
+      title="Please enter only A-Z, a-z, spaces, commas, periods & hyphens, between one & 50 characters"
       formControlName="introduction"
     />
     <div
@@ -306,6 +335,8 @@
 
   <div class="form-group">
     <input
+      required="required"
+      pattern="[A-Za-z, .-]{1,50}"
       [ngClass]="{
         'is-invalid':
           registerForm.get('lookingFor').errors &&
@@ -313,6 +344,7 @@
       }"
       class="form-control"
       placeholder="Looking For"
+      title="Please enter only A-Z, a-z, spaces, commas, periods & hyphens, between one & 50 characters"
       formControlName="lookingFor"
     />
     <div
@@ -328,13 +360,16 @@
 
   <div class="form-group">
     <input
+      required="required"
+      pattern="^#[\w-]+(?:\s+#[\w-]+)*$"
       [ngClass]="{
         'is-invalid':
           registerForm.get('interests').errors &&
           registerForm.get('interests').touched
       }"
       class="form-control"
-      placeholder="Interests"
+      placeholder="Interest Hashtags (#beaches, #fun)"
+      title="Please enter tags starting with # & only A-Z, a-z, separated by spaces, between one & 50 characters"
       formControlName="interests"
     />
     <div
@@ -347,6 +382,16 @@
       Interests is required
     </div>
   </div><br>
+
+  <div class="form-group">
+    <label>Enter address</label>
+    <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+  </div><br>
+
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+      (dragEnd)="markerDragEnd($event)"></agm-marker>
+  </agm-map><br>
 
   <div class="form-group">
     <button

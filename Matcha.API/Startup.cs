@@ -83,6 +83,7 @@ namespace Matcha.API
 
             // Mailer services
             services.AddScoped<IMailer, Mailer>();
+            services.AddScoped<IMailTemplate, MailTemplate>();
             services.AddMailer(new ConfigurationBuilder().AddJsonFile("appsettings.json", false).Build());
         }
 

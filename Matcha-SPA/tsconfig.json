@@ -13,7 +13,8 @@
     "target": "es2015",
     "typeRoots": [
       "node_modules/@types",
-      "src/typings.d.ts"
+      "src/typings.d.ts",
+      "src/index.d.ts"
     ],
     "lib": [
       "es2018",

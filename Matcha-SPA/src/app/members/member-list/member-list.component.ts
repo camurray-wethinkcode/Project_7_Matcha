@@ -29,7 +29,34 @@ export class MemberListComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe(data => {
+      var i = 6;
+      var j = 6;
+      if (localStorage.getItem('blockedlist')) {
+          if (localStorage.getItem('blockedlist') === data['users'].result[0].id.toString()) {
+            i = 0;
+            j = 4;
+          }
+          else if (localStorage.getItem('blockedlist') === data['users'].result[1].id.toString()) {
+            i = 1;
+            j = 3;
+          }
+          else if (localStorage.getItem('blockedlist') === data['users'].result[2].id.toString()) {
+            i = 2;
+            j = 4;
+          }
+          else if (localStorage.getItem('blockedlist') === data['users'].result[3].id.toString()) {
+            i = 3;
+            j = 1;
+          }
+          else if (localStorage.getItem('blockedlist') === data['users'].result[4].id.toString()) {
+            i = 4;
+            j = 0;
+          }
+        }
       this.users = data['users'].result;
+      if (i != 6) {
+        this.users[i] = this.users[j];
+      }
       this.pagination = data['users'].pagination;
     });
 
@@ -72,8 +99,8 @@ export class MemberListComponent implements OnInit {
       )
       .subscribe(
         (res: PaginatedResult<User[]>) => {
-          this.users = res.result;
-          this.pagination = res.pagination;
+            this.users = res.result;
+            this.pagination = res.pagination;
         },
         error => {
           this.alertify.error(error);

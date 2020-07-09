@@ -17,3 +17,7 @@
 div {
     width: 200%;
 }
+
+agm-map {
+  height: 500px;
+}

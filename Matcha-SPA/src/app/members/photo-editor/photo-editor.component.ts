@@ -18,6 +18,8 @@ export class PhotoEditorComponent implements OnInit {
   hasBaseDropZoneOver = false;
   baseUrl = environment.apiUrl;
   currentMain: Photo;
+  flag: number = 0;
+  msg: number = 0;
 
   constructor(
     private authService: AuthService,
@@ -26,11 +28,19 @@ export class PhotoEditorComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.initializeUploader();
+    if (this.photos[4] != undefined) {
+      this.flag = 1;
+    }
+      this.initializeUploader();
   }
 
   fileOverBase(e: any): void {
-    this.hasBaseDropZoneOver = e;
+    if (this.flag === 1 && this.msg === 0) {
+      this.alertify.error('Maximum 5 photos allowed');
+      this.msg++;
+    }
+    else if (this.flag === 0)
+      this.hasBaseDropZoneOver = e;
   }
 
   initializeUploader() {
@@ -69,6 +79,7 @@ export class PhotoEditorComponent implements OnInit {
           localStorage.setItem('user', JSON.stringify(this.authService.currentUser));
         }
       }
+      window.location.reload();
     };
   }
 
@@ -101,6 +112,7 @@ export class PhotoEditorComponent implements OnInit {
           () => {
             this.photos.splice(this.photos.findIndex(p => p.id === id), 1);
             this.alertify.success('Photo has been deleted');
+            window.location.reload();
           },
           error => {
             this.alertify.error('Failed to delete the photo');

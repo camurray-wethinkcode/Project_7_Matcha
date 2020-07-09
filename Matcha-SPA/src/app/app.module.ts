@@ -19,6 +19,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -69,6 +70,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     MemberMessagesComponent
   ],
   imports: [
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyBKQnPRyn_iLOrIf8U1_2Hx_vw6wGn4qAs', libraries: ['places']}),
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,

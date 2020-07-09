@@ -39,10 +39,10 @@
       </div>
   
       Multiple
-      <input type="file" ng2FileSelect [uploader]="uploader" multiple /><br />
+      <input type="file" ng2FileSelect [uploader]="uploader" [disabled]="this.flag" multiple /><br />
   
       Single
-      <input type="file" ng2FileSelect [uploader]="uploader" />
+      <input type="file" ng2FileSelect [uploader]="uploader" [disabled]="this.flag" />
     </div>
   
     <div
@@ -88,6 +88,7 @@
           class="btn btn-success btn-s"
           (click)="uploader.uploadAll()"
           [disabled]="!uploader.getNotUploadedItems().length"
+          [disabled]="this.flag"
         >
           <span class="fa fa-upload"></span> Upload
         </button>
@@ -96,6 +97,7 @@
           class="btn btn-warning btn-s"
           (click)="uploader.cancelAll()"
           [disabled]="!uploader.isUploading"
+          [disabled]="this.flag"
         >
           <span class="fa fa-ban"></span> Cancel
         </button>
@@ -104,6 +106,7 @@
           class="btn btn-danger btn-s"
           (click)="uploader.clearQueue()"
           [disabled]="!uploader.queue.length"
+          [disabled]="this.flag"
         >
           <span class="fa fa-trash"></span> Remove
         </button>
