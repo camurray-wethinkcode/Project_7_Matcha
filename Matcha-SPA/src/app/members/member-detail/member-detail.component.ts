@@ -20,6 +20,7 @@ import { TabsetComponent } from 'ngx-bootstrap';
 export class MemberDetailComponent implements OnInit {
   @ViewChild('memberTabs', {static: true}) memberTabs: TabsetComponent;
   user: User;
+  nophoto: number = 0;
   userParams: any = {};
   isClicked = false;
   likeName = 'Like';
@@ -37,6 +38,10 @@ export class MemberDetailComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.user = data['user'];
+      if (localStorage.getItem('nophoto') === '1') {
+        this.nophoto = 1;
+        this.alertify.error('You must upload atleast one photo before you can contact other users');
+      }
     });
 
     this.route.queryParams.subscribe(params => {

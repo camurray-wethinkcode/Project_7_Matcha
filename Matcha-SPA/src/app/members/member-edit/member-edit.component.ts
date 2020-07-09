@@ -41,6 +41,7 @@ export class MemberEditComponent implements OnInit {
       .updateUser(this.authService.decodedToken.nameid, this.user)
       .subscribe(
         next => {
+          localStorage.setItem('nophoto', '0');
           this.alertify.success('Profile updated successfully');
           this.editForm.reset(this.user);
         },
@@ -52,5 +53,6 @@ export class MemberEditComponent implements OnInit {
 
   updateMainPhoto(photoUrl) {
     this.user.photoUrl = photoUrl;
+    localStorage.setItem('nophoto', '0');
   }
 }

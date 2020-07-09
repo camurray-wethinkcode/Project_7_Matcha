@@ -24,10 +24,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
-  @ViewChild('editForm', { static: true }) editForm: NgForm;
-  @HostListener('window:beforeunload', ['$event'])
   user: User;
-  photoUrl: string = 'null';
   registerForm: FormGroup;
   bsConfig: Partial<BsDatepickerConfig>;
   latitude: number;
@@ -37,11 +34,6 @@ export class RegisterComponent implements OnInit {
   city: string;
   country: string;
   private geoCoder;
-  unloadNotification($event: any) {
-    if (this.editForm.dirty) {
-      $event.returnValue = true;
-    }
-  }
 
   @ViewChild('search', {static:true})
   public searchElementRef: ElementRef;
@@ -109,6 +101,7 @@ export class RegisterComponent implements OnInit {
 
   getAddress(latitude, longitude) {
     if (this.geoCoder === undefined || this.geoCoder === null) {
+      localStorage.setItem('connection', '1');
       window.location.reload(); 
     }
     this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results, status) => {
@@ -173,30 +166,12 @@ export class RegisterComponent implements OnInit {
         },
         () => {
           this.authService.login(this.user).subscribe(() => {
+            localStorage.setItem('nophoto', '1');
             this.router.navigate(['/members']);
           });
         }
       );
     }
-  }
-
-  updateUser() {
-    this.user = Object.assign({}, this.registerForm.value);
-    this.userService
-      .updateUser(this.authService.decodedToken.nameid, this.user)
-      .subscribe(
-        next => {
-          this.alertify.success('Profile updated successfully');
-          this.editForm.reset(this.user);
-        },
-        error => {
-          this.alertify.error(error);
-        }
-      );
-  }
-
-  updateMainPhoto(photoUrl) {
-    this.user.photoUrl = photoUrl;
   }
 
   cancel() {

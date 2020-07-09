@@ -14,6 +14,7 @@ export class MemberMessagesComponent implements OnInit {
   @Input() recipientId: number;
   messages: Message[];
   newMessage: any = {};
+  nophoto: number = 0;
 
   constructor(
     private userService: UserService,
@@ -23,6 +24,9 @@ export class MemberMessagesComponent implements OnInit {
 
   ngOnInit() {
     this.loadMessages();
+      if (localStorage.getItem('nophoto') === '1') {
+        this.nophoto = 1;
+      }
   }
 
   loadMessages() {

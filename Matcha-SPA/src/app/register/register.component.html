@@ -394,13 +394,6 @@
   </agm-map><br>
 
   <div class="form-group">
-    <app-photo-editor
-      [photos]="user.photos"
-      (getMemberPhotoChange)="updateMainPhoto($event)"
-    ></app-photo-editor>
-  </div><br>
-
-  <div class="form-group">
     <button
       class="btn btn-success"
       [disabled]="!registerForm.valid"
