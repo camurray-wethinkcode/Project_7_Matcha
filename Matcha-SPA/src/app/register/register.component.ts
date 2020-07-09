@@ -167,7 +167,6 @@ export class RegisterComponent implements OnInit {
         },
         () => {
           this.authService.login(this.user).subscribe(() => {
-            localStorage.setItem('nophoto', '1');
             this.router.navigate(['/members']);
           });
         }

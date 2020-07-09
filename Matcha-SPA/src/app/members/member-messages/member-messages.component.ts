@@ -15,6 +15,7 @@ export class MemberMessagesComponent implements OnInit {
   messages: Message[];
   newMessage: any = {};
   nophoto: number = 0;
+  notliked: number = 0;
 
   constructor(
     private userService: UserService,
@@ -26,6 +27,10 @@ export class MemberMessagesComponent implements OnInit {
     this.loadMessages();
     if (localStorage.getItem('nophoto') === '1') {
       this.nophoto = 1;
+    }
+    if (localStorage.getItem('notliked') === '1') {
+      this.notliked = 1;
+      this.alertify.error('You must like a user and be liked back to connect with them before messaging them');
     }
   }
 

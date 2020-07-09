@@ -26,6 +26,10 @@ export class ListsComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.users = data['users'].result;
+      if (this.users[0] === null || this.users[0] === undefined)
+        localStorage.setItem('notliked', '1');
+      if (this.users[0] != null)
+        localStorage.setItem('notliked', '0');
       this.pagination = data['users'].pagination;
     });
     this.likesParam = 'Likers';
@@ -42,6 +46,10 @@ export class ListsComponent implements OnInit {
       .subscribe(
         (res: PaginatedResult<User[]>) => {
           this.users = res.result;
+          if (this.users[0] === null || this.users[0] === undefined)
+            localStorage.setItem('notliked', '1');
+          if (this.users[0] != null)
+            localStorage.setItem('notliked', '0');
           this.pagination = res.pagination;
         },
         error => {

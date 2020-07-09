@@ -38,10 +38,6 @@ export class MemberDetailComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.user = data['user'];
-      if (!this.user.photos[0])
-        localStorage.setItem('nophoto', '1');
-      else
-        localStorage.setItem('nophoto', '0');
       if (localStorage.getItem('nophoto') === '1') {
         this.nophoto = 1;
         this.alertify.error('You must upload atleast one photo before you can contact other users');
@@ -129,7 +125,7 @@ export class MemberDetailComponent implements OnInit {
 
   reportUser(id: number) {
     localStorage.setItem('reportedlist', id.toString());
-    this.alertify.success('User reported');
+    this.alertify.success('User reported to admin, user will be banned from platform and unable to login');
     this.router.navigate(['/home']);
   }
 }

@@ -73,7 +73,7 @@
           placeholder="send a private message"
         />
         <div class="input-group-append">
-          <button [disabled]="!messageForm.valid || this.nophoto" class="btn btn-primary">
+          <button [disabled]="!messageForm.valid || this.nophoto || this.notliked" class="btn btn-primary">
             Send
           </button>
         </div>
