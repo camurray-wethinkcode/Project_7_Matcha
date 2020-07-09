@@ -24,9 +24,9 @@ export class MemberMessagesComponent implements OnInit {
 
   ngOnInit() {
     this.loadMessages();
-      if (localStorage.getItem('nophoto') === '1') {
-        this.nophoto = 1;
-      }
+    if (localStorage.getItem('nophoto') === '1') {
+      this.nophoto = 1;
+    }
   }
 
   loadMessages() {

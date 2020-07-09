@@ -159,6 +159,7 @@ export class RegisterComponent implements OnInit {
       this.user.country = this.country;
       this.authService.register(this.user).subscribe(
         () => {
+          localStorage.setItem('nophoto', '1');
           this.alertify.success('Registration successful');
         },
         error => {

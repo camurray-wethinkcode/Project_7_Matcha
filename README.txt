@@ -16,3 +16,6 @@ In the second window:
 Navigate into Matcha-SPA and run "npm install" (only needed once).
 Then run "ng build" (only needed once).
 Then run "ng serve".
+
+For email:
+docker run -d -p 1025:1025 -p 1080:1080 --name fake-smtp-server reachfive/fake-smtp-server
