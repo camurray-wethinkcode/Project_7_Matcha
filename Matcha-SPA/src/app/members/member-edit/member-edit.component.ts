@@ -37,7 +37,6 @@ export class MemberEditComponent implements OnInit {
   }
 
   updateUser() {
-    console.log(this.user);
     this.userService
       .updateUser(this.authService.decodedToken.nameid, this.user)
       .subscribe(

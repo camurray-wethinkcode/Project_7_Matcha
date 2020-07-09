@@ -1,5 +1,6 @@
-import { Component, ChangeDetectorRef, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, NgZone, HostListener } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import { UserService } from 'src/app/_services/user.service';
 import { AlertifyService } from '../_services/alertify.service';
 import {
   FormGroup,
@@ -13,6 +14,7 @@ import { NgForm } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { MapsAPILoader, MouseEvent } from '@agm/core';
 import { } from 'google-maps';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +24,10 @@ import { } from 'google-maps';
 
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
+  @ViewChild('editForm', { static: true }) editForm: NgForm;
+  @HostListener('window:beforeunload', ['$event'])
   user: User;
+  photoUrl: string = 'null';
   registerForm: FormGroup;
   bsConfig: Partial<BsDatepickerConfig>;
   latitude: number;
@@ -32,11 +37,18 @@ export class RegisterComponent implements OnInit {
   city: string;
   country: string;
   private geoCoder;
+  unloadNotification($event: any) {
+    if (this.editForm.dirty) {
+      $event.returnValue = true;
+    }
+  }
 
   @ViewChild('search', {static:true})
   public searchElementRef: ElementRef;
 
   constructor(
+    private route: ActivatedRoute,
+    private userService: UserService,
     private authService: AuthService,
     private router: Router,
     private alertify: AlertifyService,
@@ -166,6 +178,25 @@ export class RegisterComponent implements OnInit {
         }
       );
     }
+  }
+
+  updateUser() {
+    this.user = Object.assign({}, this.registerForm.value);
+    this.userService
+      .updateUser(this.authService.decodedToken.nameid, this.user)
+      .subscribe(
+        next => {
+          this.alertify.success('Profile updated successfully');
+          this.editForm.reset(this.user);
+        },
+        error => {
+          this.alertify.error(error);
+        }
+      );
+  }
+
+  updateMainPhoto(photoUrl) {
+    this.user.photoUrl = photoUrl;
   }
 
   cancel() {
