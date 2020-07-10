@@ -40,11 +40,11 @@ export class AuthService {
   }
 
   reset(email: Email) {
-    return this.http.post(this.baseUrl + 'sendreset', email);
+    this.http.post(this.baseUrl + 'sendreset', email);
   }
 
   password(user: User) {
-    return this.http.post(this.baseUrl + 'doreset', user);
+    this.http.post(this.baseUrl + 'doreset', user);
   }
 
   register(user: User) {
