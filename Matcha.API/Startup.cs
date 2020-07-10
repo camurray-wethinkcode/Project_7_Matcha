@@ -80,6 +80,7 @@ namespace Matcha.API
                     };
                 });
             services.AddScoped<LogUserActivity>();
+            services.AddScoped<IToken, Token>();
 
             // Mailer services
             services.AddScoped<IMailer, Mailer>();
