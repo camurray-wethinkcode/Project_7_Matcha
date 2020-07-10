@@ -39,11 +39,12 @@ export class AuthService {
   }
 
   reset(user: User) {
-    return this.http.post(this.baseUrl + 'sendreset', user);
+    console.log(user);
+    return this.http.post(this.baseUrl + 'SendReset', user);
   }
 
   password(user: User) {
-    return this.http.post(this.baseUrl + 'doreset', user);
+    return this.http.post(this.baseUrl + 'DoReset', user);
   }
 
   register(user: User) {
