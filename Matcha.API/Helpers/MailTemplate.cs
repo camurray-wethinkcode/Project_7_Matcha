@@ -6,6 +6,7 @@ namespace Matcha.API.Helpers
     public interface IMailTemplate
     {
         public string GetRegisterTemplate(string verifyLink);
+        public string GetResetTemplate(string resetLink);
         public string GetLikeTemplate(string userName, string likedByName);
         public string GetUnlikeTemplate(string userName, string unlikedByName);
         public string GetViewedTemplate(string userName, string viewedBy);
@@ -19,6 +20,13 @@ namespace Matcha.API.Helpers
             var html = GetTemplate("RegisterTemplate");
             return string.Format(html, verifyLink);
         }
+
+        public string GetResetTemplate(string resetLink)
+        {
+            var html = GetTemplate("ResetTemplate");
+            return string.Format(html, resetLink);
+        }
+
         public string GetLikeTemplate(string userName, string likedByName)
         {
             var html = GetTemplate("LikeTemplate");

@@ -11,6 +11,7 @@ namespace Matcha.API.Helpers
         Task SendMail(Mailable mailable);
 
         Task SendVerificationMail(MailUser to, string verifyLink);
+        Task SendPasswordResetMail(MailUser to, string resetLink);
         Task SendLikeMail(MailUser to, string likedByName);
         Task SendUnlikeMail(MailUser to, string unlikedByName);
         Task SendViewedMail(MailUser to, string viewedBy);
@@ -39,6 +40,19 @@ namespace Matcha.API.Helpers
                 To = new List<MailUser> { to },
                 Subject = "Matcha Account Verification",
                 HTML = _mailTemplate.GetRegisterTemplate(verifyLink)
+            };
+
+            _logger.LogInformation("[MAIL] Email sent to \"{0}\" with Subject \"{1}\"", to.Email, email.Subject);
+            return SendMail(new Mailable(email));
+        }
+
+        public Task SendPasswordResetMail(MailUser to, string resetLink)
+        {
+            var email = new Email()
+            {
+                To = new List<MailUser> { to },
+                Subject = "Matcha Password Reset",
+                HTML = _mailTemplate.GetResetTemplate(resetLink)
             };
 
             _logger.LogInformation("[MAIL] Email sent to \"{0}\" with Subject \"{1}\"", to.Email, email.Subject);

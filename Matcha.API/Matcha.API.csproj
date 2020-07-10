@@ -7,6 +7,7 @@
     <None Remove="Helpers\EmailTemplates\LikeTemplate.html" />
     <None Remove="Helpers\EmailTemplates\MessagedTemplate.html" />
     <None Remove="Helpers\EmailTemplates\RegisterTemplate.html" />
+    <None Remove="Helpers\EmailTemplates\ResetTemplate.html" />
     <None Remove="Helpers\EmailTemplates\UnlikeTemplate.html" />
     <None Remove="Helpers\EmailTemplates\ViewedTemplate.html" />
   </ItemGroup>
@@ -14,6 +15,7 @@
     <EmbeddedResource Include="Helpers\EmailTemplates\LikeTemplate.html" />
     <EmbeddedResource Include="Helpers\EmailTemplates\MessagedTemplate.html" />
     <EmbeddedResource Include="Helpers\EmailTemplates\RegisterTemplate.html" />
+    <EmbeddedResource Include="Helpers\EmailTemplates\ResetTemplate.html" />
     <EmbeddedResource Include="Helpers\EmailTemplates\UnlikeTemplate.html" />
     <EmbeddedResource Include="Helpers\EmailTemplates\ViewedTemplate.html" />
   </ItemGroup>
