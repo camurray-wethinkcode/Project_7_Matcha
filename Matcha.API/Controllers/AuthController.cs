@@ -126,7 +126,7 @@ namespace Matcha.API.Controllers
         [HttpGet("verify")]
         public async Task<IActionResult> Verify(string token)
         {
-            var user = await _datingRepo.GetUserByToken(token);
+            var user = await _datingRepo.GetUserByVerifyToken(token);
 
             if (user == null)
                 return Unauthorized("Token not found!");
@@ -137,6 +137,51 @@ namespace Matcha.API.Controllers
             await _datingRepo.SaveAll();
 
             return Ok("User Successfully Verified");
+        }
+
+        [HttpPost("sendreset")]
+        public async Task<IActionResult> SendReset(string email)
+        {
+            var user = await _datingRepo.GetUserByEmail(email);
+
+            if (user == null)
+                return NotFound("Email Address not registered!");
+
+            user.Reset = _token.GenerateToken(128);
+
+            try
+            {
+                var resetLink = string.Format("{0}://{1}{2}/reset?token={3}",
+                    Request.Scheme,
+                    Request.Host,
+                    Request.Path.Value.Remove(Request.Path.Value.LastIndexOf('/')),
+                    HttpUtility.UrlEncode(user.Reset));
+
+                await _mailer.SendPasswordResetMail(
+                    new MailUser
+                    {
+                        Email = user.Email,
+                        Name = user.Name
+                    },
+                    resetLink
+                );
+
+                return Ok("Reset Email sent Successfully");
+            }
+            catch (Exception)
+            {
+                return BadRequest("Error sending reset link email");
+            }
+        }
+
+        public async Task<IActionResult> CheckReset(string token)
+        {
+            var user = await _datingRepo.GetUserByResetToken(token);
+
+            if (user == null)
+                return NotFound("Reset Token Not Found");
+
+            return Ok("Reset Token Found");
         }
     }
 }

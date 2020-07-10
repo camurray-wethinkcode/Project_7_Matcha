@@ -12,7 +12,9 @@ namespace Matcha.API.Data
         Task<bool> SaveAll();
         Task<PagedList<User>> GetUsers(UserParams userParams);
         Task<User> GetUser(int id);
-        Task<User> GetUserByToken(string token);
+        Task<User> GetUserByEmail(string email);
+        Task<User> GetUserByVerifyToken(string verifyToken);
+        Task<User> GetUserByResetToken(string resetToken);
         Task<Photo> GetPhoto(int id);
         Task<Photo> GetMainPhotoForUser(int userId);
         Task<Like> GetLike(int userId, int recipientId);

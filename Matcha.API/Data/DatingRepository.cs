@@ -51,9 +51,23 @@ namespace Matcha.API.Data
             return user;
         }
 
-        public async Task<User> GetUserByToken(string token)
+        public async Task<User> GetUserByEmail(string email)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Token == token);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+
+            return user;
+        }
+
+        public async Task<User> GetUserByVerifyToken(string verifyToken)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Token == verifyToken);
+
+            return user;
+        }
+
+        public async Task<User> GetUserByResetToken(string resetToken)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Reset == resetToken);
 
             return user;
         }
