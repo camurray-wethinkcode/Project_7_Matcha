@@ -10,6 +10,7 @@ import {
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/_services/user.service';
 import { User } from '../_models/user';
+import { Email } from '../_models/email';
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   resetForm: FormGroup;
   passwordForm: FormGroup;
   user: User;
+  email: Email;
   password: string;
   isReset = true;
   token: string;
@@ -62,10 +64,10 @@ export class HomeComponent implements OnInit {
   }
 
   forgotPassword() {
-    this.user = Object.assign({}, this.resetForm.value);
+    this.email = Object.assign({}, this.resetForm.value);
     if(this.resetForm.value != null && this.resetForm.value != undefined)
       this.alertify.success('If you have entered a valid email address, an email will be sent with a link to reset your password');
-    this.authService.reset(this.user);
+    this.authService.reset(this.email);
   }
 
   cancelRegisterMode(registerMode: boolean) {

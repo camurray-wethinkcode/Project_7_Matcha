@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from 'src/environments/environment';
 import { User } from '../_models/user';
+import { Email } from '../_models/email';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -38,8 +39,8 @@ export class AuthService {
     );
   }
 
-  reset(user: User) {
-    return this.http.post(this.baseUrl + 'sendreset', user);
+  reset(email: Email) {
+    return this.http.post(this.baseUrl + 'sendreset', email);
   }
 
   password(user: User) {
