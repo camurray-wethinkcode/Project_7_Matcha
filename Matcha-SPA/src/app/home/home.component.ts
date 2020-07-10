@@ -59,8 +59,14 @@ export class HomeComponent implements OnInit {
   newPassword() {
     this.user = Object.assign({}, this.passwordForm.value);
     this.user.token = this.token;
-    this.alertify.success('Your password has been updated');
-    this.authService.password(this.user);
+    this.authService.password(this.user).subscribe(
+      () => {
+        this.alertify.success('Your password has been updated');
+      },
+      error => {
+        this.alertify.error(error);
+      }
+    );;
   }
 
   forgotPassword() {
