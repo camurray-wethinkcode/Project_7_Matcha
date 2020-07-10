@@ -38,6 +38,11 @@ export class AuthService {
     );
   }
 
+  reset(email: Email) {
+    console.log(email);
+    return this.http.post(this.baseUrl + 'sendreset', email);
+  }
+
   register(user: User) {
     return this.http.post(this.baseUrl + 'register', user);
   }

@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
   forgotPassword() {
     if(this.resetForm.value != null && this.resetForm.value != undefined)
       this.alertify.success('If you have entered a valid email address, an email will be sent with a link to reset your password');
-    //window.location.reload();
+    this.authService.reset(this.resetForm.value);
   }
 
   cancelRegisterMode(registerMode: boolean) {
