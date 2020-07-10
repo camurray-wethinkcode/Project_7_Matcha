@@ -38,9 +38,9 @@ export class AuthService {
     );
   }
 
-  reset(email: Email) {
-    console.log(email);
-    return this.http.post(this.baseUrl + 'sendreset', email);
+  reset(user: User) {
+    console.log(user);
+    return this.http.post(this.baseUrl + 'sendreset', user);
   }
 
   register(user: User) {
