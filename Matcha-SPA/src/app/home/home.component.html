@@ -5,20 +5,23 @@
     <div class="text-center">
       <button [hidden]="isShow" class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
     </div><br>
-    <div>
-      <form [hidden]="isShow" (ngSubmit)="forgotPassword()">
-      <p [hidden]="isShow" class="lead">Enter your email here if you've forgotten your password:</p>
+  <form [formGroup]="resetForm" [hidden]="isShow" (ngSubmit)="forgotPassword()">
+    <p [hidden]="isShow" class="lead">Enter your email here if you've forgotten your password:</p>
+    <div class="form-group">
       <input
         [hidden]="isShow"
-        class="emailbox"
-        type="text"
+        class="form-control"
         placeholder="Email"
-        name="email"
-      /><br><br>
+        formControlName="email"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        title="Please enter a valid email with an @ & atleast .xx"
+      />
+      </div>
+      <div class="form-group">
       <button [hidden]="isShow" class="btn btn-primary btn-lg mr-2" type="submit">Forgot Password</button>
-      </form>
-    </div>
-  </div>
+      </div>
+    </form>
+</div>
 
   <div *ngIf="registerMode" class="container">
     <div class="row justify-content-center">

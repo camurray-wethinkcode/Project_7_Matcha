@@ -80,6 +80,11 @@ namespace Matcha.API.Migrations
                 table: "Users",
                 nullable: true);
 
+            migrationBuilder.AddColumn<string>(
+                name: "Reset",
+                table: "Users",
+                nullable: true);
+
             migrationBuilder.AddColumn<DateTime>(
                 name: "LastActive",
                 table: "Users",
@@ -176,6 +181,10 @@ namespace Matcha.API.Migrations
 
             migrationBuilder.DropColumn(
                 name: "Token",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "Reset",
                 table: "Users");
 
             migrationBuilder.DropColumn(

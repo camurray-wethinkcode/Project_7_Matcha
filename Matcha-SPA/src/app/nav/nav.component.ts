@@ -57,6 +57,7 @@ export class NavComponent implements OnInit {
             );
           }
         }
+        console.log(this.authService.currentUser);
         if (this.authService.currentUser.activated === 0) {
           this.alertify.error('Your profile has not yet been activated, please check your email and click on the verification link to activate it');
           this.logout();

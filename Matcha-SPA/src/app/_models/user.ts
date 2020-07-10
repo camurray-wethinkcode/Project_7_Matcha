@@ -21,5 +21,7 @@ export interface User {
   fameRating: number;
   deactivated: number;
   activated: number;
+  token: string;
+  reset: string;
   photos?: Photo[];
 }

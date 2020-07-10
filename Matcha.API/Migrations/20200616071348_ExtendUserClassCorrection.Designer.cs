@@ -112,6 +112,9 @@ namespace Matcha.API.Migrations
                     b.Property<string>("Token")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Reset")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
