@@ -143,11 +143,11 @@ namespace Matcha.API.Controllers
         }
 
         [HttpPost("sendreset")]
-        public async Task<IActionResult> SendReset(string email)
+        public async Task<IActionResult> SendReset(UserForResetSendDto userForResetSendDto)
         {
-            var user = await _datingRepo.GetUserByEmail(email);
+            var user = await _datingRepo.GetUserByEmail(userForResetSendDto.Email);
 
-            if (string.IsNullOrEmpty(email) || user == null)
+            if (string.IsNullOrEmpty(userForResetSendDto.Email) || user == null)
                 return NotFound("Email Address not registered!");
 
             user.Reset = _token.GenerateToken(128);
@@ -173,17 +173,6 @@ namespace Matcha.API.Controllers
             {
                 return BadRequest("Error sending reset link email");
             }
-        }
-
-        [HttpPost("checkreset")]
-        public async Task<IActionResult> CheckReset(string token)
-        {
-            var user = await _datingRepo.GetUserByResetToken(token);
-
-            if (string.IsNullOrEmpty(token) || user == null)
-                return NotFound("Reset Token Not Found");
-
-            return Ok("Reset Token Found");
         }
 
         [HttpPost("doreset")]
