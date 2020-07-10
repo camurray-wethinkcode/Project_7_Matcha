@@ -24,6 +24,7 @@ namespace Matcha.API.Dtos
         public int FameRating { get; set; }
         public int Deactivated { get; set; }
         public int Activated { get; set; }
+        public string Token { get; set; }
         public string PhotoUrl { get; set; }
         public ICollection<PhotosForDetailedDto> Photos { get; set; }
     }

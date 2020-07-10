@@ -25,6 +25,7 @@ namespace Matcha.API.Models
         public string FameRating { get; set; }
         public string Deactivated { get; set; }
         public string Activated { get; set; }
+        public string Token { get; set; }
         public virtual ICollection<Photo> Photos { get; set; }
         public virtual ICollection<Like> Likers { get; set; }
         public virtual ICollection<Like> Likees { get; set; }

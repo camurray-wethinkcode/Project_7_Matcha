@@ -23,6 +23,7 @@ namespace Matcha.API.Dtos
         public int FameRating { get; set; }
         public int Deactivated { get; set; }
         public int Activated { get; set; }
+        public string Token { get; set; }
         public UserForRegisterDto()
         {
             Created = DateTime.Now;

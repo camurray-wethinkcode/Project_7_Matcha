@@ -112,6 +112,9 @@ namespace Matcha.API.Migrations
                     b.Property<string>("Activated")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Token")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
