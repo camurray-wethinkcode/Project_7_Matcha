@@ -24,19 +24,22 @@ namespace Matcha.API.Controllers
         private readonly IMapper _mapper;
         private readonly IToken _token;
         private readonly IMailer _mailer;
+        private readonly IDatingRepository _datingRepo;
 
         public AuthController(
             IAuthRepository repo,
             IConfiguration config,
             IMapper mapper,
             IToken token,
-            IMailer mailer)
+            IMailer mailer,
+            IDatingRepository datingRepo)
         {
             _repo = repo;
             _config = config;
             _mapper = mapper;
             _token = token;
             _mailer = mailer;
+            _datingRepo = datingRepo;
         }
 
         [HttpPost("register")]
@@ -118,6 +121,22 @@ namespace Matcha.API.Controllers
                 token = tokenHandler.WriteToken(token),
                 user
             });
+        }
+    
+        [HttpGet("verify")]
+        public async Task<IActionResult> Verify(string token)
+        {
+            var user = await _datingRepo.GetUserByToken(token);
+
+            if (user == null)
+                return Unauthorized("Token not found!");
+
+            user.Token = null;
+            user.Activated = 1;
+
+            await _datingRepo.SaveAll();
+
+            return Ok("User Successfully Verified");
         }
     }
 }
