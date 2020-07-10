@@ -20,5 +20,6 @@ export interface User {
   email: string;
   fameRating: number;
   deactivated: number;
+  activated: number;
   photos?: Photo[];
 }

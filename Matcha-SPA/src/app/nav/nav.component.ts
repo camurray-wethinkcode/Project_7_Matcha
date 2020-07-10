@@ -61,7 +61,7 @@ export class NavComponent implements OnInit {
           this.alertify.error('Your profile has not yet been activated, please check your email and click on the verification link to activate it');
           this.logout();
         }
-        if (this.authService.currentUser.deactivated === 1) {
+        else if (this.authService.currentUser.deactivated === 1) {
           this.alertify.error('Your profile has been reported as fake and deactivated, please contact an admin if this was done in error at murraylydie@gmail.com');
           this.logout();
         }

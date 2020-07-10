@@ -157,6 +157,7 @@ export class RegisterComponent implements OnInit {
   register() {
     if (this.registerForm.valid) {
       this.user = Object.assign({}, this.registerForm.value);
+      this.user.activated = 0;
       if (this.flag === 0) {
         this.user.city = this.city;
         this.user.country = this.country;
@@ -170,9 +171,8 @@ export class RegisterComponent implements OnInit {
           this.alertify.error(error);
         },
         () => {
-          this.authService.login(this.user).subscribe(() => {
-            this.router.navigate(['/members']);
-          });
+          this.alertify.error('Please login');
+          window.location.reload();
         }
       );
     }
