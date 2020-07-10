@@ -30,7 +30,8 @@ export class HomeComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private fb: FormBuilder, private http: HttpClient, private alertify: AlertifyService, private authService: AuthService) {
   this.activatedRoute.queryParams.subscribe(params => {
         this.token = params['token'];
-        this.isReset = !this.isReset;
+        if (this.token != null || this.token != undefined)
+          this.isReset = !this.isReset;
     });
 }
 
