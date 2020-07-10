@@ -22,7 +22,6 @@
       </div>
     </form>
 </div>
-
   <div *ngIf="registerMode" class="container">
     <div class="row justify-content-center">
       <div class="col-4">
@@ -31,3 +30,30 @@
     </div>
   </div>
 </div>
+
+<div style="text-align: center">
+<form [hidden]="isReset" [formGroup]="passwordForm">
+  <h2 class="text-center text-primary">Sign Up</h2>
+  <hr />
+  <div class="form-group">
+    <input
+      required="required"
+      pattern="(?=^.{6,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[a-z]).*$"
+      type="password"
+      class="form-control"
+      title="Please enter a complex password, atleast one capital letter, one lowercase letter, one number & one special character"
+      formControlName="password"
+      placeholder="Password must contain a lowercase & capital letter, number & special character"
+    />
+  </div>
+  <div class="form-group">
+    <button
+      class="btn btn-success"
+      [disabled]="!passwordForm.valid"
+      type="submit"
+      (click)="newPassword()"
+    >
+      Save
+    </button>
+  </div>
+</form></div><br><br><br>

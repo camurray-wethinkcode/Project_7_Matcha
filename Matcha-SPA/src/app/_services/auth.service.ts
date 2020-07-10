@@ -42,6 +42,10 @@ export class AuthService {
     return this.http.post(this.baseUrl + 'sendreset', user);
   }
 
+  password(user: User) {
+    return this.http.post(this.baseUrl + 'doreset', user);
+  }
+
   register(user: User) {
     return this.http.post(this.baseUrl + 'register', user);
   }

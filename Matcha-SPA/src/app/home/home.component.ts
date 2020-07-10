@@ -20,7 +20,10 @@ export class HomeComponent implements OnInit {
   registerMode = false;
   isShow = false;
   resetForm: FormGroup;
+  passwordForm: FormGroup;
   user: User;
+  password: string;
+  isReset = false;
 
   constructor(private fb: FormBuilder, private http: HttpClient, private alertify: AlertifyService, private authService: AuthService) {}
 
@@ -36,10 +39,17 @@ export class HomeComponent implements OnInit {
 
   createForm() {
     this.resetForm = this.fb.group({ email: [''] });
+    this.passwordForm = this.fb.group({ password: [''] });
   }
 
   registerToggle() {
     this.registerMode = true;
+  }
+
+  newPassword() {
+    this.user = Object.assign({}, this.passwordForm.value);
+    this.alertify.success('Your password has been updated');
+    this.authService.password(this.user);
   }
 
   forgotPassword() {
