@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   reset(user: User) {
-    return this.http.post(this.baseUrl + 'sendreset', user.email);
+    return this.http.post(this.baseUrl + 'sendreset', user);
   }
 
   password(user: User) {
