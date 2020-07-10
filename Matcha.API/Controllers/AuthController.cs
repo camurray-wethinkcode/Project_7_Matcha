@@ -183,5 +183,17 @@ namespace Matcha.API.Controllers
 
             return Ok("Reset Token Found");
         }
+
+        public async Task<IActionResult> DoReset(string token, string newPassword)
+        {
+            var user = await _datingRepo.GetUserByResetToken(token);
+
+            if (user == null)
+                return NotFound("Reset Token Not Found");
+
+            await _repo.ResetPassword(user, newPassword);
+
+            return Ok("Password Successfully Reset");
+        }
     }
 }
