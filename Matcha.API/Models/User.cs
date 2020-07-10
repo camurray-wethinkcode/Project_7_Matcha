@@ -23,8 +23,8 @@ namespace Matcha.API.Models
         public string City { get; set; }
         public string Country { get; set; }
         public string FameRating { get; set; }
-        public string Deactivated { get; set; }
-        public string Activated { get; set; }
+        public int Deactivated { get; set; }
+        public int Activated { get; set; }
         public string Token { get; set; }
         public string Reset { get; set; }
         public virtual ICollection<Photo> Photos { get; set; }
