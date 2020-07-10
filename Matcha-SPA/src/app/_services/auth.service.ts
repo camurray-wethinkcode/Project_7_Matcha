@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   password(user: User) {
-    return this.http.post(this.baseUrl + 'doreset', user.token, user.password);
+    return this.http.post(this.baseUrl + 'doreset', user);
   }
 
   register(user: User) {
