@@ -128,7 +128,7 @@ namespace Matcha.API.Controllers
         {
             var user = await _datingRepo.GetUserByVerifyToken(token);
 
-            if (user == null)
+            if (string.IsNullOrEmpty(token) || user == null)
                 return Unauthorized("Token not found!");
 
             user.Token = null;
@@ -144,7 +144,7 @@ namespace Matcha.API.Controllers
         {
             var user = await _datingRepo.GetUserByEmail(email);
 
-            if (user == null)
+            if (string.IsNullOrEmpty(email) || user == null)
                 return NotFound("Email Address not registered!");
 
             user.Reset = _token.GenerateToken(128);
@@ -179,7 +179,7 @@ namespace Matcha.API.Controllers
         {
             var user = await _datingRepo.GetUserByResetToken(token);
 
-            if (user == null)
+            if (string.IsNullOrEmpty(token) || user == null)
                 return NotFound("Reset Token Not Found");
 
             return Ok("Reset Token Found");
@@ -190,7 +190,7 @@ namespace Matcha.API.Controllers
         {
             var user = await _datingRepo.GetUserByResetToken(token);
 
-            if (user == null)
+            if (string.IsNullOrEmpty(token) || user == null)
                 return NotFound("Reset Token Not Found");
 
             await _repo.ResetPassword(user, newPassword);
