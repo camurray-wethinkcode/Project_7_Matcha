@@ -23,6 +23,7 @@ namespace Matcha.API.Dtos
         public string Password { get; set; }
         public int FameRating { get; set; }
         public int Deactivated { get; set; }
+        public int Activated { get; set; }
         public string PhotoUrl { get; set; }
         public ICollection<PhotosForDetailedDto> Photos { get; set; }
     }

@@ -124,6 +124,9 @@ namespace Matcha.API.Migrations
                     b.Property<string>("Deactivated")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Activated")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
