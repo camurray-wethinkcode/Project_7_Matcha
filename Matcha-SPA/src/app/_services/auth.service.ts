@@ -39,7 +39,6 @@ export class AuthService {
   }
 
   reset(user: User) {
-    console.log(user);
     return this.http.post(this.baseUrl + 'sendreset', user);
   }
 
