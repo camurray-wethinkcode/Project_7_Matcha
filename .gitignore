@@ -1,0 +1,7 @@
+.vs/
+.vscode/
+bin/
+obj/
+*.db
+Matcha.API/wwwroot
+node_modules/
