@@ -16,6 +16,7 @@ export class MemberMessagesComponent implements OnInit {
   newMessage: any = {};
   nophoto: number = 0;
   notliked: number = 0;
+  count: number = 0;
 
   constructor(
     private userService: UserService,
@@ -46,6 +47,7 @@ export class MemberMessagesComponent implements OnInit {
               messages[i].recipientId === currentUserId
             ) {
               this.userService.markAsRead(currentUserId, messages[i].id);
+              this.alertify.success('Message auto read');
             }
           }
         })

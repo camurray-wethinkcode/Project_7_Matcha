@@ -34,6 +34,7 @@ export class RegisterComponent implements OnInit {
   city: string;
   country: string;
   private geoCoder;
+  flag: number = 1;
 
   @ViewChild('search', {static:true})
   public searchElementRef: ElementRef;
@@ -108,6 +109,7 @@ export class RegisterComponent implements OnInit {
       if (status === 'OK') {
         if (results[0]) {
           this.zoom = 12;
+          this.flag = 0;
           this.address = results[0];
           var countrystr = results[5].formatted_address;
           this.country = countrystr.split(',', 3)[2];
@@ -155,8 +157,10 @@ export class RegisterComponent implements OnInit {
   register() {
     if (this.registerForm.valid) {
       this.user = Object.assign({}, this.registerForm.value);
-      this.user.city = this.city;
-      this.user.country = this.country;
+      if (this.flag === 0) {
+        this.user.city = this.city;
+        this.user.country = this.country;
+      }
       this.authService.register(this.user).subscribe(
         () => {
           localStorage.setItem('nophoto', '1');

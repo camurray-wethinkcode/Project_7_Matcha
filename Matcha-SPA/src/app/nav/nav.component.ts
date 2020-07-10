@@ -13,9 +13,9 @@ import { UserService } from 'src/app/_services/user.service';
 export class NavComponent implements OnInit {
   model: any = {};
   photoUrl: string;
-  unread: number = 0;
   user: User;
   flag: number = 0;
+  show: string;
 
   constructor(
     private userService: UserService,
@@ -25,6 +25,7 @@ export class NavComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.show = localStorage.getItem('count');
     this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
 
@@ -37,11 +38,13 @@ export class NavComponent implements OnInit {
         this.alertify.error(error);
       },
       () => {
+        localStorage.setItem('count', '0');
         if (localStorage.getItem('reportedlist')) {
           if (localStorage.getItem('reportedlist') === this.authService.currentUser.id.toString()) {
             this.flag = 1;
             this.userService.getUser(this.authService.currentUser.id).subscribe(
               data => {
+                this.show = localStorage.getItem('count');
                 this.user = data;
                 this.user.deactivated = 1;
                 this.userService.updateUser(this.authService.currentUser.id, this.user);
