@@ -167,6 +167,8 @@ namespace Matcha.API.Controllers
                     resetLink
                 );
 
+                await _datingRepo.SaveAll();
+
                 return Ok("Reset Email sent Successfully");
             }
             catch (Exception)
