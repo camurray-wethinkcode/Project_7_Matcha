@@ -108,20 +108,28 @@ namespace Matcha.API.Controllers
 
             _repo.Add<Like>(like);
 
-            var likedUser = await _repo.GetUser(recipientId);
-            var likedByUser = await _repo.GetUser(id);
-
-            await _mailer.SendLikeMail(
-                new MailUser
-                {
-                    Email = likedUser.Email,
-                    Name = likedUser.Name
-                },
-                likedByUser.Name
-            );
-
             if (await _repo.SaveAll())
+            {
+                var likedUser = await _repo.GetUser(recipientId);
+                var likedByUser = await _repo.GetUser(id);
+                try
+                {
+                    await _mailer.SendLikeMail(
+                        new MailUser
+                        {
+                            Email = likedUser.Email,
+                            Name = likedUser.Name
+                        },
+                        likedByUser.Name
+                    );
+                }
+                catch (Exception)
+                {
+                    return BadRequest("Successfully liked user, Unable to send email");
+                }
+
                 return Ok();
+            }
 
             return BadRequest("Failed to like user");
         }
@@ -139,20 +147,28 @@ namespace Matcha.API.Controllers
 
             _repo.Delete<Like>(like);
 
-            var unlikedUser = await _repo.GetUser(recipientId);
-            var unlikedByUser = await _repo.GetUser(id);
-
-            await _mailer.SendUnlikeMail(
-                new MailUser
-                {
-                    Email = unlikedUser.Email,
-                    Name = unlikedUser.Name
-                },
-                unlikedByUser.Name
-            );
-
             if (await _repo.SaveAll())
+            {
+                var unlikedUser = await _repo.GetUser(recipientId);
+                var unlikedByUser = await _repo.GetUser(id);
+                try
+                {
+                    await _mailer.SendUnlikeMail(
+                        new MailUser
+                        {
+                            Email = unlikedUser.Email,
+                            Name = unlikedUser.Name
+                        },
+                        unlikedByUser.Name
+                    );
+                }
+                catch (Exception)
+                {
+                    return BadRequest("Successfully unliked user, Unable to send email");
+                }
+
                 return Ok();
+            }
 
             return BadRequest("Failed to unlike user");
         }

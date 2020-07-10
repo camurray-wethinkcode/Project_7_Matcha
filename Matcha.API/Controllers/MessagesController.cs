@@ -97,18 +97,25 @@ namespace Matcha.API.Controllers
             if (messageSnippet.Length > 60)
                 messageSnippet = messageSnippet.Remove(57).TrimEnd() + "...";
 
-            await _mailer.SendMessagedMail(
-                new MailUser
-                {
-                    Email = recipient.Email,
-                    Name = recipient.Name
-                },
-                sender.Name,
-                messageSnippet
-            );
-
             if (await _repo.SaveAll())
             {
+                try
+                {
+                    await _mailer.SendMessagedMail(
+                        new MailUser
+                        {
+                            Email = recipient.Email,
+                            Name = recipient.Name
+                        },
+                        sender.Name,
+                        messageSnippet
+                    );
+                }
+                catch (Exception)
+                {
+                    return BadRequest("Successfully sent message, Unable to send email");
+                }
+
                 var messageToReturn = _mapper.Map<MessageToReturnDto>(message);
                 return CreatedAtRoute("GetMessage",
                     new { userId, id = message.Id }, messageToReturn);
