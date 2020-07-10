@@ -3,9 +3,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using AutoMapper;
 using Matcha.API.Data;
 using Matcha.API.Dtos;
+using Matcha.API.Helpers;
 using Matcha.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -20,11 +22,24 @@ namespace Matcha.API.Controllers
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
         private readonly IMapper _mapper;
-        public AuthController(IAuthRepository repo, IConfiguration config, IMapper mapper)
+        private readonly IToken _token;
+        private readonly IMailer _mailer;
+        private readonly IDatingRepository _datingRepo;
+
+        public AuthController(
+            IAuthRepository repo,
+            IConfiguration config,
+            IMapper mapper,
+            IToken token,
+            IMailer mailer,
+            IDatingRepository datingRepo)
         {
-            _mapper = mapper;
-            _config = config;
             _repo = repo;
+            _config = config;
+            _mapper = mapper;
+            _token = token;
+            _mailer = mailer;
+            _datingRepo = datingRepo;
         }
 
         [HttpPost("register")]
@@ -37,7 +52,31 @@ namespace Matcha.API.Controllers
 
             var userToCreate = _mapper.Map<User>(userForRegisterDto);
 
+            userToCreate.Token = _token.GenerateToken(128);
+
             var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
+
+            try
+            {
+                var verifyLink = string.Format("{0}://{1}{2}/verify?token={3}",
+                    Request.Scheme,
+                    Request.Host,
+                    Request.Path.Value.Remove(Request.Path.Value.LastIndexOf('/')),
+                    HttpUtility.UrlEncode(createdUser.Token));
+
+                await _mailer.SendVerificationMail(
+                    new MailUser
+                    {
+                        Email = createdUser.Email,
+                        Name = createdUser.Name
+                    },
+                    verifyLink
+                );
+            }
+            catch (Exception)
+            {
+                return BadRequest("User created successfully, but verify email failed to send");
+            }
 
             var userToReturn = _mapper.Map<UserForDetailedDto>(createdUser);
 
@@ -82,6 +121,22 @@ namespace Matcha.API.Controllers
                 token = tokenHandler.WriteToken(token),
                 user
             });
+        }
+    
+        [HttpGet("verify")]
+        public async Task<IActionResult> Verify(string token)
+        {
+            var user = await _datingRepo.GetUserByToken(token);
+
+            if (user == null)
+                return Unauthorized("Token not found!");
+
+            user.Token = null;
+            user.Activated = 1;
+
+            await _datingRepo.SaveAll();
+
+            return Ok("User Successfully Verified");
         }
     }
 }

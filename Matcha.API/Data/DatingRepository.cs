@@ -51,6 +51,13 @@ namespace Matcha.API.Data
             return user;
         }
 
+        public async Task<User> GetUserByToken(string token)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Token == token);
+
+            return user;
+        }
+
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
             var users = _context.Users.OrderByDescending(u => u.LastActive).AsQueryable();
