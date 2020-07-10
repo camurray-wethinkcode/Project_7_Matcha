@@ -10,6 +10,7 @@ import {
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/_services/user.service';
 import { User } from '../_models/user';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-home',
@@ -23,9 +24,15 @@ export class HomeComponent implements OnInit {
   passwordForm: FormGroup;
   user: User;
   password: string;
-  isReset = false;
+  isReset = true;
+  token: string;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private alertify: AlertifyService, private authService: AuthService) {}
+  constructor(private activatedRoute: ActivatedRoute, private fb: FormBuilder, private http: HttpClient, private alertify: AlertifyService, private authService: AuthService) {
+  this.activatedRoute.queryParams.subscribe(params => {
+        this.token = params['token'];
+        this.isReset = !this.isReset;
+    });
+}
 
   ngOnInit() {
     this.createForm();
@@ -48,6 +55,7 @@ export class HomeComponent implements OnInit {
 
   newPassword() {
     this.user = Object.assign({}, this.passwordForm.value);
+    this.user.token = this.token;
     this.alertify.success('Your password has been updated');
     this.authService.password(this.user);
   }
