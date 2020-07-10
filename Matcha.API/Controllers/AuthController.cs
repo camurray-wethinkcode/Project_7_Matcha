@@ -174,6 +174,7 @@ namespace Matcha.API.Controllers
             }
         }
 
+        [HttpPost("checkreset")]
         public async Task<IActionResult> CheckReset(string token)
         {
             var user = await _datingRepo.GetUserByResetToken(token);
@@ -184,6 +185,7 @@ namespace Matcha.API.Controllers
             return Ok("Reset Token Found");
         }
 
+        [HttpPost("doreset")]
         public async Task<IActionResult> DoReset(string token, string newPassword)
         {
             var user = await _datingRepo.GetUserByResetToken(token);
