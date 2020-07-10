@@ -25,6 +25,7 @@ namespace Matcha.API.Controllers
         private readonly IToken _token;
         private readonly IMailer _mailer;
         private readonly IDatingRepository _datingRepo;
+        private readonly IConfiguration _configuration;
 
         public AuthController(
             IAuthRepository repo,
@@ -32,7 +33,8 @@ namespace Matcha.API.Controllers
             IMapper mapper,
             IToken token,
             IMailer mailer,
-            IDatingRepository datingRepo)
+            IDatingRepository datingRepo,
+            IConfiguration configuration)
         {
             _repo = repo;
             _config = config;
@@ -40,6 +42,7 @@ namespace Matcha.API.Controllers
             _token = token;
             _mailer = mailer;
             _datingRepo = datingRepo;
+            _configuration = configuration;
         }
 
         [HttpPost("register")]
@@ -128,7 +131,7 @@ namespace Matcha.API.Controllers
         {
             var user = await _datingRepo.GetUserByVerifyToken(token);
 
-            if (user == null)
+            if (string.IsNullOrEmpty(token) || user == null)
                 return Unauthorized("Token not found!");
 
             user.Token = null;
@@ -144,17 +147,15 @@ namespace Matcha.API.Controllers
         {
             var user = await _datingRepo.GetUserByEmail(email);
 
-            if (user == null)
+            if (string.IsNullOrEmpty(email) || user == null)
                 return NotFound("Email Address not registered!");
 
             user.Reset = _token.GenerateToken(128);
 
             try
             {
-                var resetLink = string.Format("{0}://{1}{2}/reset?token={3}",
-                    Request.Scheme,
-                    Request.Host,
-                    Request.Path.Value.Remove(Request.Path.Value.LastIndexOf('/')),
+                var resetLink = string.Format("{0}?token={1}",
+                    _configuration.GetValue<string>("FrontendUrl"),
                     HttpUtility.UrlEncode(user.Reset));
 
                 await _mailer.SendPasswordResetMail(
@@ -179,7 +180,7 @@ namespace Matcha.API.Controllers
         {
             var user = await _datingRepo.GetUserByResetToken(token);
 
-            if (user == null)
+            if (string.IsNullOrEmpty(token) || user == null)
                 return NotFound("Reset Token Not Found");
 
             return Ok("Reset Token Found");
@@ -190,9 +191,10 @@ namespace Matcha.API.Controllers
         {
             var user = await _datingRepo.GetUserByResetToken(token);
 
-            if (user == null)
+            if (string.IsNullOrEmpty(token) || user == null)
                 return NotFound("Reset Token Not Found");
 
+            user.Reset = null;
             await _repo.ResetPassword(user, newPassword);
 
             return Ok("Password Successfully Reset");
