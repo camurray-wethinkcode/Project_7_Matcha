@@ -187,15 +187,15 @@ namespace Matcha.API.Controllers
         }
 
         [HttpPost("doreset")]
-        public async Task<IActionResult> DoReset(string token, string newPassword)
+        public async Task<IActionResult> DoReset(UserForResetDto userForResetDto)
         {
-            var user = await _datingRepo.GetUserByResetToken(token);
+            var user = await _datingRepo.GetUserByResetToken(userForResetDto.Token);
 
-            if (string.IsNullOrEmpty(token) || user == null)
+            if (string.IsNullOrEmpty(userForResetDto.Token) || user == null)
                 return NotFound("Reset Token Not Found");
 
             user.Reset = null;
-            await _repo.ResetPassword(user, newPassword);
+            await _repo.ResetPassword(user, userForResetDto.Password);
 
             return Ok("Password Successfully Reset");
         }
