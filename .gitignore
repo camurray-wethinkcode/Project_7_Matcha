@@ -3,5 +3,8 @@
 bin/
 obj/
 *.db
+*.db-shm
+*.db-wal
+*.user
 Matcha.API/wwwroot
 node_modules/
