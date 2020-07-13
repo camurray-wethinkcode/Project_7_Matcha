@@ -51,11 +51,7 @@ namespace Matcha.API.Data
                 SQLiteCommand command = new SQLiteCommand(query, _connection);
                 foreach (DBParam param in paramArray)
                 {
-                    SQLiteParameter commandParam = new SQLiteParameter
-                    {
-                        ParameterName = param.Name,
-                        Value = param.Value
-                    };
+                    SQLiteParameter commandParam = new SQLiteParameter(param.Name, param.Value);
                     command.Parameters.Add(commandParam);
                 }
                 await command.PrepareAsync();
@@ -128,11 +124,7 @@ namespace Matcha.API.Data
                 SQLiteCommand command = new SQLiteCommand(query, _connection);
                 foreach (var param in paramArray)
                 {
-                    var commandParam = new SQLiteParameter
-                    {
-                        ParameterName = param.Name,
-                        Value = param.Value
-                    };
+                    var commandParam = new SQLiteParameter(param.Name, param.Value);
                     command.Parameters.Add(commandParam);
                 }
                 await command.PrepareAsync();
@@ -156,11 +148,7 @@ namespace Matcha.API.Data
                 SQLiteCommand command = new SQLiteCommand(query, _connection);
                 foreach (var param in paramArray)
                 {
-                    var commandParam = new SQLiteParameter
-                    {
-                        ParameterName = param.Name,
-                        Value = param.Value
-                    };
+                    var commandParam = new SQLiteParameter(param.Name, param.Value);
                     command.Parameters.Add(commandParam);
                 }
                 await command.PrepareAsync();
@@ -184,11 +172,7 @@ namespace Matcha.API.Data
                 SQLiteCommand command = new SQLiteCommand(query, _connection);
                 foreach (var param in paramArray)
                 {
-                    var commandParam = new SQLiteParameter
-                    {
-                        ParameterName = param.Name,
-                        Value = param.Value
-                    };
+                    var commandParam = new SQLiteParameter(param.Name, param.Value);
                     command.Parameters.Add(commandParam);
                 }
                 await command.PrepareAsync();
