@@ -1,7 +1,6 @@
 using System;
 using System.Threading.Tasks;
 using Matcha.API.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace Matcha.API.Data
 {

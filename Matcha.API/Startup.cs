@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,12 +28,6 @@ namespace Matcha.API
 
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(x => 
-            {
-                x.UseLazyLoadingProxies();
-                x.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
-            });
-
             SQLiteConnection sQLiteConnection = new SQLiteConnection(Configuration.GetConnectionString("DefaultConnection"));
             services.AddSingleton<IDbAccess>(x => new DbAccess(sQLiteConnection));
             ConfigureServices(services);
@@ -42,12 +35,6 @@ namespace Matcha.API
 
         public void ConfigureProductionServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(x => 
-            {
-                x.UseLazyLoadingProxies();
-                x.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
-            });
-
             SQLiteConnection sQLiteConnection = new SQLiteConnection(Configuration.GetConnectionString("DefaultConnection"));
             services.AddSingleton<IDbAccess>(x => new DbAccess(sQLiteConnection));
             ConfigureServices(services);
