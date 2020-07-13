@@ -20,6 +20,7 @@ namespace Matcha.API.Data
     public interface IDbAccess
     {
         Task<List<List<object[]>>> Select(string query, params DBParam[] paramArray);
+        Task<object[]> SelectOne(string query, params DBParam[] paramArray);
         Task<int> Insert(string query, params DBParam[] paramArray);
         Task<int> Update(string query, params DBParam[] paramArray);
         Task<bool> Delete(string query, params DBParam[] paramArray);
@@ -34,6 +35,14 @@ namespace Matcha.API.Data
             _connection = connection;
         }
 
+        /// <summary>Sends a SELECT query to the database, and returns retrieved data</summary>
+        /// <param name="query">Query to send. Use @paramName to reference parameter names</param>
+        /// <param name="paramArray">Parameters to bind to query. <see cref="DBParam.Name"/> is used to bind to query string</param>
+        /// <returns>
+        /// Awaitable List of List of Object array.
+        /// First level list is for each result set (multiple statements in query), Second level is for each row of data.
+        /// Object array contains values retrieved, in order of SELECT fields requested.
+        /// </returns>
         public async Task<List<List<object[]>>> Select(string query, params DBParam[] paramArray)
         {
             _connection.Open();
@@ -86,6 +95,31 @@ namespace Matcha.API.Data
             }
         }
 
+        /// <summary>Sends a SELECT query to the database, and returns first row received</summary>
+        /// <param name="query">Query to send. Use @paramName to reference parameter names</param>
+        /// <param name="paramArray">Parameters to bind to query. <see cref="DBParam.Name"/> is used to bind to query string</param>
+        /// <returns>
+        /// Awaitable Object array of values retrieved, in order of SELECT fields requested.
+        /// </returns>
+        public async Task<object[]> SelectOne(string query, params DBParam[] paramArray)
+        {
+            var fullResults = await Select(query, paramArray);
+
+            if (fullResults.Count > 0)
+            {
+                if (fullResults[0].Count > 0)
+                    return fullResults[0][0];
+                else
+                    return null;
+            }
+            else
+                return null;
+        }
+
+        /// <summary>Sends an INSERT query to the database, and returns number of rows inserted</summary>
+        /// <param name="query">Query to send. Use @paramName to reference parameter names</param>
+        /// <param name="paramArray">Parameters to bind to query. <see cref="DBParam.Name"/> is used to bind to query string</param>
+        /// <returns>The number of rows affected.</returns>
         public async Task<int> Insert(string query, params DBParam[] paramArray)
         {
             _connection.Open();
@@ -110,6 +144,10 @@ namespace Matcha.API.Data
             }
         }
 
+        /// <summary>Sends a UPDATE query to the database, and returns number of rows updated</summary>
+        /// <param name="query">Query to send. Use @paramName to reference parameter names</param>
+        /// <param name="paramArray">Parameters to bind to query. <see cref="DBParam.Name"/> is used to bind to query string</param>
+        /// <returns>The number of rows affected.</returns>
         public async Task<int> Update(string query, params DBParam[] paramArray)
         {
             _connection.Open();
@@ -134,6 +172,10 @@ namespace Matcha.API.Data
             }
         }
 
+        /// <summary>Sends a DELETE query to the database, and returns whether data was deleted</summary>
+        /// <param name="query">Query to send. Use @paramName to reference parameter names</param>
+        /// <param name="paramArray">Parameters to bind to query. <see cref="DBParam.Name"/> is used to bind to query string</param>
+        /// <returns>True if data was deleted, False if no rows were affected.</returns>
         public async Task<bool> Delete(string query, params DBParam[] paramArray)
         {
             _connection.Open();
