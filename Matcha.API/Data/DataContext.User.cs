@@ -1,3 +1,4 @@
+using System.Data.Common;
 using System.Threading.Tasks;
 using Matcha.API.Models;
 
@@ -122,12 +123,25 @@ namespace Matcha.API.Data
 
         public async Task<bool> Update(User user)
         {
-            //
+            var updateAmount = await _dbAccess.Update("UPDATE `Users` SET " +
+                "`Id` = @Id, `Username` = @Username, `PasswordHash` = @PasswordHash, `PasswordSalt` = @PasswordSalt, `Gender` = @Gender, " +
+                "`Sexuality` = @Sexuality, `DateOfBirth` = @DateOfBirth, `Name` = @Name, `Surname` = @Surname, `Created` = @Created, " +
+                "`LastActive` = @LastActive, `Introduction` = @Introduction, `LookingFor` = @LookingFor, `Email` = @Email, `Interests` = @Interests, " +
+                "`City` = @City, `Country` = @Country, `FameRating` = @FameRating, `Deactivated` = @Deactivated, `Activated` = @Activated, " +
+                "`Token` = @Token, `Reset` = @Reset" +
+                "WHERE `Id` = @Id",
+                new DBParam("Id", user.Id), new DBParam("Username", user.Username), new DBParam("PasswordHash", user.PasswordHash), new DBParam("PasswordSalt", user.PasswordSalt), new DBParam("Gender", user.Gender),
+                new DBParam("Sexuality", user.Sexuality), new DBParam("DateOfBirth", user.DateOfBirth), new DBParam("Name", user.Name), new DBParam("Surname", user.Surname), new DBParam("Created", user.Created),
+                new DBParam("LastActive", user.LastActive), new DBParam("Introduction", user.Introduction), new DBParam("LookingFor", user.LookingFor), new DBParam("Email", user.Email), new DBParam("Interests", user.Interests),
+                new DBParam("City", user.City), new DBParam("Country", user.Country), new DBParam("FameRating", user.FameRating), new DBParam("Deactivated", user.Deactivated), new DBParam("Activated", user.Activated),
+                new DBParam("Token", user.Token), new DBParam("Reset", user.Reset));
+
+            return updateAmount == 1;
         }
 
         public async Task<bool> Delete(int id)
         {
-            //
+            return await _dbAccess.Delete("DELETE FROM `Users` WHERE `Id` = @Id", new DBParam("Id", id));
         }
     }
 }
