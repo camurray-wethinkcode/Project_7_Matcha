@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Data.SQLite;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using Coravel;
 using Matcha.API.Data;
@@ -13,13 +10,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Matcha.API
@@ -40,7 +34,9 @@ namespace Matcha.API
                 x.UseLazyLoadingProxies();
                 x.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
-                
+
+            SQLiteConnection sQLiteConnection = new SQLiteConnection(Configuration.GetConnectionString("DefaultConnection"));
+            services.AddSingleton<IDbAccess>(x => new DbAccess(sQLiteConnection));
             ConfigureServices(services);
         }
 
@@ -52,6 +48,8 @@ namespace Matcha.API
                 x.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            SQLiteConnection sQLiteConnection = new SQLiteConnection(Configuration.GetConnectionString("DefaultConnection"));
+            services.AddSingleton<IDbAccess>(x => new DbAccess(sQLiteConnection));
             ConfigureServices(services);
         }
 
