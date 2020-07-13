@@ -139,7 +139,9 @@ namespace Matcha.API.Controllers
 
             await _datingRepo.SaveAll();
 
-            return Ok("User Successfully Verified");
+            var redirectUrl = string.Format("{0}?verified=true",
+                _configuration.GetValue<string>("FrontendUrl"));
+            return Redirect(redirectUrl);
         }
 
         [HttpPost("sendreset")]
