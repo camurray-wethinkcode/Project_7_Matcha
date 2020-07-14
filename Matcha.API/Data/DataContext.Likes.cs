@@ -5,10 +5,10 @@ namespace Matcha.API.Data
 {
     public interface ILikesDataContext
     {
-        public Task<Like> Get(int likerId, int likeeId);
+        public Task<Like> Get(long likerId, long likeeId);
         public Task<bool> Add(Like like);
         public Task<bool> Update(Like like);
-        public Task<bool> Delete(int likerId, int likeeId);
+        public Task<bool> Delete(long likerId, long likeeId);
     }
 
     public class LikesDataContext : ILikesDataContext
@@ -22,7 +22,7 @@ namespace Matcha.API.Data
 
         private const string _likesDBValues = "`LikerId`, `LikeeId`";
 
-        public async Task<Like> Get(int likerId, int likeeId)
+        public async Task<Like> Get(long likerId, long likeeId)
         {
             var values = await _dbAccess.SelectOne("SELECT" + _likesDBValues +
                 "FROM `Likes`" +
@@ -58,7 +58,7 @@ namespace Matcha.API.Data
             return updateAmount == 1;
         }
 
-        public async Task<bool> Delete(int likerId, int likeeId)
+        public async Task<bool> Delete(long likerId, long likeeId)
         {
             return await _dbAccess.Delete("DELETE FROM `Likes` WHERE" +
                 "   `LikerId` = @LikerId" +

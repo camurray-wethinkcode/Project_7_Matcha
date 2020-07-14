@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Matcha.API.Models;
 
@@ -5,11 +6,11 @@ namespace Matcha.API.Data
 {
     public interface IPhotosDataContext
     {
-        public Task<Photo> GetById(int id);
-        public Task<Photo> GetMainForUser(int id);
+        public Task<Photo> GetById(long id);
+        public Task<Photo> GetMainForUser(long id);
         public Task<bool> Add(Photo photo);
         public Task<bool> Update(Photo photo);
-        public Task<bool> Delete(int id);
+        public Task<bool> Delete(long id);
     }
 
     public class PhotosDataContext : IPhotosDataContext
@@ -26,15 +27,15 @@ namespace Matcha.API.Data
         private Photo MapObjArrToPhoto(object[] objArr) => new Photo
         {
             Id = (long)objArr[0],
-            Url = (string)objArr[1],
-            Description = (string)objArr[2],
-            DateAdded = (System.DateTime)objArr[3],
+            Url = (objArr[1].GetType() == typeof(string)) ? (string)objArr[1] : null,
+            Description = (objArr[2].GetType() == typeof(string)) ? (string)objArr[2] : null,
+            DateAdded = DateTime.Parse((string)objArr[3]),
             IsMain = (bool)objArr[4],
             UserId = (long)objArr[5],
-            PublicId = (string)objArr[6]
+            PublicId = (objArr[6].GetType() == typeof(string)) ? (string)objArr[6] : null
         };
 
-        public async Task<Photo> GetById(int id)
+        public async Task<Photo> GetById(long id)
         {
             var values = await _dbAccess.SelectOne("SELECT" + _photosDBValues +
                 "FROM `Photos`" +
@@ -44,7 +45,7 @@ namespace Matcha.API.Data
             return MapObjArrToPhoto(values);
         }
 
-        public async Task<Photo> GetMainForUser(int id)
+        public async Task<Photo> GetMainForUser(long id)
         {
             var values = await _dbAccess.SelectOne("SELECT" + _photosDBValues +
                 "FROM `Photos`" +
@@ -79,7 +80,7 @@ namespace Matcha.API.Data
             return updateAmount == 1;
         }
 
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(long id)
         {
             return await _dbAccess.Delete("DELETE FROM `Photos` WHERE `Id` = @Id", new DBParam("Id", id));
         }

@@ -148,7 +148,7 @@ namespace Matcha.API.Data
             //return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
-        private async Task<IEnumerable<int>> GetUserLikes(int id, bool likers)
+        private async Task<IEnumerable<long>> GetUserLikes(int id, bool likers)
         {
             var user = await _userDataContext.GetById(id);
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Matcha.API.Models;
@@ -6,15 +7,15 @@ namespace Matcha.API.Data
 {
     public interface IMessagesDataContext
     {
-        public Task<Message> GetById(int id);
-        public Task<List<Message>> GetInbox(int recipientId);
-        public Task<List<Message>> GetOutbox(int senderId);
-        public Task<List<Message>> GetUnread(int recipientId);
-        public Task<List<Message>> GetThread(int senderId, int recipientId);
+        public Task<Message> GetById(long id);
+        public Task<List<Message>> GetInbox(long recipientId);
+        public Task<List<Message>> GetOutbox(long senderId);
+        public Task<List<Message>> GetUnread(long recipientId);
+        public Task<List<Message>> GetThread(long senderId, long recipientId);
 
         public Task<bool> Add(Message message);
         public Task<bool> Update(Message message);
-        public Task<bool> Delete(int id);
+        public Task<bool> Delete(long id);
     }
 
     public class MessagesDataContext : IMessagesDataContext
@@ -33,15 +34,15 @@ namespace Matcha.API.Data
             Id = (long)objArr[0],
             SenderId = (long)objArr[1],
             RecipientId = (long)objArr[2],
-            Content = (string)objArr[3],
+            Content = (objArr[3].GetType() == typeof(string)) ? (string)objArr[3] : null,
             IsRead = (bool)objArr[4],
-            DateRead = (System.DateTime?)objArr[5],
-            MessageSent = (System.DateTime)objArr[6],
+            DateRead = (objArr[5].GetType() == typeof(DateTime)) ? DateTime.Parse((string)objArr[5]) : (DateTime?)null,
+            MessageSent = DateTime.Parse((string)objArr[6]),
             SenderDeleted = (bool)objArr[7],
             RecipientDeleted = (bool)objArr[8]
         };
 
-        public async Task<Message> GetById(int id)
+        public async Task<Message> GetById(long id)
         {
             var values = await _dbAccess.SelectOne("SELECT" + _messagesDBValues +
                 "FROM `Messages`" +
@@ -51,7 +52,7 @@ namespace Matcha.API.Data
             return MapObjArrToMessage(values);
         }
 
-        public async Task<List<Message>> GetInbox(int recipientId)
+        public async Task<List<Message>> GetInbox(long recipientId)
         {
             var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
                 "FROM `Messages`" +
@@ -70,7 +71,7 @@ namespace Matcha.API.Data
             return rtn;
         }
 
-        public async Task<List<Message>> GetOutbox(int senderId)
+        public async Task<List<Message>> GetOutbox(long senderId)
         {
             var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
                 "FROM `Messages`" +
@@ -89,7 +90,7 @@ namespace Matcha.API.Data
             return rtn;
         }
 
-        public async Task<List<Message>> GetUnread(int recipientId)
+        public async Task<List<Message>> GetUnread(long recipientId)
         {
             var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
                 "FROM `Messages`" +
@@ -107,7 +108,7 @@ namespace Matcha.API.Data
             return rtn;
         }
 
-        public async Task<List<Message>> GetThread(int senderId, int recipientId)
+        public async Task<List<Message>> GetThread(long senderId, long recipientId)
         {
             var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
                 "FROM `Messages`" +
@@ -151,7 +152,7 @@ namespace Matcha.API.Data
             return updateAmount == 1;
         }
 
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(long id)
         {
             return await _dbAccess.Delete("DELETE FROM `Messages` WHERE `Id` = @Id", new DBParam("Id", id));
         }

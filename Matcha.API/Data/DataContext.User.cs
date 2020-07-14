@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Matcha.API.Models;
 
@@ -5,7 +6,7 @@ namespace Matcha.API.Data
 {
     public interface IUserDataContext
     {
-        public Task<User> GetById(int id);
+        public Task<User> GetById(long id);
         public Task<User> GetByUsername(string username);
         public Task<User> GetByEmail(string email);
         public Task<User> GetByVerifyToken(string token);
@@ -13,7 +14,7 @@ namespace Matcha.API.Data
 
         public Task<bool> Add(User user);
         public Task<bool> Update(User user);
-        public Task<bool> Delete(int id);
+        public Task<bool> Delete(long id);
     }
 
     public class UserDataContext : IUserDataContext
@@ -40,25 +41,25 @@ namespace Matcha.API.Data
             PasswordSalt = (byte[])objArr[3],
             Gender = (string)objArr[4],
             Sexuality = (string)objArr[5],
-            DateOfBirth = (System.DateTime)objArr[6],
+            DateOfBirth = DateTime.Parse((string)objArr[6]),
             Name = (string)objArr[7],
             Surname = (string)objArr[8],
-            Created = (System.DateTime)objArr[9],
-            LastActive = (System.DateTime)objArr[10],
+            Created = DateTime.Parse((string)objArr[9]),
+            LastActive = DateTime.Parse((string)objArr[10]),
             Introduction = (string)objArr[11],
             LookingFor = (string)objArr[12],
             Email = (string)objArr[13],
             Interests = (string)objArr[14],
             City = (string)objArr[15],
             Country = (string)objArr[16],
-            FameRating = (string)objArr[17],
+            FameRating = (long)objArr[17],
             Deactivated = (long)objArr[18],
             Activated = (long)objArr[19],
-            Token = (string)objArr[20],
-            Reset = (string)objArr[21]
+            Token = (objArr[20].GetType() == typeof(string)) ? (string)objArr[20] : null,
+            Reset = (objArr[21].GetType() == typeof(string)) ? (string)objArr[21] : null
         };
 
-        public async Task<User> GetById(int id)
+        public async Task<User> GetById(long id)
         {
             var values = await _dbAccess.SelectOne("SELECT" + _userDBValues +
                 "FROM `Users`" +
@@ -138,7 +139,7 @@ namespace Matcha.API.Data
             return updateAmount == 1;
         }
 
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(long id)
         {
             return await _dbAccess.Delete("DELETE FROM `Users` WHERE `Id` = @Id", new DBParam("Id", id));
         }
