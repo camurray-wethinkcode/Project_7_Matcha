@@ -24,7 +24,8 @@ namespace Matcha.API.Data
 
         public MessagesDataContext(IDbAccess dbAccess) => _dbAccess = dbAccess;
 
-        private const string _messagesDBValues = "`Id`, `SenderId`, `RecipientId`, `Content`, `IsRead`, `DateRead`, `MessageSent`, `SenderDeleted`, `RecipientDeleted` ";
+        private const string _messagesDBInsertValues = "`SenderId`, `RecipientId`, `Content`, `IsRead`, `DateRead`, `MessageSent`, `SenderDeleted`, `RecipientDeleted` ";
+        private const string _messagesDBValues = "`Id`, " + _messagesDBInsertValues;
 
         private Message MapObjArrToMessage(object[] objArr) => new Message
         {
@@ -139,9 +140,9 @@ namespace Matcha.API.Data
 
         public async Task<bool> Add(Message message)
         {
-            var updateAmount = await _dbAccess.Insert("INSERT INTO `Messages` (" + _messagesDBValues + ") VALUES (" +
-                "@Id, @SenderId, @RecipientId, @Content, @IsRead, @DateRead, @MessageSent, @SenderDeleted, @RecipientDeleted)",
-                new DBParam("Id", message.Id), new DBParam("SenderId", message.SenderId), new DBParam("RecipientId", message.RecipientId), new DBParam("Content", message.Content), new DBParam("IsRead", message.IsRead),
+            var updateAmount = await _dbAccess.Insert("INSERT INTO `Messages` (" + _messagesDBInsertValues + ") VALUES (" +
+                "@SenderId, @RecipientId, @Content, @IsRead, @DateRead, @MessageSent, @SenderDeleted, @RecipientDeleted)",
+                new DBParam("SenderId", message.SenderId), new DBParam("RecipientId", message.RecipientId), new DBParam("Content", message.Content), new DBParam("IsRead", message.IsRead),
                 new DBParam("DateRead", message.DateRead), new DBParam("MessageSent", message.MessageSent), new DBParam("SenderDeleted", message.SenderDeleted), new DBParam("RecipientDeleted", message.RecipientDeleted));
 
             return updateAmount == 1;

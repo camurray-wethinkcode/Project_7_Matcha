@@ -38,12 +38,14 @@ namespace Matcha.API.Data
             _likesDataContext = likesDataContext;
         }
 
-        private const string _userDBValues = 
-            "`Id`,         `Username`,     `PasswordHash`, `PasswordSalt`, `Gender`,   " +
+        private const string _userDBInsertValues = 
+            "              `Username`,     `PasswordHash`, `PasswordSalt`, `Gender`,   " +
             "`Sexuality`,  `DateOfBirth`,  `Name`,         `Surname`,      `Created`,  " +
             "`LastActive`, `Introduction`, `LookingFor`,   `Email`,        `Interests`," +
             "`City`,       `Country`,      `FameRating`,   `Deactivated`,  `Activated`," +
             "`Token`,      `Reset` ";
+        private const string _userDBValues = 
+            "`Id`, " + _userDBInsertValues;
 
         private User MapObjArrToUser(object[] objArr)
         {
@@ -172,13 +174,13 @@ namespace Matcha.API.Data
 
         public async Task<bool> Add(User user)
         {
-            var updateAmount = await _dbAccess.Insert("INSERT INTO `Users` (" + _userDBValues + ") VALUES (" +
-                "@Id,         @Username,     @PasswordHash, @PasswordSalt, @Gender,   " +
+            var updateAmount = await _dbAccess.Insert("INSERT INTO `Users` (" + _userDBInsertValues + ") VALUES (" +
+                "             @Username,     @PasswordHash, @PasswordSalt, @Gender,   " +
                 "@Sexuality,  @DateOfBirth,  @Name,         @Surname,      @Created,  " +
                 "@LastActive, @Introduction, @LookingFor,   @Email,        @Interests," +
                 "@City,       @Country,      @FameRating,   @Deactivated,  @Activated," +
                 "@Token,      @Reset )",
-                new DBParam("Id", user.Id), new DBParam("Username", user.Username), new DBParam("PasswordHash", user.PasswordHash), new DBParam("PasswordSalt", user.PasswordSalt), new DBParam("Gender", user.Gender),
+                new DBParam("Username", user.Username), new DBParam("PasswordHash", user.PasswordHash), new DBParam("PasswordSalt", user.PasswordSalt), new DBParam("Gender", user.Gender),
                 new DBParam("Sexuality", user.Sexuality), new DBParam("DateOfBirth", user.DateOfBirth), new DBParam("Name", user.Name), new DBParam("Surname", user.Surname), new DBParam("Created", user.Created),
                 new DBParam("LastActive", user.LastActive), new DBParam("Introduction", user.Introduction), new DBParam("LookingFor", user.LookingFor), new DBParam("Email", user.Email), new DBParam("Interests", user.Interests),
                 new DBParam("City", user.City), new DBParam("Country", user.Country), new DBParam("FameRating", user.FameRating), new DBParam("Deactivated", user.Deactivated), new DBParam("Activated", user.Activated),

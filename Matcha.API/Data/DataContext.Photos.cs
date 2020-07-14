@@ -21,7 +21,8 @@ namespace Matcha.API.Data
 
         public PhotosDataContext(IDbAccess dbAccess) => _dbAccess = dbAccess;
 
-        private const string _photosDBValues = "`Id`, `Url`, `Description`, `DateAdded`, `IsMain`, `UserId`, `PublicId` ";
+        private const string _photosDBInsertValues = "`Url`, `Description`, `DateAdded`, `IsMain`, `UserId`, `PublicId` ";
+        private const string _photosDBValues = "`Id`, " + _photosDBInsertValues;
 
         private Photo MapObjArrToPhoto(object[] objArr) => new Photo
         {
@@ -82,9 +83,9 @@ namespace Matcha.API.Data
 
         public async Task<bool> Add(Photo photo)
         {
-            var updateAmount = await _dbAccess.Insert("INSERT INTO `Photos` (" + _photosDBValues + ") VALUES (" +
-                "@Id, @Url, @Description, @DateAdded, @IsMain, @UserId, @PublicId)",
-                new DBParam("Id", photo.Id), new DBParam("Url", photo.Url), new DBParam("Description", photo.Description), new DBParam("DateAdded", photo.DateAdded),
+            var updateAmount = await _dbAccess.Insert("INSERT INTO `Photos` (" + _photosDBInsertValues + ") VALUES (" +
+                "@Url, @Description, @DateAdded, @IsMain, @UserId, @PublicId)",
+                new DBParam("Url", photo.Url), new DBParam("Description", photo.Description), new DBParam("DateAdded", photo.DateAdded),
                 new DBParam("IsMain", photo.IsMain), new DBParam("UserId", photo.UserId), new DBParam("PublicId", photo.PublicId));
 
             return updateAmount == 1;
