@@ -26,44 +26,44 @@ namespace Matcha.API.Data
             _messagesDataContext = messagesDataContext;
         }
 
-        public void Add<T>(T entity) where T : class
+        public async Task<bool> Add<T>(T entity) where T : class
         {
             if (typeof(T) == typeof(User))
-                _userDataContext.Add(entity as User);
+                return await _userDataContext.Add(entity as User);
             else if (typeof(T) == typeof(Like))
-                _likesDataContext.Add(entity as Like);
+                return await _likesDataContext.Add(entity as Like);
             else if (typeof(T) == typeof(Photo))
-                _photosDataContext.Add(entity as Photo);
+                return await _photosDataContext.Add(entity as Photo);
             else if (typeof(T) == typeof(Message))
-                _messagesDataContext.Add(entity as Message);
+                return await _messagesDataContext.Add(entity as Message);
             else
                 throw new NotImplementedException();
         }
 
-        public void Update<T>(T entity) where T:class
+        public async Task<bool> Update<T>(T entity) where T:class
         {
             if (typeof(T) == typeof(User))
-                _userDataContext.Update(entity as User);
+                return await _userDataContext.Update(entity as User);
             else if (typeof(T) == typeof(Like))
-                _likesDataContext.Update(entity as Like);
+                return await _likesDataContext.Update(entity as Like);
             else if (typeof(T) == typeof(Photo))
-                _photosDataContext.Update(entity as Photo);
+                return await _photosDataContext.Update(entity as Photo);
             else if (typeof(T) == typeof(Message))
-                _messagesDataContext.Update(entity as Message);
+                return await _messagesDataContext.Update(entity as Message);
             else
                 throw new NotImplementedException();
         }
 
-        public void Delete<T>(T entity) where T : class
+        public async Task<bool> Delete<T>(T entity) where T : class
         {
             if (typeof(T) == typeof(User))
-                _userDataContext.Delete((entity as User).Id);
+                return await _userDataContext.Delete((entity as User).Id);
             else if (typeof(T) == typeof(Like))
-                _likesDataContext.Delete((entity as Like).LikerId, (entity as Like).LikeeId);
+                return await _likesDataContext.Delete((entity as Like).LikerId, (entity as Like).LikeeId);
             else if (typeof(T) == typeof(Photo))
-                _photosDataContext.Delete((entity as Photo).Id);
+                return await _photosDataContext.Delete((entity as Photo).Id);
             else if (typeof(T) == typeof(Message))
-                _messagesDataContext.Delete((entity as Message).Id);
+                return await _messagesDataContext.Delete((entity as Message).Id);
             else
                 throw new NotImplementedException();
         }
