@@ -152,9 +152,9 @@ namespace Matcha.API.Data
 
         public async Task<bool> Update(Message message)
         {
-            var updateAmount = await _dbAccess.Update("UPDATE `Users` SET " +
+            var updateAmount = await _dbAccess.Update("UPDATE `Messages` SET " +
                 "   `Id` = @Id, `SenderId` = @SenderId, `RecipientId` = @RecipientId, `Content` = @Content, `IsRead` = @IsRead," +
-                "   `DateRead` = @DateRead, `MessageSent` = @MessageSent, `SenderDeleted` = @SenderDeleted, `RecipientDeleted` = @RecipientDeleted" +
+                "   `DateRead` = @DateRead, `MessageSent` = @MessageSent, `SenderDeleted` = @SenderDeleted, `RecipientDeleted` = @RecipientDeleted " +
                 "WHERE `Id` = @Id",
                 new DBParam("Id", message.Id), new DBParam("SenderId", message.SenderId), new DBParam("RecipientId", message.RecipientId), new DBParam("Content", message.Content), new DBParam("IsRead", message.IsRead),
                 new DBParam("DateRead", message.DateRead), new DBParam("MessageSent", message.MessageSent), new DBParam("SenderDeleted", message.SenderDeleted), new DBParam("RecipientDeleted", message.RecipientDeleted));
