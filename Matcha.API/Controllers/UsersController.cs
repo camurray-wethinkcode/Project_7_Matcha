@@ -29,7 +29,7 @@ namespace Matcha.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers([FromQuery]UserParams userParams)
+        public async Task<IActionResult> GetUsers([FromQuery] UserParams userParams)
         {
             var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
@@ -41,11 +41,11 @@ namespace Matcha.API.Controllers
             {
                 var gender = "test";
                 if (userFromRepo.Gender == "male")
-                  gender = "male";
+                    gender = "male";
                 else if (userFromRepo.Gender == "female")
-                  gender = "female";
+                    gender = "female";
                 else if (userFromRepo.Gender == "other")
-                  gender = "other";
+                    gender = "other";
                 userParams.Gender = gender;
                 //userParams.Gender = userFromRepo.Gender == "male" ? "female" : "male";
             }
@@ -80,7 +80,7 @@ namespace Matcha.API.Controllers
 
             _mapper.Map(userForUpdateDto, userFromRepo);
 
-            if (await _repo.SaveAll())
+            if (await _repo.Update(userFromRepo))
                 return NoContent();
 
             throw new Exception($"Updating user {id} failed on save");
@@ -106,9 +106,7 @@ namespace Matcha.API.Controllers
                 LikeeId = recipientId
             };
 
-            _repo.Add<Like>(like);
-
-            if (await _repo.SaveAll())
+            if (await _repo.Add(like))
             {
                 var likedUser = await _repo.GetUser(recipientId);
                 var likedByUser = await _repo.GetUser(id);
@@ -145,9 +143,7 @@ namespace Matcha.API.Controllers
             if (like == null)
                 return BadRequest("You haven't liked this user");
 
-            _repo.Delete<Like>(like);
-
-            if (await _repo.SaveAll())
+            if (await _repo.Delete(like))
             {
                 var unlikedUser = await _repo.GetUser(recipientId);
                 var unlikedByUser = await _repo.GetUser(id);
