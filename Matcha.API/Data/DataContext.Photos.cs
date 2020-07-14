@@ -8,6 +8,7 @@ namespace Matcha.API.Data
         public Task<Photo> GetById(int id);
         public Task<Photo> GetMainForUser(int id);
         public Task<bool> Add(Photo photo);
+        public Task<bool> Update(Photo photo);
         public Task<bool> Delete(int id);
     }
 
@@ -60,6 +61,18 @@ namespace Matcha.API.Data
         {
             var updateAmount = await _dbAccess.Insert("INSERT INTO `Photos` (" + _photosDBValues + ") VALUES (" +
                 "@Id, @Url, @Description, @DateAdded, @IsMain, @UserId, @PublicId)",
+                new DBParam("Id", photo.Id), new DBParam("Url", photo.Url), new DBParam("Description", photo.Description), new DBParam("DateAdded", photo.DateAdded),
+                new DBParam("IsMain", photo.IsMain), new DBParam("UserId", photo.UserId), new DBParam("PublicId", photo.PublicId));
+
+            return updateAmount == 1;
+        }
+
+        public async Task<bool> Update(Photo photo)
+        {
+            var updateAmount = await _dbAccess.Update("UPDATE `Users` SET " +
+                "   `Id` = @Id, `Url` = @Url, `Description` = @Description, `DateAdded` = @DateAdded," +
+                "   `IsMain` = @IsMain, `UserId` = @UserId, `PublicId` = @PublicId" +
+                "WHERE `Id` = @Id",
                 new DBParam("Id", photo.Id), new DBParam("Url", photo.Url), new DBParam("Description", photo.Description), new DBParam("DateAdded", photo.DateAdded),
                 new DBParam("IsMain", photo.IsMain), new DBParam("UserId", photo.UserId), new DBParam("PublicId", photo.PublicId));
 

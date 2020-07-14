@@ -13,6 +13,7 @@ namespace Matcha.API.Data
         public Task<List<Message>> GetThread(int senderId, int recipientId);
 
         public Task<bool> Add(Message message);
+        public Task<bool> Update(Message message);
         public Task<bool> Delete(int id);
     }
 
@@ -132,6 +133,18 @@ namespace Matcha.API.Data
         {
             var updateAmount = await _dbAccess.Insert("INSERT INTO `Messages` (" + _messagesDBValues + ") VALUES (" +
                 "@Id, @SenderId, @RecipientId, @Content, @IsRead, @DateRead, @MessageSent, @SenderDeleted, @RecipientDeleted)",
+                new DBParam("Id", message.Id), new DBParam("SenderId", message.SenderId), new DBParam("RecipientId", message.RecipientId), new DBParam("Content", message.Content), new DBParam("IsRead", message.IsRead),
+                new DBParam("DateRead", message.DateRead), new DBParam("MessageSent", message.MessageSent), new DBParam("SenderDeleted", message.SenderDeleted), new DBParam("RecipientDeleted", message.RecipientDeleted));
+
+            return updateAmount == 1;
+        }
+
+        public async Task<bool> Update(Message message)
+        {
+            var updateAmount = await _dbAccess.Update("UPDATE `Users` SET " +
+                "   `Id` = @Id, `SenderId` = @SenderId, `RecipientId` = @RecipientId, `Content` = @Content, `IsRead` = @IsRead," +
+                "   `DateRead` = @DateRead, `MessageSent` = @MessageSent, `SenderDeleted` = @SenderDeleted, `RecipientDeleted` = @RecipientDeleted" +
+                "WHERE `Id` = @Id",
                 new DBParam("Id", message.Id), new DBParam("SenderId", message.SenderId), new DBParam("RecipientId", message.RecipientId), new DBParam("Content", message.Content), new DBParam("IsRead", message.IsRead),
                 new DBParam("DateRead", message.DateRead), new DBParam("MessageSent", message.MessageSent), new DBParam("SenderDeleted", message.SenderDeleted), new DBParam("RecipientDeleted", message.RecipientDeleted));
 

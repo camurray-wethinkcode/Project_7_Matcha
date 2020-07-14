@@ -7,6 +7,7 @@ namespace Matcha.API.Data
     {
         public Task<Like> Get(int likerId, int likeeId);
         public Task<bool> Add(Like like);
+        public Task<bool> Update(Like like);
         public Task<bool> Delete(int likerId, int likeeId);
     }
 
@@ -42,6 +43,16 @@ namespace Matcha.API.Data
         public async Task<bool> Add(Like like)
         {
             var updateAmount = await _dbAccess.Insert("INSERT INTO `Likes` (" + _likesDBValues + ") VALUES (@LikerId, @LikeeId)",
+                new DBParam("LikerId", like.LikerId), new DBParam("LikeeId", like.LikeeId));
+
+            return updateAmount == 1;
+        }
+
+        public async Task<bool> Update(Like like)
+        {
+            var updateAmount = await _dbAccess.Update("UPDATE `Users` SET " +
+                "   `LikerId` = @LikerId, `LikeeId` = @LikeeId" +
+                "WHERE `Id` = @Id",
                 new DBParam("LikerId", like.LikerId), new DBParam("LikeeId", like.LikeeId));
 
             return updateAmount == 1;

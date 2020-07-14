@@ -40,6 +40,20 @@ namespace Matcha.API.Data
                 throw new NotImplementedException();
         }
 
+        public void Update<T>(T entity) where T:class
+        {
+            if (typeof(T) == typeof(User))
+                _userDataContext.Update(entity as User);
+            else if (typeof(T) == typeof(Like))
+                _likesDataContext.Update(entity as Like);
+            else if (typeof(T) == typeof(Photo))
+                _photosDataContext.Update(entity as Photo);
+            else if (typeof(T) == typeof(Message))
+                _messagesDataContext.Update(entity as Message);
+            else
+                throw new NotImplementedException();
+        }
+
         public void Delete<T>(T entity) where T : class
         {
             if (typeof(T) == typeof(User))
