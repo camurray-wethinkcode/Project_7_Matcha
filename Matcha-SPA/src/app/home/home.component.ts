@@ -11,7 +11,8 @@ import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/_services/user.service';
 import { User } from '../_models/user';
 import { Email } from '../_models/email';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit {
   isReset = true;
   token: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private fb: FormBuilder, private http: HttpClient, private alertify: AlertifyService, private authService: AuthService) {
+  constructor(private activatedRoute: ActivatedRoute, private fb: FormBuilder, private http: HttpClient, private alertify: AlertifyService, private authService: AuthService, private router: Router) {
   this.activatedRoute.queryParams.subscribe(params => {
         this.token = params['token'];
         if (this.token != null || this.token != undefined)
@@ -62,11 +63,15 @@ export class HomeComponent implements OnInit {
     this.authService.password(this.user).subscribe(
       () => {
         this.alertify.error('Something went wrong here...');
+        this.isShow = !this.isShow;
+        this.isReset = !this.isReset;
       },
       error => {
         this.alertify.success('Your password has been updated');
+        this.isShow = !this.isShow;
+        this.isReset = !this.isReset;
       }
-    );;
+    );
   }
 
   forgotPassword() {
