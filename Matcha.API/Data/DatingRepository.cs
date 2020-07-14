@@ -9,66 +9,74 @@ namespace Matcha.API.Data
 {
     public class DatingRepository : IDatingRepository
     {
-        private readonly DataContext _context;
-        public DatingRepository(DataContext context)
+        private readonly IUserDataContext _userDataContext;
+        private readonly ILikesDataContext _likesDataContext;
+        private readonly IPhotosDataContext _photosDataContext;
+
+        public DatingRepository(IUserDataContext userDataContext, ILikesDataContext likesDataContext, IPhotosDataContext photosDataContext)
         {
-            _context = context;
+            _userDataContext = userDataContext;
+            _likesDataContext = likesDataContext;
+            _photosDataContext = photosDataContext;
         }
 
         public void Add<T>(T entity) where T : class
         {
-            _context.Add(entity);
+            if (typeof(T) == typeof(User))
+                _userDataContext.Add(entity as User);
+            else if (typeof(T) == typeof(Like))
+                _likesDataContext.Add(entity as Like);
+            else if (typeof(T) == typeof(Photo))
+                _photosDataContext.Add(entity as Photo);
+            else
+                throw new NotImplementedException();
         }
 
         public void Delete<T>(T entity) where T : class
         {
-            _context.Remove(entity);
+            if (typeof(T) == typeof(User))
+                _userDataContext.Delete((entity as User).Id);
+            else if (typeof(T) == typeof(Like))
+                _likesDataContext.Delete((entity as Like).LikerId, (entity as Like).LikeeId);
+            else if (typeof(T) == typeof(Photo))
+                _photosDataContext.Delete((entity as Photo).Id);
+            else
+                throw new NotImplementedException();
         }
 
         public async Task<Like> GetLike(int userId, int recipientId)
         {
-            return await _context.Likes.FirstOrDefaultAsync(u =>
-                u.LikerId == userId && u.LikeeId == recipientId);
+            return await _likesDataContext.Get(userId, recipientId);
         }
 
         public async Task<Photo> GetMainPhotoForUser(int userId)
         {
-            return await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
+            return await _photosDataContext.GetMainForUser(userId);
         }
 
         public async Task<Photo> GetPhoto(int id)
         {
-            var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
-
-            return photo;
+            return await _photosDataContext.GetById(id);
         }
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
-
-            return user;
+            return await _userDataContext.GetById(id);
         }
 
         public async Task<User> GetUserByEmail(string email)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-
-            return user;
+            return await _userDataContext.GetByEmail(email);
         }
 
         public async Task<User> GetUserByVerifyToken(string verifyToken)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Token == verifyToken);
-
-            return user;
+            return await _userDataContext.GetByVerifyToken(verifyToken);
         }
 
         public async Task<User> GetUserByResetToken(string resetToken)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Reset == resetToken);
-
-            return user;
+            return await _userDataContext.GetByResetToken(resetToken);
         }
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
@@ -117,7 +125,7 @@ namespace Matcha.API.Data
 
         private async Task<IEnumerable<int>> GetUserLikes(int id, bool likers)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _userDataContext.GetById(id);
 
             if (likers)
             {
@@ -127,11 +135,6 @@ namespace Matcha.API.Data
             {
                 return user.Likees.Where(u => u.LikerId == id).Select(i => i.LikeeId);
             }
-        }
-
-        public async Task<bool> SaveAll()
-        {
-            return await _context.SaveChangesAsync() > 0;
         }
 
         public async Task<Message> GetMessage(int id)
