@@ -29,15 +29,13 @@ namespace Matcha.API
 
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
-            SQLiteConnection sQLiteConnection = new SQLiteConnection(Configuration.GetConnectionString("DefaultConnection"));
-            services.AddSingleton<IDbAccess>(x => new DbAccess(sQLiteConnection));
+            services.AddSingleton<IDbAccess>(x => new DbAccess(Configuration.GetConnectionString("DefaultConnection")));
             ConfigureServices(services);
         }
 
         public void ConfigureProductionServices(IServiceCollection services)
         {
-            SQLiteConnection sQLiteConnection = new SQLiteConnection(Configuration.GetConnectionString("DefaultConnection"));
-            services.AddSingleton<IDbAccess>(x => new DbAccess(sQLiteConnection));
+            services.AddSingleton<IDbAccess>(x => new DbAccess(Configuration.GetConnectionString("DefaultConnection")));
             ConfigureServices(services);
         }
 

@@ -28,12 +28,9 @@ namespace Matcha.API.Data
 
     public class DbAccess : IDbAccess
     {
-        SQLiteConnection _connection;
+        string _connectionString;
 
-        public DbAccess(SQLiteConnection connection)
-        {
-            _connection = connection;
-        }
+        public DbAccess(string connectionString) => _connectionString = connectionString;
 
         /// <summary>Sends a SELECT query to the database, and returns retrieved data</summary>
         /// <param name="query">Query to send. Use @paramName to reference parameter names</param>
@@ -45,15 +42,12 @@ namespace Matcha.API.Data
         /// </returns>
         public async Task<List<List<object[]>>> Select(string query, params DBParam[] paramArray)
         {
-            _connection.Open();
-            try
+            using SQLiteConnection connection = new SQLiteConnection(_connectionString);
+            await connection.OpenAsync();
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                SQLiteCommand command = new SQLiteCommand(query, _connection);
-                foreach (DBParam param in paramArray)
-                {
-                    SQLiteParameter commandParam = new SQLiteParameter(param.Name, param.Value);
-                    command.Parameters.Add(commandParam);
-                }
+                foreach (var param in paramArray)
+                    command.Parameters.Add(new SQLiteParameter(param.Name, param.Value));
                 await command.PrepareAsync();
 
                 using (DbDataReader reader = await command.ExecuteReaderAsync())
@@ -69,9 +63,7 @@ namespace Matcha.API.Data
                             var rowArr = new object[reader.FieldCount];
 
                             for (int col = 0; col < reader.FieldCount; col++)
-                            {
                                 rowArr[col] = reader.GetValue(col);
-                            }
 
                             rowLst.Add(rowArr);
                             // add to list of rows
@@ -84,10 +76,6 @@ namespace Matcha.API.Data
 
                     return resultLst;
                 }
-            }
-            finally
-            {
-                _connection.Close();
             }
         }
 
@@ -118,21 +106,14 @@ namespace Matcha.API.Data
         /// <returns>The number of rows affected.</returns>
         public async Task<int> Insert(string query, params DBParam[] paramArray)
         {
-            _connection.Open();
-            try
+            using SQLiteConnection connection = new SQLiteConnection(_connectionString);
+            await connection.OpenAsync();
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                SQLiteCommand command = new SQLiteCommand(query, _connection);
                 foreach (var param in paramArray)
-                {
-                    var commandParam = new SQLiteParameter(param.Name, param.Value);
-                    command.Parameters.Add(commandParam);
-                }
+                    command.Parameters.Add(new SQLiteParameter(param.Name, param.Value));
                 await command.PrepareAsync();
                 return await command.ExecuteNonQueryAsync();
-            }
-            finally
-            {
-                _connection.Close();
             }
         }
 
@@ -142,21 +123,14 @@ namespace Matcha.API.Data
         /// <returns>The number of rows affected.</returns>
         public async Task<int> Update(string query, params DBParam[] paramArray)
         {
-            _connection.Open();
-            try
+            using SQLiteConnection connection = new SQLiteConnection(_connectionString);
+            await connection.OpenAsync();
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                SQLiteCommand command = new SQLiteCommand(query, _connection);
                 foreach (var param in paramArray)
-                {
-                    var commandParam = new SQLiteParameter(param.Name, param.Value);
-                    command.Parameters.Add(commandParam);
-                }
+                    command.Parameters.Add(new SQLiteParameter(param.Name, param.Value));
                 await command.PrepareAsync();
                 return await command.ExecuteNonQueryAsync();
-            }
-            finally
-            {
-                _connection.Close();
             }
         }
 
@@ -166,21 +140,14 @@ namespace Matcha.API.Data
         /// <returns>True if data was deleted, False if no rows were affected.</returns>
         public async Task<bool> Delete(string query, params DBParam[] paramArray)
         {
-            _connection.Open();
-            try
+            using SQLiteConnection connection = new SQLiteConnection(_connectionString);
+            await connection.OpenAsync();
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                SQLiteCommand command = new SQLiteCommand(query, _connection);
                 foreach (var param in paramArray)
-                {
-                    var commandParam = new SQLiteParameter(param.Name, param.Value);
-                    command.Parameters.Add(commandParam);
-                }
+                    command.Parameters.Add(new SQLiteParameter(param.Name, param.Value));
                 await command.PrepareAsync();
                 return await command.ExecuteNonQueryAsync() > 0;
-            }
-            finally
-            {
-                _connection.Close();
             }
         }
     }
