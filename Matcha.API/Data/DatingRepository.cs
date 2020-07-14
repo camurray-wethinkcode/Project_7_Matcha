@@ -68,40 +68,19 @@ namespace Matcha.API.Data
                 throw new NotImplementedException();
         }
 
-        public async Task<Like> GetLike(int userId, int recipientId)
-        {
-            return await _likesDataContext.Get(userId, recipientId);
-        }
+        public async Task<Like> GetLike(int userId, int recipientId) => await _likesDataContext.Get(userId, recipientId);
 
-        public async Task<Photo> GetMainPhotoForUser(int userId)
-        {
-            return await _photosDataContext.GetMainForUser(userId);
-        }
+        public async Task<Photo> GetMainPhotoForUser(int userId) => await _photosDataContext.GetMainForUser(userId);
 
-        public async Task<Photo> GetPhoto(int id)
-        {
-            return await _photosDataContext.GetById(id);
-        }
+        public async Task<Photo> GetPhoto(int id) => await _photosDataContext.GetById(id);
 
-        public async Task<User> GetUser(int id)
-        {
-            return await _userDataContext.GetById(id);
-        }
+        public async Task<User> GetUser(int id) => await _userDataContext.GetById(id);
 
-        public async Task<User> GetUserByEmail(string email)
-        {
-            return await _userDataContext.GetByEmail(email);
-        }
+        public async Task<User> GetUserByEmail(string email) => await _userDataContext.GetByEmail(email);
 
-        public async Task<User> GetUserByVerifyToken(string verifyToken)
-        {
-            return await _userDataContext.GetByVerifyToken(verifyToken);
-        }
+        public async Task<User> GetUserByVerifyToken(string verifyToken) => await _userDataContext.GetByVerifyToken(verifyToken);
 
-        public async Task<User> GetUserByResetToken(string resetToken)
-        {
-            return await _userDataContext.GetByResetToken(resetToken);
-        }
+        public async Task<User> GetUserByResetToken(string resetToken) => await _userDataContext.GetByResetToken(resetToken);
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
@@ -162,10 +141,7 @@ namespace Matcha.API.Data
             }
         }
 
-        public async Task<Message> GetMessage(int id)
-        {
-            return await _messagesDataContext.GetById(id);
-        }
+        public async Task<Message> GetMessage(int id) => await _messagesDataContext.GetById(id);
 
         public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
         {
@@ -189,9 +165,6 @@ namespace Matcha.API.Data
             return PagedList<Message>.Create(orderedMessages, messageParams.PageNumber, messageParams.PageSize);
         }
 
-        public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
-        {
-            return await _messagesDataContext.GetThread(userId, recipientId);
-        }
+        public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId) => await _messagesDataContext.GetThread(userId, recipientId);
     }
 }
