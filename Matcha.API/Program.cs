@@ -17,8 +17,16 @@ namespace Matcha.API
                 var services = scope.ServiceProvider;
                 try
                 {
+                    if (!System.IO.File.Exists("matcha.db"))
+                    {
+                        Console.WriteLine("Creating Database...");
+                        var dbAccess = services.GetRequiredService<IDbAccess>();
+                        var createTablesCommand = System.IO.File.ReadAllText("CreateTables.sql");
+                        var rowsAffected = dbAccess.NonQuery(createTablesCommand).Result;
+                        Console.WriteLine("{0} rows affected during database creation.", rowsAffected);
+                    }
+
                     var userDataContext = services.GetRequiredService<IUserDataContext>();
-                    //context.Database.Migrate();
                     Seed.SeedUsers(userDataContext);
                 }
                 catch (Exception ex)
@@ -33,9 +41,6 @@ namespace Matcha.API
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
     }
 }

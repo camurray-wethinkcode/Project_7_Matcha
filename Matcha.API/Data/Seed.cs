@@ -11,6 +11,7 @@ namespace Matcha.API.Data
         {
             if (!context.GetAllUsersByLastActive().Result.Any())
             {
+                System.Console.WriteLine("Seeding users...");
                 var userData = System.IO.File.ReadAllText("Data/UserSeedData.json");
                 var users = JsonConvert.DeserializeObject<List<User>>(userData);
                 foreach (var user in users)
@@ -23,6 +24,7 @@ namespace Matcha.API.Data
                     user.Username = user.Username.ToLower();
                     context.Add(user);
                 }
+                System.Console.WriteLine("User Seed complete.");
             }
         }
 
