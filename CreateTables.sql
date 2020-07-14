@@ -1,0 +1,79 @@
+BEGIN TRANSACTION;
+DROP TABLE IF EXISTS "Photos";
+CREATE TABLE IF NOT EXISTS "Photos" (
+	"Id"	INTEGER NOT NULL,
+	"Url"	TEXT,
+	"Description"	TEXT,
+	"DateAdded"	TEXT NOT NULL,
+	"IsMain"	INTEGER NOT NULL,
+	"UserId"	INTEGER NOT NULL,
+	"PublicId"	TEXT,
+	CONSTRAINT "PK_Photos" PRIMARY KEY("Id" AUTOINCREMENT),
+	CONSTRAINT "FK_Photos_Users_UserId" FOREIGN KEY("UserId") REFERENCES "Users"("Id") ON DELETE CASCADE
+);
+DROP TABLE IF EXISTS "Likes";
+CREATE TABLE IF NOT EXISTS "Likes" (
+	"LikerId"	INTEGER NOT NULL,
+	"LikeeId"	INTEGER NOT NULL,
+	CONSTRAINT "PK_Likes" PRIMARY KEY("LikerId","LikeeId"),
+	CONSTRAINT "FK_Likes_Users_LikeeId" FOREIGN KEY("LikeeId") REFERENCES "Users"("Id") ON DELETE RESTRICT,
+	CONSTRAINT "FK_Likes_Users_LikerId" FOREIGN KEY("LikerId") REFERENCES "Users"("Id") ON DELETE RESTRICT
+);
+DROP TABLE IF EXISTS "Messages";
+CREATE TABLE IF NOT EXISTS "Messages" (
+	"Id"	INTEGER NOT NULL,
+	"SenderId"	INTEGER NOT NULL,
+	"RecipientId"	INTEGER NOT NULL,
+	"Content"	TEXT,
+	"IsRead"	INTEGER NOT NULL,
+	"DateRead"	TEXT,
+	"MessageSent"	TEXT NOT NULL,
+	"SenderDeleted"	INTEGER NOT NULL,
+	"RecipientDeleted"	INTEGER NOT NULL,
+	CONSTRAINT "PK_Messages" PRIMARY KEY("Id" AUTOINCREMENT),
+	CONSTRAINT "FK_Messages_Users_RecipientId" FOREIGN KEY("RecipientId") REFERENCES "Users"("Id") ON DELETE RESTRICT,
+	CONSTRAINT "FK_Messages_Users_SenderId" FOREIGN KEY("SenderId") REFERENCES "Users"("Id") ON DELETE RESTRICT
+);
+DROP TABLE IF EXISTS "Users";
+CREATE TABLE IF NOT EXISTS "Users" (
+	"Id"	INTEGER NOT NULL,
+	"Username"	TEXT NOT NULL,
+	"PasswordHash"	BLOB,
+	"PasswordSalt"	BLOB,
+	"City"	TEXT NOT NULL,
+	"Country"	TEXT NOT NULL,
+	"Created"	TEXT NOT NULL DEFAULT '0001-01-01 00:00:00',
+	"DateOfBirth"	TEXT NOT NULL DEFAULT '0001-01-01 00:00:00',
+	"Gender"	TEXT NOT NULL,
+	"Sexuality"	TEXT NOT NULL,
+	"Introduction"	TEXT NOT NULL,
+	"Name"	TEXT NOT NULL,
+	"Surname"	TEXT NOT NULL,
+	"LastActive"	TEXT NOT NULL DEFAULT '0001-01-01 00:00:00',
+	"Interests"	TEXT NOT NULL,
+	"LookingFor"	TEXT NOT NULL,
+	"Email"	TEXT NOT NULL,
+	"FameRating"	INTEGER NOT NULL DEFAULT 0,
+	"Deactivated"	INTEGER NOT NULL DEFAULT 0,
+	"Activated"	INTEGER NOT NULL DEFAULT 0,
+	"Reset"	TEXT,
+	"Token"	TEXT,
+	PRIMARY KEY("Id" AUTOINCREMENT)
+);
+DROP INDEX IF EXISTS "IX_Photos_UserId";
+CREATE INDEX IF NOT EXISTS "IX_Photos_UserId" ON "Photos" (
+	"UserId"
+);
+DROP INDEX IF EXISTS "IX_Likes_LikeeId";
+CREATE INDEX IF NOT EXISTS "IX_Likes_LikeeId" ON "Likes" (
+	"LikeeId"
+);
+DROP INDEX IF EXISTS "IX_Messages_RecipientId";
+CREATE INDEX IF NOT EXISTS "IX_Messages_RecipientId" ON "Messages" (
+	"RecipientId"
+);
+DROP INDEX IF EXISTS "IX_Messages_SenderId";
+CREATE INDEX IF NOT EXISTS "IX_Messages_SenderId" ON "Messages" (
+	"SenderId"
+);
+COMMIT;
