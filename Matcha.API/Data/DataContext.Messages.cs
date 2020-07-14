@@ -35,11 +35,11 @@ namespace Matcha.API.Data
             SenderId = (long)objArr[1],
             RecipientId = (long)objArr[2],
             Content = (objArr[3].GetType() == typeof(string)) ? (string)objArr[3] : null,
-            IsRead = (bool)objArr[4],
+            IsRead = Convert.ToBoolean((long)objArr[4]),
             DateRead = (objArr[5].GetType() == typeof(DateTime)) ? DateTime.Parse((string)objArr[5]) : (DateTime?)null,
             MessageSent = DateTime.Parse((string)objArr[6]),
-            SenderDeleted = (bool)objArr[7],
-            RecipientDeleted = (bool)objArr[8]
+            SenderDeleted = Convert.ToBoolean((long)objArr[7]),
+            RecipientDeleted = Convert.ToBoolean((long)objArr[8])
         };
 
         public async Task<Message> GetById(long id)
@@ -48,6 +48,8 @@ namespace Matcha.API.Data
                 "FROM `Messages` " +
                 "WHERE `Id` = @Id",
                 new DBParam("Id", id));
+
+            if (values == null) return null;
 
             return MapObjArrToMessage(values);
         }
@@ -59,6 +61,8 @@ namespace Matcha.API.Data
                 "WHERE `RecipientId` = @RecipientId " +
                 "AND `RecipientDeleted` = 0 ",
                 new DBParam("RecipientId", recipientId));
+
+            if (results.Count == 0) return new List<Message>();
 
             var list = results[0];
             var rtn = new List<Message>();
@@ -79,6 +83,8 @@ namespace Matcha.API.Data
                 "AND `SenderDeleted` = 0",
                 new DBParam("SenderId", senderId));
 
+            if (results.Count == 0) return new List<Message>();
+
             var list = results[0];
             var rtn = new List<Message>();
 
@@ -98,6 +104,8 @@ namespace Matcha.API.Data
                 "AND `RecipientDeleted` = 0 " +
                 "AND `IsRead` = 0 ",
                 new DBParam("RecipientId", recipientId));
+
+            if (results.Count == 0) return new List<Message>();
 
             var list = results[0];
             var rtn = new List<Message>();
@@ -120,6 +128,8 @@ namespace Matcha.API.Data
                 "   `MessageSent` DESC;",
                 new DBParam("SenderId", senderId),
                 new DBParam("RecipientId", recipientId));
+
+            if (results.Count == 0) return new List<Message>();
 
             var list = results[0];
             var rtn = new List<Message>();

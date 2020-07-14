@@ -30,7 +30,7 @@ namespace Matcha.API.Data
             Url = (objArr[1].GetType() == typeof(string)) ? (string)objArr[1] : null,
             Description = (objArr[2].GetType() == typeof(string)) ? (string)objArr[2] : null,
             DateAdded = DateTime.Parse((string)objArr[3]),
-            IsMain = (bool)objArr[4],
+            IsMain = Convert.ToBoolean((long)objArr[4]),
             UserId = (long)objArr[5],
             PublicId = (objArr[6].GetType() == typeof(string)) ? (string)objArr[6] : null
         };
@@ -41,6 +41,8 @@ namespace Matcha.API.Data
                 "FROM `Photos` " +
                 "WHERE `Id` = @Id",
                 new DBParam("Id", id));
+
+            if (values == null) return null;
 
             return MapObjArrToPhoto(values);
         }
@@ -54,6 +56,8 @@ namespace Matcha.API.Data
                 "AND " +
                 "   `IsMain` = 1",
                 new DBParam("UserId", id));
+
+            if (values == null) return null;
 
             return MapObjArrToPhoto(values);
         }

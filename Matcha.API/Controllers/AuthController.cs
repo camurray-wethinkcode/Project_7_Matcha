@@ -11,6 +11,7 @@ using Matcha.API.Helpers;
 using Matcha.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Matcha.API.Controllers
@@ -26,6 +27,7 @@ namespace Matcha.API.Controllers
         private readonly IMailer _mailer;
         private readonly IDatingRepository _datingRepo;
         private readonly IConfiguration _configuration;
+        private readonly ILogger _logger;
 
         public AuthController(
             IAuthRepository repo,
@@ -34,7 +36,8 @@ namespace Matcha.API.Controllers
             IToken token,
             IMailer mailer,
             IDatingRepository datingRepo,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            ILogger<AuthController> logger)
         {
             _repo = repo;
             _config = config;
@@ -43,6 +46,7 @@ namespace Matcha.API.Controllers
             _mailer = mailer;
             _datingRepo = datingRepo;
             _configuration = configuration;
+            _logger = logger;
         }
 
         [HttpPost("register")]
@@ -76,8 +80,9 @@ namespace Matcha.API.Controllers
                     verifyLink
                 );
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                _logger.LogError(ex, "Error sending mail");
                 return BadRequest("User created successfully, but verify email failed to send");
             }
 
@@ -173,8 +178,9 @@ namespace Matcha.API.Controllers
 
                 return Ok("Reset Email sent Successfully");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                _logger.LogError(ex, "Error sending mail");
                 return BadRequest("Error sending reset link email");
             }
         }
