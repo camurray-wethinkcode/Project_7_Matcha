@@ -68,19 +68,19 @@ namespace Matcha.API.Data
                 throw new NotImplementedException();
         }
 
-        public async Task<Like> GetLike(int userId, int recipientId) => await _likesDataContext.Get(userId, recipientId);
+        public Task<Like> GetLike(int userId, int recipientId) => _likesDataContext.Get(userId, recipientId);
 
-        public async Task<Photo> GetMainPhotoForUser(int userId) => await _photosDataContext.GetMainForUser(userId);
+        public Task<Photo> GetMainPhotoForUser(int userId) => _photosDataContext.GetMainForUser(userId);
 
-        public async Task<Photo> GetPhoto(int id) => await _photosDataContext.GetById(id);
+        public Task<Photo> GetPhoto(int id) => _photosDataContext.GetById(id);
 
-        public async Task<User> GetUser(int id) => await _userDataContext.GetById(id);
+        public Task<User> GetUser(int id) => _userDataContext.GetById(id);
 
-        public async Task<User> GetUserByEmail(string email) => await _userDataContext.GetByEmail(email);
+        public Task<User> GetUserByEmail(string email) => _userDataContext.GetByEmail(email);
 
-        public async Task<User> GetUserByVerifyToken(string verifyToken) => await _userDataContext.GetByVerifyToken(verifyToken);
+        public Task<User> GetUserByVerifyToken(string verifyToken) => _userDataContext.GetByVerifyToken(verifyToken);
 
-        public async Task<User> GetUserByResetToken(string resetToken) => await _userDataContext.GetByResetToken(resetToken);
+        public Task<User> GetUserByResetToken(string resetToken) => _userDataContext.GetByResetToken(resetToken);
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
@@ -110,6 +110,12 @@ namespace Matcha.API.Data
                 var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
 
                 users = users.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
+            }
+
+            if (userParams.SameCountry)
+            {
+                var currentUser = await _userDataContext.GetById(userParams.UserId);
+                users = users.Where(u => u.Country == currentUser.Country);
             }
 
             if (!string.IsNullOrEmpty(userParams.OrderBy))

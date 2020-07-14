@@ -19,5 +19,6 @@ namespace Matcha.API.Helpers
         public string Email { get; set; }
         public bool Likees { get; set; } = false;
         public bool Likers { get; set; } = false;
+        public bool SameCountry { get; set; } = false;
     }
 }
