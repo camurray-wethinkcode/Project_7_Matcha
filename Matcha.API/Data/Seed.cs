@@ -7,9 +7,9 @@ namespace Matcha.API.Data
 {
     public class Seed
     {
-        public static void SeedUsers(DataContext context)
+        public static void SeedUsers(IUserDataContext context)
         {
-            if (!context.Users.Any())
+            if (context.GetById(0).Result != null)
             {
                 var userData = System.IO.File.ReadAllText("Data/UserSeedData.json");
                 var users = JsonConvert.DeserializeObject<List<User>>(userData);
@@ -21,10 +21,8 @@ namespace Matcha.API.Data
                     user.PasswordHash = passwordHash;
                     user.PasswordSalt = passwordSalt;
                     user.Username = user.Username.ToLower();
-                    context.Users.Add(user);
+                    context.Add(user);
                 }
-
-                context.SaveChanges();
             }
         }
 

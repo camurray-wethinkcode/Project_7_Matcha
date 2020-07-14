@@ -1,21 +1,22 @@
 using System;
 using System.Threading.Tasks;
 using Matcha.API.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace Matcha.API.Data
 {
     public class AuthRepository : IAuthRepository
     {
-        private readonly DataContext _context;
-        public AuthRepository(DataContext context)
+        private readonly IUserDataContext _userDataContext;
+
+        public AuthRepository(IUserDataContext userDataContext)
         {
-            _context = context;
+            _userDataContext = userDataContext;
         }
 
         public async Task<User> Login(string username, string password)
         {
-            var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(x => x.Username == username);
+            var user = await _userDataContext.GetByUsername(username);
+            //var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(x => x.Username == username);
 
             if (user == null)
                 return null;
@@ -47,8 +48,7 @@ namespace Matcha.API.Data
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
+            await _userDataContext.Add(user);
 
             return user;
         }
@@ -61,8 +61,7 @@ namespace Matcha.API.Data
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
-            _context.Users.Update(user);
-            await _context.SaveChangesAsync();
+            await _userDataContext.Update(user);
         }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
@@ -76,7 +75,7 @@ namespace Matcha.API.Data
 
         public async Task<bool> UserExists(string username)
         {
-            if (await _context.Users.AnyAsync(x => x.Username == username))
+            if (await _userDataContext.GetByUsername(username) != null)
                 return true;
 
             return false;

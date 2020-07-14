@@ -91,13 +91,11 @@ namespace Matcha.API.Controllers
 
             var message = _mapper.Map<Message>(messageForCreationDto);
 
-            _repo.Add(message);
-
             var messageSnippet = message.Content;
             if (messageSnippet.Length > 60)
                 messageSnippet = messageSnippet.Remove(57).TrimEnd() + "...";
 
-            if (await _repo.SaveAll())
+            if (await _repo.Add(message))
             {
                 try
                 {
@@ -138,13 +136,13 @@ namespace Matcha.API.Controllers
             if (messageFromRepo.RecipientId == userId)
                 messageFromRepo.RecipientDeleted = true;
 
+            if (!await _repo.Update(messageFromRepo))
+                throw new Exception("Error deleting the message");
+
             if (messageFromRepo.SenderDeleted && messageFromRepo.RecipientDeleted)
-                _repo.Delete(messageFromRepo);
+                await _repo.Delete(messageFromRepo);
 
-            if (await _repo.SaveAll())
-                return NoContent();
-
-            throw new Exception("Error deleting the message");
+            return NoContent();
         }
 
         [HttpPost("{id}/read")]
@@ -161,7 +159,7 @@ namespace Matcha.API.Controllers
             message.IsRead = true;
             message.DateRead = DateTime.Now;
 
-            await _repo.SaveAll();
+            await _repo.Update(message);
 
             return NoContent();
         }

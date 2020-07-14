@@ -84,7 +84,10 @@ namespace Matcha.API.Controllers
 
             userFromRepo.Photos.Add(photo);
 
-            if (await _repo.SaveAll())
+            photo.UserId = userFromRepo.Id;
+            await _repo.Add(photo);
+
+            if (await _repo.Update(User))
             {
                 var photoToReturn = _mapper.Map<PhotoForReturnDto>(photo);
                 return CreatedAtRoute("GetPhoto", new { userId = userId, id = photo.Id }, photoToReturn);
@@ -114,7 +117,7 @@ namespace Matcha.API.Controllers
 
             photoFromRepo.IsMain = true;
 
-            if (await _repo.SaveAll())
+            if (await _repo.Update(photoFromRepo))
                 return NoContent();
 
             return BadRequest("Could not set photo to main");
@@ -142,18 +145,13 @@ namespace Matcha.API.Controllers
                 var deleteParams = new DeletionParams(photoFromRepo.PublicId);
                 var result = _cloudinary.Destroy(deleteParams);
 
-                if (result.Result == "ok")
+                if (result.Result != "ok")
                 {
-                    _repo.Delete(photoFromRepo);
+                    return BadRequest("Failed to delete photo");
                 }
             }
 
-            if (photoFromRepo.PublicId == null)
-            {
-                _repo.Delete(photoFromRepo);
-            }
-
-            if (await _repo.SaveAll())
+            if (await _repo.Delete(photoFromRepo))
                 return Ok();
 
             return BadRequest("Failed to delete photo");

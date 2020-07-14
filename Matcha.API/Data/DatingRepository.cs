@@ -4,121 +4,153 @@ using System.Linq;
 using System.Threading.Tasks;
 using Matcha.API.Helpers;
 using Matcha.API.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace Matcha.API.Data
 {
     public class DatingRepository : IDatingRepository
     {
-        private readonly DataContext _context;
-        public DatingRepository(DataContext context)
+        private readonly IUserDataContext _userDataContext;
+        private readonly ILikesDataContext _likesDataContext;
+        private readonly IPhotosDataContext _photosDataContext;
+        private readonly IMessagesDataContext _messagesDataContext;
+
+        public DatingRepository(
+            IUserDataContext userDataContext,
+            ILikesDataContext likesDataContext,
+            IPhotosDataContext photosDataContext,
+            IMessagesDataContext messagesDataContext)
         {
-            _context = context;
+            _userDataContext = userDataContext;
+            _likesDataContext = likesDataContext;
+            _photosDataContext = photosDataContext;
+            _messagesDataContext = messagesDataContext;
         }
 
-        public void Add<T>(T entity) where T : class
+        public async Task<bool> Add<T>(T entity) where T : class
         {
-            _context.Add(entity);
+            if (typeof(T) == typeof(User))
+                return await _userDataContext.Add(entity as User);
+            else if (typeof(T) == typeof(Like))
+                return await _likesDataContext.Add(entity as Like);
+            else if (typeof(T) == typeof(Photo))
+                return await _photosDataContext.Add(entity as Photo);
+            else if (typeof(T) == typeof(Message))
+                return await _messagesDataContext.Add(entity as Message);
+            else
+                throw new NotImplementedException();
         }
 
-        public void Delete<T>(T entity) where T : class
+        public async Task<bool> Update<T>(T entity) where T:class
         {
-            _context.Remove(entity);
+            if (typeof(T) == typeof(User))
+                return await _userDataContext.Update(entity as User);
+            else if (typeof(T) == typeof(Like))
+                return await _likesDataContext.Update(entity as Like);
+            else if (typeof(T) == typeof(Photo))
+                return await _photosDataContext.Update(entity as Photo);
+            else if (typeof(T) == typeof(Message))
+                return await _messagesDataContext.Update(entity as Message);
+            else
+                throw new NotImplementedException();
+        }
+
+        public async Task<bool> Delete<T>(T entity) where T : class
+        {
+            if (typeof(T) == typeof(User))
+                return await _userDataContext.Delete((entity as User).Id);
+            else if (typeof(T) == typeof(Like))
+                return await _likesDataContext.Delete((entity as Like).LikerId, (entity as Like).LikeeId);
+            else if (typeof(T) == typeof(Photo))
+                return await _photosDataContext.Delete((entity as Photo).Id);
+            else if (typeof(T) == typeof(Message))
+                return await _messagesDataContext.Delete((entity as Message).Id);
+            else
+                throw new NotImplementedException();
         }
 
         public async Task<Like> GetLike(int userId, int recipientId)
         {
-            return await _context.Likes.FirstOrDefaultAsync(u =>
-                u.LikerId == userId && u.LikeeId == recipientId);
+            return await _likesDataContext.Get(userId, recipientId);
         }
 
         public async Task<Photo> GetMainPhotoForUser(int userId)
         {
-            return await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
+            return await _photosDataContext.GetMainForUser(userId);
         }
 
         public async Task<Photo> GetPhoto(int id)
         {
-            var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
-
-            return photo;
+            return await _photosDataContext.GetById(id);
         }
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
-
-            return user;
+            return await _userDataContext.GetById(id);
         }
 
         public async Task<User> GetUserByEmail(string email)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-
-            return user;
+            return await _userDataContext.GetByEmail(email);
         }
 
         public async Task<User> GetUserByVerifyToken(string verifyToken)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Token == verifyToken);
-
-            return user;
+            return await _userDataContext.GetByVerifyToken(verifyToken);
         }
 
         public async Task<User> GetUserByResetToken(string resetToken)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Reset == resetToken);
-
-            return user;
+            return await _userDataContext.GetByResetToken(resetToken);
         }
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
-            var users = _context.Users.OrderByDescending(u => u.LastActive).AsQueryable();
+            throw new NotImplementedException();
+            //var users = _context.Users.OrderByDescending(u => u.LastActive).AsQueryable();
 
-            users = users.Where(u => u.Id != userParams.UserId);
+            //users = users.Where(u => u.Id != userParams.UserId);
 
-            users = users.Where(u => u.Gender == userParams.Gender);
+            //users = users.Where(u => u.Gender == userParams.Gender);
 
-            if (userParams.Likers)
-            {
-                var userLikers = await GetUserLikes(userParams.UserId, userParams.Likers);
-                users = users.Where(u => userLikers.Contains(u.Id));
-            }
+            //if (userParams.Likers)
+            //{
+            //    var userLikers = await GetUserLikes(userParams.UserId, userParams.Likers);
+            //    users = users.Where(u => userLikers.Contains(u.Id));
+            //}
 
-            if (userParams.Likees)
-            {
-                var userLikees = await GetUserLikes(userParams.UserId, userParams.Likers);
-                users = users.Where(u => userLikees.Contains(u.Id));
-            }
+            //if (userParams.Likees)
+            //{
+            //    var userLikees = await GetUserLikes(userParams.UserId, userParams.Likers);
+            //    users = users.Where(u => userLikees.Contains(u.Id));
+            //}
 
-            if (userParams.MinAge != 18 || userParams.MaxAge != 99)
-            {
-                var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1);
-                var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
+            //if (userParams.MinAge != 18 || userParams.MaxAge != 99)
+            //{
+            //    var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1);
+            //    var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
 
-                users = users.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
-            }
+            //    users = users.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
+            //}
 
-            if (!string.IsNullOrEmpty(userParams.OrderBy))
-            {
-                switch (userParams.OrderBy)
-                {
-                    case "created":
-                        users = users.OrderByDescending(u => u.Created);
-                        break;
-                    default:
-                        users = users.OrderByDescending(u => u.LastActive);
-                        break;
-                }
-            }
+            //if (!string.IsNullOrEmpty(userParams.OrderBy))
+            //{
+            //    switch (userParams.OrderBy)
+            //    {
+            //        case "created":
+            //            users = users.OrderByDescending(u => u.Created);
+            //            break;
+            //        default:
+            //            users = users.OrderByDescending(u => u.LastActive);
+            //            break;
+            //    }
+            //}
 
-            return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
+            //return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
         private async Task<IEnumerable<int>> GetUserLikes(int id, bool likers)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _userDataContext.GetById(id);
 
             if (likers)
             {
@@ -130,52 +162,37 @@ namespace Matcha.API.Data
             }
         }
 
-        public async Task<bool> SaveAll()
-        {
-            return await _context.SaveChangesAsync() > 0;
-        }
-
         public async Task<Message> GetMessage(int id)
         {
-            return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
+            return await _messagesDataContext.GetById(id);
         }
 
         public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
         {
-            var messages = _context.Messages.AsQueryable();
+            List<Message> messages;
 
             switch (messageParams.MessageContainer)
             {
                 case "Inbox":
-                    messages = messages.Where(u => u.RecipientId == messageParams.UserId
-                        && u.RecipientDeleted == false);
+                    messages = await _messagesDataContext.GetInbox(messageParams.UserId);
                     break;
                 case "Outbox":
-                    messages = messages.Where(u => u.SenderId == messageParams.UserId
-                        && u.SenderDeleted == false);
+                    messages = await _messagesDataContext.GetOutbox(messageParams.UserId);
                     break;
                 default:
-                    messages = messages.Where(u => u.RecipientId == messageParams.UserId
-                        && u.RecipientDeleted == false && u.IsRead == false);
+                    messages = await _messagesDataContext.GetUnread(messageParams.UserId);
                     break;
             }
 
-            messages = messages.OrderByDescending(d => d.MessageSent);
+            var orderedMessages = messages.OrderByDescending(d => d.MessageSent);
 
-            return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
+            throw new NotImplementedException();
+            //return await PagedList<Message>.CreateAsync(orderedMessages, messageParams.PageNumber, messageParams.PageSize);
         }
 
         public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
         {
-            var messages = await _context.Messages
-                .Where(m => m.RecipientId == userId && m.RecipientDeleted == false
-                    && m.SenderId == recipientId
-                    || m.RecipientId == recipientId && m.SenderId == userId
-                    && m.SenderDeleted == false)
-                .OrderByDescending(m => m.MessageSent)
-                .ToListAsync();
-
-            return messages;
+            return await _messagesDataContext.GetThread(userId, recipientId);
         }
     }
 }

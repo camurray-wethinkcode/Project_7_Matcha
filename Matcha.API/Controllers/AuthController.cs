@@ -137,7 +137,7 @@ namespace Matcha.API.Controllers
             user.Token = null;
             user.Activated = 1;
 
-            await _datingRepo.SaveAll();
+            await _datingRepo.Update(user);
 
             var redirectUrl = string.Format("{0}?verified=true",
                 _configuration.GetValue<string>("FrontendUrl"));
@@ -169,7 +169,7 @@ namespace Matcha.API.Controllers
                     resetLink
                 );
 
-                await _datingRepo.SaveAll();
+                await _datingRepo.Update(user);
 
                 return Ok("Reset Email sent Successfully");
             }
