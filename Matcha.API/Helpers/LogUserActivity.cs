@@ -18,7 +18,7 @@ namespace Matcha.API.Helpers
             var repo = resultContext.HttpContext.RequestServices.GetService<IDatingRepository>();
             var user = await repo.GetUser(userId);
             user.LastActive = DateTime.Now;
-            await repo.SaveAll();
+            await repo.Update(user);
         }
     }
 }
