@@ -49,6 +49,8 @@ namespace Matcha.API.Data
                 "WHERE `Id` = @Id",
                 new DBParam("Id", id));
 
+            if (values == null) return null;
+
             return MapObjArrToMessage(values);
         }
 
@@ -59,6 +61,8 @@ namespace Matcha.API.Data
                 "WHERE `RecipientId` = @RecipientId " +
                 "AND `RecipientDeleted` = 0 ",
                 new DBParam("RecipientId", recipientId));
+
+            if (results.Count == 0) return new List<Message>();
 
             var list = results[0];
             var rtn = new List<Message>();
@@ -79,6 +83,8 @@ namespace Matcha.API.Data
                 "AND `SenderDeleted` = 0",
                 new DBParam("SenderId", senderId));
 
+            if (results.Count == 0) return new List<Message>();
+
             var list = results[0];
             var rtn = new List<Message>();
 
@@ -98,6 +104,8 @@ namespace Matcha.API.Data
                 "AND `RecipientDeleted` = 0 " +
                 "AND `IsRead` = 0 ",
                 new DBParam("RecipientId", recipientId));
+
+            if (results.Count == 0) return new List<Message>();
 
             var list = results[0];
             var rtn = new List<Message>();
@@ -120,6 +128,8 @@ namespace Matcha.API.Data
                 "   `MessageSent` DESC;",
                 new DBParam("SenderId", senderId),
                 new DBParam("RecipientId", recipientId));
+
+            if (results.Count == 0) return new List<Message>();
 
             var list = results[0];
             var rtn = new List<Message>();

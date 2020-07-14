@@ -65,6 +65,8 @@ namespace Matcha.API.Data
                 "FROM `Users` " +
                 "WHERE `Id` = @id", new DBParam("id", id));
 
+            if (values == null) return null;
+
             return MapObjArrToUser(values);
         }
 
@@ -73,6 +75,8 @@ namespace Matcha.API.Data
             var values = await _dbAccess.SelectOne("SELECT " + _userDBValues +
                 "FROM `Users` " +
                 "WHERE `Username` = @username", new DBParam("username", username));
+
+            if (values == null) return null;
 
             return MapObjArrToUser(values);
         }
@@ -83,6 +87,8 @@ namespace Matcha.API.Data
                 "FROM `Users` " +
                 "WHERE `Email` = @email", new DBParam("email", email));
 
+            if (values == null) return null;
+
             return MapObjArrToUser(values);
         }
 
@@ -92,6 +98,8 @@ namespace Matcha.API.Data
                 "FROM `Users` " +
                 "WHERE `Token` = @verifyToken", new DBParam("verifyToken", token));
 
+            if (values == null) return null;
+
             return MapObjArrToUser(values);
         }
 
@@ -100,6 +108,8 @@ namespace Matcha.API.Data
             var values = await _dbAccess.SelectOne("SELECT " + _userDBValues +
                 "FROM `Users` " +
                 "WHERE `Reset` = @resetToken", new DBParam("resetToken", token));
+
+            if (values == null) return null;
 
             return MapObjArrToUser(values);
         }

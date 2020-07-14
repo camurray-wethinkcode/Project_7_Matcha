@@ -33,6 +33,8 @@ namespace Matcha.API.Data
                 new DBParam("LikerId", likerId),
                 new DBParam("LikeeId", likeeId));
 
+            if (values == null) return null;
+
             return new Like
             {
                 LikerId = (long)values[0],

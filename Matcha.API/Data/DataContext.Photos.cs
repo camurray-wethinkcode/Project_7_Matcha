@@ -42,6 +42,8 @@ namespace Matcha.API.Data
                 "WHERE `Id` = @Id",
                 new DBParam("Id", id));
 
+            if (values == null) return null;
+
             return MapObjArrToPhoto(values);
         }
 
@@ -54,6 +56,8 @@ namespace Matcha.API.Data
                 "AND " +
                 "   `IsMain` = 1",
                 new DBParam("UserId", id));
+
+            if (values == null) return null;
 
             return MapObjArrToPhoto(values);
         }
