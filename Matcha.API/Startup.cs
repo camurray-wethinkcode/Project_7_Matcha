@@ -54,6 +54,7 @@ namespace Matcha.API
             services.AddScoped<IUserDataContext, UserDataContext>();
             services.AddScoped<ILikesDataContext, LikesDataContext>();
             services.AddScoped<IPhotosDataContext, PhotosDataContext>();
+            services.AddScoped<IMessagesDataContext, MessagesDataContext>();
             services.AddScoped<IToken, Token>();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
