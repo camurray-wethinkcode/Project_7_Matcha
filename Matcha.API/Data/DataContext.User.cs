@@ -34,7 +34,7 @@ namespace Matcha.API.Data
 
         private User MapObjArrToUser(object[] objArr) => new User
         {
-            Id = (int)objArr[0],
+            Id = (long)objArr[0],
             Username = (string)objArr[1],
             PasswordHash = (byte[])objArr[2],
             PasswordSalt = (byte[])objArr[3],
@@ -52,8 +52,8 @@ namespace Matcha.API.Data
             City = (string)objArr[15],
             Country = (string)objArr[16],
             FameRating = (string)objArr[17],
-            Deactivated = (int)objArr[18],
-            Activated = (int)objArr[19],
+            Deactivated = (long)objArr[18],
+            Activated = (long)objArr[19],
             Token = (string)objArr[20],
             Reset = (string)objArr[21]
         };

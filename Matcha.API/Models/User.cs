@@ -5,7 +5,7 @@ namespace Matcha.API.Models
 {
     public class User
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Username { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
@@ -23,8 +23,8 @@ namespace Matcha.API.Models
         public string City { get; set; }
         public string Country { get; set; }
         public string FameRating { get; set; }
-        public int Deactivated { get; set; }
-        public int Activated { get; set; }
+        public long Deactivated { get; set; }
+        public long Activated { get; set; }
         public string Token { get; set; }
         public string Reset { get; set; }
         public virtual ICollection<Photo> Photos { get; set; }

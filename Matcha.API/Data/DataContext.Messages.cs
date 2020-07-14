@@ -30,9 +30,9 @@ namespace Matcha.API.Data
 
         private Message MapObjArrToMessage(object[] objArr) => new Message
         {
-            Id = (int)objArr[0],
-            SenderId = (int)objArr[1],
-            RecipientId = (int)objArr[2],
+            Id = (long)objArr[0],
+            SenderId = (long)objArr[1],
+            RecipientId = (long)objArr[2],
             Content = (string)objArr[3],
             IsRead = (bool)objArr[4],
             DateRead = (System.DateTime?)objArr[5],

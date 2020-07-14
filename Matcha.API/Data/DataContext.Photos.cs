@@ -25,12 +25,12 @@ namespace Matcha.API.Data
 
         private Photo MapObjArrToPhoto(object[] objArr) => new Photo
         {
-            Id = (int)objArr[0],
+            Id = (long)objArr[0],
             Url = (string)objArr[1],
             Description = (string)objArr[2],
             DateAdded = (System.DateTime)objArr[3],
             IsMain = (bool)objArr[4],
-            UserId = (int)objArr[5],
+            UserId = (long)objArr[5],
             PublicId = (string)objArr[6]
         };
 

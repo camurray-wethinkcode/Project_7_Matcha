@@ -4,10 +4,10 @@ namespace Matcha.API.Models
 {
     public class Message
     {
-        public int Id { get; set; }
-        public int SenderId { get; set; }
+        public long Id { get; set; }
+        public long SenderId { get; set; }
         public virtual User Sender { get; set; }
-        public int RecipientId { get; set; }
+        public long RecipientId { get; set; }
         public virtual User Recipient { get; set; }
         public string Content { get; set; }
         public bool IsRead { get; set; }

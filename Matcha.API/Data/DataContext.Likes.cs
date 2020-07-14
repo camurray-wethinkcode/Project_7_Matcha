@@ -35,8 +35,8 @@ namespace Matcha.API.Data
 
             return new Like
             {
-                LikerId = (int)values[0],
-                LikeeId = (int)values[1]
+                LikerId = (long)values[0],
+                LikeeId = (long)values[1]
             };
         }
 
