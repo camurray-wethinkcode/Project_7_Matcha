@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Matcha.API.Models;
 
@@ -8,6 +9,7 @@ namespace Matcha.API.Data
     {
         public Task<Photo> GetById(long id);
         public Task<Photo> GetMainForUser(long id);
+        public Task<List<Photo>> GetAllForUser(long userid);
         public Task<bool> Add(Photo photo);
         public Task<bool> Update(Photo photo);
         public Task<bool> Delete(long id);
@@ -57,6 +59,25 @@ namespace Matcha.API.Data
             if (values == null) return null;
 
             return MapObjArrToPhoto(values);
+        }
+
+        public async Task<List<Photo>> GetAllForUser(long userid)
+        {
+            var results = await _dbAccess.Select("SELECT " + _photosDBValues +
+                "FROM `Photos` " +
+                "WHERE " +
+                "   `UserId` = @UserId",
+                new DBParam("UserId", userid));
+
+            if (results.Count == 0) return new List<Photo>();
+
+            var list = results[0];
+            var rtn = new List<Photo>();
+
+            foreach (var photo in list)
+                rtn.Add(MapObjArrToPhoto(photo));
+
+            return rtn;
         }
 
         public async Task<bool> Add(Photo photo)

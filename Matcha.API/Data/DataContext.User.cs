@@ -22,8 +22,13 @@ namespace Matcha.API.Data
     public class UserDataContext : IUserDataContext
     {
         private readonly IDbAccess _dbAccess;
+        private readonly IPhotosDataContext _photosDataContext;
 
-        public UserDataContext(IDbAccess dbAccess) => _dbAccess = dbAccess;
+        public UserDataContext(IDbAccess dbAccess, IPhotosDataContext photosDataContext)
+        {
+            _dbAccess = dbAccess;
+            _photosDataContext = photosDataContext;
+        }
 
         private const string _userDBValues = 
             "`Id`,         `Username`,     `PasswordHash`, `PasswordSalt`, `Gender`,   " +
@@ -58,7 +63,7 @@ namespace Matcha.API.Data
                 objArr[20].GetType() != typeof(DBNull)) throw new Exception("Token is of wrong type: " + objArr[20].GetType().FullName);
             if (objArr[21].GetType() != typeof(string) &&
                 objArr[21].GetType() != typeof(DBNull)) throw new Exception("Reset is of wrong type: " + objArr[21].GetType().FullName);
-            return new User
+            return new User(_photosDataContext)
             {
                 Id = (long)objArr[0],
                 Username = (string)objArr[1],

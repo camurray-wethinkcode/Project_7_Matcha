@@ -1,10 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Matcha.API.Data;
 
 namespace Matcha.API.Models
 {
     public class User
     {
+        private readonly IPhotosDataContext _photosDataContext;
+
+        public User(IPhotosDataContext photosDataContext)
+        {
+            _photosDataContext = photosDataContext;
+        }
+
         public long Id { get; set; }
         public string Username { get; set; }
         public byte[] PasswordHash { get; set; }
@@ -27,7 +36,7 @@ namespace Matcha.API.Models
         public long Activated { get; set; }
         public string Token { get; set; }
         public string Reset { get; set; }
-        public virtual ICollection<Photo> Photos { get; set; }
+        public async Task<ICollection<Photo>> Photos() => await _photosDataContext.GetAllForUser(Id);
         public virtual ICollection<Like> Likers { get; set; }
         public virtual ICollection<Like> Likees { get; set; }
         public virtual ICollection<Message> MessagesSent { get; set; }

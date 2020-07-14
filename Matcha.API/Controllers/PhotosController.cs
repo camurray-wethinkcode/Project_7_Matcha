@@ -79,10 +79,10 @@ namespace Matcha.API.Controllers
 
             var photo = _mapper.Map<Photo>(photoForCreationDto);
 
-            if (!userFromRepo.Photos.Any(u => u.IsMain))
+            if (!(await userFromRepo.Photos()).Any(u => u.IsMain))
                 photo.IsMain = true;
 
-            userFromRepo.Photos.Add(photo);
+            //(await userFromRepo.Photos()).Add(photo);
 
             photo.UserId = userFromRepo.Id;
             await _repo.Add(photo);
@@ -104,7 +104,7 @@ namespace Matcha.API.Controllers
 
             var user = await _repo.GetUser(userId);
 
-            if (!user.Photos.Any(p => p.Id == id))
+            if (!(await user.Photos()).Any(p => p.Id == id))
                 return Unauthorized();
 
             var photoFromRepo = await _repo.GetPhoto(id);
@@ -131,7 +131,7 @@ namespace Matcha.API.Controllers
 
             var user = await _repo.GetUser(userId);
 
-            if (!user.Photos.Any(p => p.Id == id))
+            if (!(await user.Photos()).Any(p => p.Id == id))
                 return Unauthorized();
 
             var photoFromRepo = await _repo.GetPhoto(id);
