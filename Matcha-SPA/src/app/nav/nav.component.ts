@@ -30,6 +30,7 @@ export class NavComponent implements OnInit {
   }
 
   login() {
+    localStorage.setItem('flag', '0');
     this.authService.login(this.model).subscribe(
       next => {
         this.alertify.success('Logged in successfully');

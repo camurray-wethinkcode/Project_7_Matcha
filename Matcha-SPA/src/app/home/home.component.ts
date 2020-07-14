@@ -37,17 +37,24 @@ export class HomeComponent implements OnInit {
         if (this.token != null || this.token != undefined)
           this.isReset = !this.isReset;
     });
-}
+  }
 
   ngOnInit() {
     this.createForm();
+    if (localStorage.getItem('flag') === '1') {
+      this.isShow = false;
+      this.isReset = true;
+    }
+    else if (localStorage.getItem('flag') === null) {
+    }
     if (localStorage.getItem('connection') === '1') {
       this.alertify.error('Network connectivity issue detected, reloading page, consider disconnecting and reconnecting your wifi');
       localStorage.setItem('connection', '0');
     }
-    if (this.authService.loggedIn() === true)
+    if (this.authService.loggedIn() === true) {
       this.isShow = !this.isShow;
-}
+    }
+  }
 
   createForm() {
     this.resetForm = this.fb.group({ email: [''] });
@@ -64,13 +71,15 @@ export class HomeComponent implements OnInit {
     this.authService.password(this.user).subscribe(
       () => {
         this.alertify.error('Something went wrong here...');
-        this.isShow = !this.isShow;
+        this.isShow = false;
         this.isReset = !this.isReset;
+        localStorage.setItem('flag', '1');
       },
       error => {
         this.alertify.success('Your password has been updated');
-        this.isShow = !this.isShow;
+        this.isShow = false;
         this.isReset = !this.isReset;
+        localStorage.setItem('flag', '1');
       }
     );
   }
