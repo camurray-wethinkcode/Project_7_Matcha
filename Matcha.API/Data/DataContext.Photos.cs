@@ -93,7 +93,7 @@ namespace Matcha.API.Data
 
         public async Task<bool> Update(Photo photo)
         {
-            var updateAmount = await _dbAccess.Update("UPDATE `Users` SET " +
+            var updateAmount = await _dbAccess.Update("UPDATE `Photos` SET " +
                 "   `Id` = @Id, `Url` = @Url, `Description` = @Description, `DateAdded` = @DateAdded, " +
                 "   `IsMain` = @IsMain, `UserId` = @UserId, `PublicId` = @PublicId " +
                 "WHERE `Id` = @Id",

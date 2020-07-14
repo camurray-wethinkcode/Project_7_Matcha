@@ -87,7 +87,7 @@ namespace Matcha.API.Controllers
             photo.UserId = userFromRepo.Id;
             await _repo.Add(photo);
 
-            if (await _repo.Update(User))
+            if (await _repo.Update(userFromRepo))
             {
                 var photoToReturn = _mapper.Map<PhotoForReturnDto>(photo);
                 return CreatedAtRoute("GetPhoto", new { userId = userId, id = photo.Id }, photoToReturn);
