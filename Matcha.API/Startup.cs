@@ -5,6 +5,7 @@ using AutoMapper;
 using Coravel;
 using Matcha.API.Data;
 using Matcha.API.Helpers;
+using Matcha.API.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -42,7 +43,6 @@ namespace Matcha.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            
             services.AddControllers().AddNewtonsoftJson(opt => 
             {
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
@@ -50,8 +50,14 @@ namespace Matcha.API
             services.AddCors();
             services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper(typeof(DatingRepository).Assembly);
+
+            services.AddScoped<IUserDataContext, UserDataContext>();
+            services.AddScoped<ILikesDataContext, LikesDataContext>();
+            services.AddScoped<IPhotosDataContext, PhotosDataContext>();
+            services.AddScoped<IToken, Token>();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => 
                 {
@@ -65,7 +71,6 @@ namespace Matcha.API
                     };
                 });
             services.AddScoped<LogUserActivity>();
-            services.AddScoped<IToken, Token>();
 
             // Mailer services
             services.AddScoped<IMailer, Mailer>();

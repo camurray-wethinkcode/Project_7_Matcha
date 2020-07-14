@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using System.Threading.Tasks;
 using Matcha.API.Models;
 
@@ -23,7 +22,7 @@ namespace Matcha.API.Data
 
         private const string _photosDBValues = "`Id`, `Url`, `Description`, `DateAdded`, `IsMain`, `UserId`, `PublicId`";
 
-        private Photo MapObjArrToUser(object[] objArr) => new Photo
+        private Photo MapObjArrToPhoto(object[] objArr) => new Photo
         {
             Id = (int)objArr[0],
             Url = (string)objArr[1],
@@ -41,7 +40,7 @@ namespace Matcha.API.Data
                 "WHERE `Id` = @Id",
                 new DBParam("Id", id));
 
-            return MapObjArrToUser(values);
+            return MapObjArrToPhoto(values);
         }
 
         public async Task<Photo> GetMainForUser(int id)
@@ -54,7 +53,7 @@ namespace Matcha.API.Data
                 "   `IsMain` = 1",
                 new DBParam("UserId", id));
 
-            return MapObjArrToUser(values);
+            return MapObjArrToPhoto(values);
         }
 
         public async Task<bool> Add(Photo photo)
