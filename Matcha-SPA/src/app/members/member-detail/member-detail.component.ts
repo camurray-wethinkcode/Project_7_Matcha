@@ -36,14 +36,16 @@ export class MemberDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    if (localStorage.getItem('liketoggle') === '1') {
-      this.likeName = 'Unlike';
-      this.isClicked = !this.isClicked;
-    }
-    if (localStorage.getItem('liketoggle') === null)
-      this.likeName = 'Like';
     this.route.data.subscribe(data => {
       this.user = data['user'];
+      if (localStorage.getItem('liketoggle') === 'null') {
+        this.likeName = 'Like';
+        console.log('null');
+      }
+      else if (localStorage.getItem('liketoggle') === this.user.id.toString()) {
+        this.likeName = 'Unlike';
+        this.isClicked = !this.isClicked;
+      }
       if (localStorage.getItem('nophoto') === '1') {
         this.nophoto = 1;
         this.alertify.error('You must upload atleast one photo before you can contact other users');
@@ -90,12 +92,12 @@ export class MemberDetailComponent implements OnInit {
     if (this.isClicked === true) {
       this.sendLike(this.user.id);
       this.likeName = 'Unlike';
-      localStorage.setItem('liketoggle', '1');
+      localStorage.setItem('liketoggle', id.toString());
     }
     else {
       this.sendUnlike(this.user.id);
       this.likeName = 'Like';
-      localStorage.setItem('liketoggle', '0');
+      localStorage.removeItem('liketoggle');
     }
   }
 
