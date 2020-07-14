@@ -79,6 +79,9 @@ export class MemberDetailComponent implements OnInit {
         description: photo.description
       });
     }
+    if (imageUrls != null) {
+      localStorage.setItem('nophoto', '0');
+    }
     return imageUrls;
   }
 
