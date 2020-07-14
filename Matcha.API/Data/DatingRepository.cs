@@ -123,9 +123,11 @@ namespace Matcha.API.Data
                 switch (userParams.OrderBy)
                 {
                     case "created":
+                        users = users.OrderByDescending(u => u.FameRating);
                         users = users.OrderByDescending(u => u.Created);
                         break;
                     default:
+                        users = users.OrderByDescending(u => u.FameRating);
                         users = users.OrderByDescending(u => u.LastActive);
                         break;
                 }
