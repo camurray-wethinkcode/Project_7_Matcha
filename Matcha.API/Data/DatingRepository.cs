@@ -12,12 +12,18 @@ namespace Matcha.API.Data
         private readonly IUserDataContext _userDataContext;
         private readonly ILikesDataContext _likesDataContext;
         private readonly IPhotosDataContext _photosDataContext;
+        private readonly IMessagesDataContext _messagesDataContext;
 
-        public DatingRepository(IUserDataContext userDataContext, ILikesDataContext likesDataContext, IPhotosDataContext photosDataContext)
+        public DatingRepository(
+            IUserDataContext userDataContext,
+            ILikesDataContext likesDataContext,
+            IPhotosDataContext photosDataContext,
+            IMessagesDataContext messagesDataContext)
         {
             _userDataContext = userDataContext;
             _likesDataContext = likesDataContext;
             _photosDataContext = photosDataContext;
+            _messagesDataContext = messagesDataContext;
         }
 
         public void Add<T>(T entity) where T : class
@@ -28,6 +34,8 @@ namespace Matcha.API.Data
                 _likesDataContext.Add(entity as Like);
             else if (typeof(T) == typeof(Photo))
                 _photosDataContext.Add(entity as Photo);
+            else if (typeof(T) == typeof(Message))
+                _messagesDataContext.Add(entity as Message);
             else
                 throw new NotImplementedException();
         }
@@ -40,6 +48,8 @@ namespace Matcha.API.Data
                 _likesDataContext.Delete((entity as Like).LikerId, (entity as Like).LikeeId);
             else if (typeof(T) == typeof(Photo))
                 _photosDataContext.Delete((entity as Photo).Id);
+            else if (typeof(T) == typeof(Message))
+                _messagesDataContext.Delete((entity as Message).Id);
             else
                 throw new NotImplementedException();
         }
@@ -139,45 +149,34 @@ namespace Matcha.API.Data
 
         public async Task<Message> GetMessage(int id)
         {
-            return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
+            return await _messagesDataContext.GetById(id);
         }
 
         public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams)
         {
-            var messages = _context.Messages.AsQueryable();
+            List<Message> messages;
 
             switch (messageParams.MessageContainer)
             {
                 case "Inbox":
-                    messages = messages.Where(u => u.RecipientId == messageParams.UserId
-                        && u.RecipientDeleted == false);
+                    messages = await _messagesDataContext.GetInbox(messageParams.UserId);
                     break;
                 case "Outbox":
-                    messages = messages.Where(u => u.SenderId == messageParams.UserId
-                        && u.SenderDeleted == false);
+                    messages = await _messagesDataContext.GetOutbox(messageParams.UserId);
                     break;
                 default:
-                    messages = messages.Where(u => u.RecipientId == messageParams.UserId
-                        && u.RecipientDeleted == false && u.IsRead == false);
+                    messages = await _messagesDataContext.GetUnread(messageParams.UserId);
                     break;
             }
 
-            messages = messages.OrderByDescending(d => d.MessageSent);
+            var orderedMessages = messages.OrderByDescending(d => d.MessageSent);
 
-            return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
+            return await PagedList<Message>.CreateAsync(orderedMessages, messageParams.PageNumber, messageParams.PageSize);
         }
 
         public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
         {
-            var messages = await _context.Messages
-                .Where(m => m.RecipientId == userId && m.RecipientDeleted == false
-                    && m.SenderId == recipientId
-                    || m.RecipientId == recipientId && m.SenderId == userId
-                    && m.SenderDeleted == false)
-                .OrderByDescending(m => m.MessageSent)
-                .ToListAsync();
-
-            return messages;
+            return await _messagesDataContext.GetThread(userId, recipientId);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Matcha.API.Data
         public Task<List<Message>> GetInbox(int recipientId);
         public Task<List<Message>> GetOutbox(int senderId);
         public Task<List<Message>> GetUnread(int recipientId);
+        public Task<List<Message>> GetThread(int senderId, int recipientId);
 
         public Task<bool> Add(Message message);
         public Task<bool> Delete(int id);
@@ -100,9 +101,29 @@ namespace Matcha.API.Data
             var rtn = new List<Message>();
 
             foreach (var message in list)
-            {
                 rtn.Add(MapObjArrToMessage(message));
-            }
+
+            return rtn;
+        }
+
+        public async Task<List<Message>> GetThread(int senderId, int recipientId)
+        {
+            var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
+                "FROM `Messages`" +
+                "WHERE" +
+                "   (`SenderId` = @SenderId AND `RecipientId` = @RecipientId AND `SenderDeleted` = 0)" +
+                "OR" +
+                "   (`RecipientId` = @SenderId AND `SenderId` = @RecipientId AND `RecipientDeleted` = 0)" +
+                "ORDER BY" +
+                "   `MessageSent` DESC;",
+                new DBParam("SenderId", senderId),
+                new DBParam("RecipientId", recipientId));
+
+            var list = results[0];
+            var rtn = new List<Message>();
+
+            foreach (var message in list)
+                rtn.Add(MapObjArrToMessage(message));
 
             return rtn;
         }
