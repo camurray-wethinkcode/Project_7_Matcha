@@ -174,7 +174,7 @@ namespace Matcha.API.Data
 
         public async Task<bool> Add(User user)
         {
-            var updateAmount = await _dbAccess.Insert("INSERT INTO `Users` (" + _userDBInsertValues + ") VALUES (" +
+            var updateAmount = await _dbAccess.NonQuery("INSERT INTO `Users` (" + _userDBInsertValues + ") VALUES (" +
                 "             @Username,     @PasswordHash, @PasswordSalt, @Gender,   " +
                 "@Sexuality,  @DateOfBirth,  @Name,         @Surname,      @Created,  " +
                 "@LastActive, @Introduction, @LookingFor,   @Email,        @Interests," +
@@ -191,7 +191,7 @@ namespace Matcha.API.Data
 
         public async Task<bool> Update(User user)
         {
-            var updateAmount = await _dbAccess.Update("UPDATE `Users` SET " +
+            var updateAmount = await _dbAccess.NonQuery("UPDATE `Users` SET " +
                 "`Id` = @Id, `Username` = @Username, `PasswordHash` = @PasswordHash, `PasswordSalt` = @PasswordSalt, `Gender` = @Gender, " +
                 "`Sexuality` = @Sexuality, `DateOfBirth` = @DateOfBirth, `Name` = @Name, `Surname` = @Surname, `Created` = @Created, " +
                 "`LastActive` = @LastActive, `Introduction` = @Introduction, `LookingFor` = @LookingFor, `Email` = @Email, `Interests` = @Interests, " +
@@ -209,7 +209,9 @@ namespace Matcha.API.Data
 
         public async Task<bool> Delete(long id)
         {
-            return await _dbAccess.Delete("DELETE FROM `Users` WHERE `Id` = @Id", new DBParam("Id", id));
+            var updateAmount = await _dbAccess.NonQuery("DELETE FROM `Users` WHERE `Id` = @Id", new DBParam("Id", id));
+
+            return updateAmount == 1;
         }
     }
 }

@@ -91,7 +91,7 @@ namespace Matcha.API.Data
 
         public async Task<bool> Add(Like like)
         {
-            var updateAmount = await _dbAccess.Insert("INSERT INTO `Likes` (" + _likesDBValues + ") VALUES (@LikerId, @LikeeId)",
+            var updateAmount = await _dbAccess.NonQuery("INSERT INTO `Likes` (" + _likesDBValues + ") VALUES (@LikerId, @LikeeId)",
                 new DBParam("LikerId", like.LikerId), new DBParam("LikeeId", like.LikeeId));
 
             return updateAmount == 1;
@@ -99,7 +99,7 @@ namespace Matcha.API.Data
 
         public async Task<bool> Update(Like like)
         {
-            var updateAmount = await _dbAccess.Update("UPDATE `Users` SET " +
+            var updateAmount = await _dbAccess.NonQuery("UPDATE `Users` SET " +
                 "   `LikerId` = @LikerId, `LikeeId` = @LikeeId " +
                 "WHERE `Id` = @Id",
                 new DBParam("LikerId", like.LikerId), new DBParam("LikeeId", like.LikeeId));
@@ -109,12 +109,14 @@ namespace Matcha.API.Data
 
         public async Task<bool> Delete(long likerId, long likeeId)
         {
-            return await _dbAccess.Delete("DELETE FROM `Likes` WHERE " +
+            var updateAmount = await _dbAccess.NonQuery("DELETE FROM `Likes` WHERE " +
                 "   `LikerId` = @LikerId " +
                 "AND" +
                 "   `LikeeId` = @LikeeId ",
                 new DBParam("LikerId", likerId),
                 new DBParam("LikeeId", likeeId));
+
+            return updateAmount == 1;
         }
     }
 }

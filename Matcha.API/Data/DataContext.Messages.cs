@@ -140,7 +140,7 @@ namespace Matcha.API.Data
 
         public async Task<bool> Add(Message message)
         {
-            var updateAmount = await _dbAccess.Insert("INSERT INTO `Messages` (" + _messagesDBInsertValues + ") VALUES (" +
+            var updateAmount = await _dbAccess.NonQuery("INSERT INTO `Messages` (" + _messagesDBInsertValues + ") VALUES (" +
                 "@SenderId, @RecipientId, @Content, @IsRead, @DateRead, @MessageSent, @SenderDeleted, @RecipientDeleted)",
                 new DBParam("SenderId", message.SenderId), new DBParam("RecipientId", message.RecipientId), new DBParam("Content", message.Content), new DBParam("IsRead", message.IsRead),
                 new DBParam("DateRead", message.DateRead), new DBParam("MessageSent", message.MessageSent), new DBParam("SenderDeleted", message.SenderDeleted), new DBParam("RecipientDeleted", message.RecipientDeleted));
@@ -150,7 +150,7 @@ namespace Matcha.API.Data
 
         public async Task<bool> Update(Message message)
         {
-            var updateAmount = await _dbAccess.Update("UPDATE `Messages` SET " +
+            var updateAmount = await _dbAccess.NonQuery("UPDATE `Messages` SET " +
                 "   `Id` = @Id, `SenderId` = @SenderId, `RecipientId` = @RecipientId, `Content` = @Content, `IsRead` = @IsRead," +
                 "   `DateRead` = @DateRead, `MessageSent` = @MessageSent, `SenderDeleted` = @SenderDeleted, `RecipientDeleted` = @RecipientDeleted " +
                 "WHERE `Id` = @Id",
@@ -162,7 +162,9 @@ namespace Matcha.API.Data
 
         public async Task<bool> Delete(long id)
         {
-            return await _dbAccess.Delete("DELETE FROM `Messages` WHERE `Id` = @Id", new DBParam("Id", id));
+            var updateAmount = await _dbAccess.NonQuery("DELETE FROM `Messages` WHERE `Id` = @Id", new DBParam("Id", id));
+
+            return updateAmount == 1;
         }
     }
 }

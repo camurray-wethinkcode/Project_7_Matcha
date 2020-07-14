@@ -21,9 +21,7 @@ namespace Matcha.API.Data
     {
         Task<List<List<object[]>>> Select(string query, params DBParam[] paramArray);
         Task<object[]> SelectOne(string query, params DBParam[] paramArray);
-        Task<int> Insert(string query, params DBParam[] paramArray);
-        Task<int> Update(string query, params DBParam[] paramArray);
-        Task<bool> Delete(string query, params DBParam[] paramArray);
+        Task<int> NonQuery(string query, params DBParam[] paramArray);
     }
 
     public class DbAccess : IDbAccess
@@ -100,11 +98,11 @@ namespace Matcha.API.Data
                 return null;
         }
 
-        /// <summary>Sends an INSERT query to the database, and returns number of rows inserted</summary>
+        /// <summary>Sends a query to the database, and returns number of rows affected</summary>
         /// <param name="query">Query to send. Use @paramName to reference parameter names</param>
         /// <param name="paramArray">Parameters to bind to query. <see cref="DBParam.Name"/> is used to bind to query string</param>
         /// <returns>The number of rows affected.</returns>
-        public async Task<int> Insert(string query, params DBParam[] paramArray)
+        public async Task<int> NonQuery(string query, params DBParam[] paramArray)
         {
             using SQLiteConnection connection = new SQLiteConnection(_connectionString);
             await connection.OpenAsync();
@@ -114,40 +112,6 @@ namespace Matcha.API.Data
                     command.Parameters.Add(new SQLiteParameter(param.Name, param.Value));
                 await command.PrepareAsync();
                 return await command.ExecuteNonQueryAsync();
-            }
-        }
-
-        /// <summary>Sends a UPDATE query to the database, and returns number of rows updated</summary>
-        /// <param name="query">Query to send. Use @paramName to reference parameter names</param>
-        /// <param name="paramArray">Parameters to bind to query. <see cref="DBParam.Name"/> is used to bind to query string</param>
-        /// <returns>The number of rows affected.</returns>
-        public async Task<int> Update(string query, params DBParam[] paramArray)
-        {
-            using SQLiteConnection connection = new SQLiteConnection(_connectionString);
-            await connection.OpenAsync();
-            using (SQLiteCommand command = new SQLiteCommand(query, connection))
-            {
-                foreach (var param in paramArray)
-                    command.Parameters.Add(new SQLiteParameter(param.Name, param.Value));
-                await command.PrepareAsync();
-                return await command.ExecuteNonQueryAsync();
-            }
-        }
-
-        /// <summary>Sends a DELETE query to the database, and returns whether data was deleted</summary>
-        /// <param name="query">Query to send. Use @paramName to reference parameter names</param>
-        /// <param name="paramArray">Parameters to bind to query. <see cref="DBParam.Name"/> is used to bind to query string</param>
-        /// <returns>True if data was deleted, False if no rows were affected.</returns>
-        public async Task<bool> Delete(string query, params DBParam[] paramArray)
-        {
-            using SQLiteConnection connection = new SQLiteConnection(_connectionString);
-            await connection.OpenAsync();
-            using (SQLiteCommand command = new SQLiteCommand(query, connection))
-            {
-                foreach (var param in paramArray)
-                    command.Parameters.Add(new SQLiteParameter(param.Name, param.Value));
-                await command.PrepareAsync();
-                return await command.ExecuteNonQueryAsync() > 0;
             }
         }
     }
