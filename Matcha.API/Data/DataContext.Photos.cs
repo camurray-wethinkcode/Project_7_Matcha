@@ -83,7 +83,7 @@ namespace Matcha.API.Data
 
         public async Task<bool> Add(Photo photo)
         {
-            var updateAmount = await _dbAccess.Insert("INSERT INTO `Photos` (" + _photosDBInsertValues + ") VALUES (" +
+            var updateAmount = await _dbAccess.NonQuery("INSERT INTO `Photos` (" + _photosDBInsertValues + ") VALUES (" +
                 "@Url, @Description, @DateAdded, @IsMain, @UserId, @PublicId)",
                 new DBParam("Url", photo.Url), new DBParam("Description", photo.Description), new DBParam("DateAdded", photo.DateAdded),
                 new DBParam("IsMain", photo.IsMain), new DBParam("UserId", photo.UserId), new DBParam("PublicId", photo.PublicId));
@@ -93,7 +93,7 @@ namespace Matcha.API.Data
 
         public async Task<bool> Update(Photo photo)
         {
-            var updateAmount = await _dbAccess.Update("UPDATE `Photos` SET " +
+            var updateAmount = await _dbAccess.NonQuery("UPDATE `Photos` SET " +
                 "   `Id` = @Id, `Url` = @Url, `Description` = @Description, `DateAdded` = @DateAdded, " +
                 "   `IsMain` = @IsMain, `UserId` = @UserId, `PublicId` = @PublicId " +
                 "WHERE `Id` = @Id",
@@ -105,7 +105,9 @@ namespace Matcha.API.Data
 
         public async Task<bool> Delete(long id)
         {
-            return await _dbAccess.Delete("DELETE FROM `Photos` WHERE `Id` = @Id", new DBParam("Id", id));
+            var updateAmount = await _dbAccess.NonQuery("DELETE FROM `Photos` WHERE `Id` = @Id", new DBParam("Id", id));
+
+            return updateAmount == 1;
         }
     }
 }
