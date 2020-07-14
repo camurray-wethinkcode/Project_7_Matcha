@@ -9,7 +9,7 @@ namespace Matcha.API.Data
     {
         public static void SeedUsers(IUserDataContext context)
         {
-            if (context.GetById(0).Result != null)
+            if (!context.GetAllUsersByLastActive().Result.Any())
             {
                 var userData = System.IO.File.ReadAllText("Data/UserSeedData.json");
                 var users = JsonConvert.DeserializeObject<List<User>>(userData);
