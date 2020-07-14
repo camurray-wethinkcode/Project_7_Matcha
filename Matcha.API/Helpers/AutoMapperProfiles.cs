@@ -23,6 +23,10 @@ namespace Matcha.API.Helpers
                 {
                     opt.MapFrom(src => src.Photos().Result.FirstOrDefault(p => p.IsMain).Url);
                 })
+                .ForMember(dest => dest.Photos, opt =>
+                {
+                    opt.MapFrom(src => src.Photos().Result);
+                })
                 .ForMember(dest => dest.Age, opt =>
                 {
                     opt.MapFrom(d => d.DateOfBirth.CalculateAge());
