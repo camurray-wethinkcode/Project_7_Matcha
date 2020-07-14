@@ -22,7 +22,7 @@ namespace Matcha.API.Models
         public string Interests { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-        public string FameRating { get; set; }
+        public long FameRating { get; set; }
         public long Deactivated { get; set; }
         public long Activated { get; set; }
         public string Token { get; set; }

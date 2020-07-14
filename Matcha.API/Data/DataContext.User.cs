@@ -52,7 +52,7 @@ namespace Matcha.API.Data
             Interests = (string)objArr[14],
             City = (string)objArr[15],
             Country = (string)objArr[16],
-            FameRating = (string)objArr[17],
+            FameRating = (long)objArr[17],
             Deactivated = (long)objArr[18],
             Activated = (long)objArr[19],
             Token = (string)objArr[20],
