@@ -6,15 +6,15 @@ namespace Matcha.API.Data
 {
     public interface IMessagesDataContext
     {
-        public Task<Message> GetById(int id);
-        public Task<List<Message>> GetInbox(int recipientId);
-        public Task<List<Message>> GetOutbox(int senderId);
-        public Task<List<Message>> GetUnread(int recipientId);
-        public Task<List<Message>> GetThread(int senderId, int recipientId);
+        public Task<Message> GetById(long id);
+        public Task<List<Message>> GetInbox(long recipientId);
+        public Task<List<Message>> GetOutbox(long senderId);
+        public Task<List<Message>> GetUnread(long recipientId);
+        public Task<List<Message>> GetThread(long senderId, long recipientId);
 
         public Task<bool> Add(Message message);
         public Task<bool> Update(Message message);
-        public Task<bool> Delete(int id);
+        public Task<bool> Delete(long id);
     }
 
     public class MessagesDataContext : IMessagesDataContext
@@ -41,7 +41,7 @@ namespace Matcha.API.Data
             RecipientDeleted = (bool)objArr[8]
         };
 
-        public async Task<Message> GetById(int id)
+        public async Task<Message> GetById(long id)
         {
             var values = await _dbAccess.SelectOne("SELECT" + _messagesDBValues +
                 "FROM `Messages`" +
@@ -51,7 +51,7 @@ namespace Matcha.API.Data
             return MapObjArrToMessage(values);
         }
 
-        public async Task<List<Message>> GetInbox(int recipientId)
+        public async Task<List<Message>> GetInbox(long recipientId)
         {
             var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
                 "FROM `Messages`" +
@@ -70,7 +70,7 @@ namespace Matcha.API.Data
             return rtn;
         }
 
-        public async Task<List<Message>> GetOutbox(int senderId)
+        public async Task<List<Message>> GetOutbox(long senderId)
         {
             var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
                 "FROM `Messages`" +
@@ -89,7 +89,7 @@ namespace Matcha.API.Data
             return rtn;
         }
 
-        public async Task<List<Message>> GetUnread(int recipientId)
+        public async Task<List<Message>> GetUnread(long recipientId)
         {
             var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
                 "FROM `Messages`" +
@@ -107,7 +107,7 @@ namespace Matcha.API.Data
             return rtn;
         }
 
-        public async Task<List<Message>> GetThread(int senderId, int recipientId)
+        public async Task<List<Message>> GetThread(long senderId, long recipientId)
         {
             var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
                 "FROM `Messages`" +
@@ -151,7 +151,7 @@ namespace Matcha.API.Data
             return updateAmount == 1;
         }
 
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(long id)
         {
             return await _dbAccess.Delete("DELETE FROM `Messages` WHERE `Id` = @Id", new DBParam("Id", id));
         }

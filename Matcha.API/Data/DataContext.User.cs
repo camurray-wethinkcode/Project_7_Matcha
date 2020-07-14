@@ -5,7 +5,7 @@ namespace Matcha.API.Data
 {
     public interface IUserDataContext
     {
-        public Task<User> GetById(int id);
+        public Task<User> GetById(long id);
         public Task<User> GetByUsername(string username);
         public Task<User> GetByEmail(string email);
         public Task<User> GetByVerifyToken(string token);
@@ -13,7 +13,7 @@ namespace Matcha.API.Data
 
         public Task<bool> Add(User user);
         public Task<bool> Update(User user);
-        public Task<bool> Delete(int id);
+        public Task<bool> Delete(long id);
     }
 
     public class UserDataContext : IUserDataContext
@@ -58,7 +58,7 @@ namespace Matcha.API.Data
             Reset = (string)objArr[21]
         };
 
-        public async Task<User> GetById(int id)
+        public async Task<User> GetById(long id)
         {
             var values = await _dbAccess.SelectOne("SELECT" + _userDBValues +
                 "FROM `Users`" +
@@ -138,7 +138,7 @@ namespace Matcha.API.Data
             return updateAmount == 1;
         }
 
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(long id)
         {
             return await _dbAccess.Delete("DELETE FROM `Users` WHERE `Id` = @Id", new DBParam("Id", id));
         }

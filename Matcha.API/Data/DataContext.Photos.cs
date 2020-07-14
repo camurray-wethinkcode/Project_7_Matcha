@@ -5,11 +5,11 @@ namespace Matcha.API.Data
 {
     public interface IPhotosDataContext
     {
-        public Task<Photo> GetById(int id);
-        public Task<Photo> GetMainForUser(int id);
+        public Task<Photo> GetById(long id);
+        public Task<Photo> GetMainForUser(long id);
         public Task<bool> Add(Photo photo);
         public Task<bool> Update(Photo photo);
-        public Task<bool> Delete(int id);
+        public Task<bool> Delete(long id);
     }
 
     public class PhotosDataContext : IPhotosDataContext
@@ -34,7 +34,7 @@ namespace Matcha.API.Data
             PublicId = (string)objArr[6]
         };
 
-        public async Task<Photo> GetById(int id)
+        public async Task<Photo> GetById(long id)
         {
             var values = await _dbAccess.SelectOne("SELECT" + _photosDBValues +
                 "FROM `Photos`" +
@@ -44,7 +44,7 @@ namespace Matcha.API.Data
             return MapObjArrToPhoto(values);
         }
 
-        public async Task<Photo> GetMainForUser(int id)
+        public async Task<Photo> GetMainForUser(long id)
         {
             var values = await _dbAccess.SelectOne("SELECT" + _photosDBValues +
                 "FROM `Photos`" +
@@ -79,7 +79,7 @@ namespace Matcha.API.Data
             return updateAmount == 1;
         }
 
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(long id)
         {
             return await _dbAccess.Delete("DELETE FROM `Photos` WHERE `Id` = @Id", new DBParam("Id", id));
         }
