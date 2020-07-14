@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Matcha.API.Models;
 
@@ -28,7 +29,7 @@ namespace Matcha.API.Data
             Id = (long)objArr[0],
             Url = (string)objArr[1],
             Description = (string)objArr[2],
-            DateAdded = (System.DateTime)objArr[3],
+            DateAdded = DateTime.Parse((string)objArr[3]),
             IsMain = (bool)objArr[4],
             UserId = (long)objArr[5],
             PublicId = (string)objArr[6]

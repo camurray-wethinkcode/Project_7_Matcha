@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Matcha.API.Models;
 
@@ -40,11 +41,11 @@ namespace Matcha.API.Data
             PasswordSalt = (byte[])objArr[3],
             Gender = (string)objArr[4],
             Sexuality = (string)objArr[5],
-            DateOfBirth = (System.DateTime)objArr[6],
+            DateOfBirth = DateTime.Parse((string)objArr[6]),
             Name = (string)objArr[7],
             Surname = (string)objArr[8],
-            Created = (System.DateTime)objArr[9],
-            LastActive = (System.DateTime)objArr[10],
+            Created = DateTime.Parse((string)objArr[9]),
+            LastActive = DateTime.Parse((string)objArr[10]),
             Introduction = (string)objArr[11],
             LookingFor = (string)objArr[12],
             Email = (string)objArr[13],

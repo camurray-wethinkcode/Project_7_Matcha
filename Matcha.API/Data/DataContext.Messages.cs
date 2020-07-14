@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Matcha.API.Models;
@@ -35,8 +36,8 @@ namespace Matcha.API.Data
             RecipientId = (long)objArr[2],
             Content = (string)objArr[3],
             IsRead = (bool)objArr[4],
-            DateRead = (System.DateTime?)objArr[5],
-            MessageSent = (System.DateTime)objArr[6],
+            DateRead = DateTime.Parse((string)objArr[5]),
+            MessageSent = DateTime.Parse((string)objArr[6]),
             SenderDeleted = (bool)objArr[7],
             RecipientDeleted = (bool)objArr[8]
         };
