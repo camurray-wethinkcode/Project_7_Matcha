@@ -15,6 +15,12 @@ export class MessagesComponent implements OnInit {
   messages: Message[];
   pagination: Pagination;
   messageContainer = 'Unread';
+  i: number = 0;
+  a: string;
+  b: string;
+  c: string;
+  d: string;
+  e: string;
 
   constructor(
     private userService: UserService,
@@ -26,6 +32,40 @@ export class MessagesComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.messages = data['messages'].result;
+      if (this.messages[0] === undefined) {
+        this.i = 0;
+      }
+      else if (this.messages[1] === undefined) {
+        this.a = this.messages[0].isRead.toString();
+        if (this.a === 'false') {
+          this.i = 1;
+        }
+      }
+      else if (this.messages[2] === undefined) {
+        this.b = this.messages[1].isRead.toString();
+        if (this.a === 'false' && this.b === 'false') {
+          this.i = 2;
+        }
+      }
+      else if (this.messages[3] === undefined) {
+        this.c = this.messages[2].isRead.toString();
+        if (this.a === 'false' && this.b === 'false' && this.c === 'false') {
+          this.i = 3;
+        }
+      }
+      else if (this.messages[4] === undefined) {
+        this.d = this.messages[3].isRead.toString();
+        if (this.a === 'false' && this.b === 'false' && this.c === 'false' && this.d === 'false') {
+          this.i = 4;
+        }
+      }
+      else {
+        this.e = this.messages[4].isRead.toString();
+        if (this.a === 'false' && this.b === 'false' && this.c === 'false' && this.d === 'false' && this.e === 'false') {
+          this.i = 5;
+        }
+      }
+      localStorage.setItem('count', this.i.toString());
       this.pagination = data['messages'].pagination;
     });
   }
