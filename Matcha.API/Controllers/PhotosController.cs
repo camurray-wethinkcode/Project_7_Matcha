@@ -114,6 +114,7 @@ namespace Matcha.API.Controllers
 
             var currentMainPhoto = await _repo.GetMainPhotoForUser(userId);
             currentMainPhoto.IsMain = false;
+            await _repo.Update(currentMainPhoto);
 
             photoFromRepo.IsMain = true;
 
