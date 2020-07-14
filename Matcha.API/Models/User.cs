@@ -12,9 +12,9 @@ namespace Matcha.API.Models
         private readonly IMessagesDataContext _messagesDataContext;
 
         public User(
-            IPhotosDataContext photosDataContext,
-            ILikesDataContext likesDataContext,
-            IMessagesDataContext messagesDataContext)
+            IPhotosDataContext photosDataContext = null,
+            ILikesDataContext likesDataContext = null,
+            IMessagesDataContext messagesDataContext = null)
         {
             _photosDataContext = photosDataContext;
             _likesDataContext = likesDataContext;
@@ -43,10 +43,45 @@ namespace Matcha.API.Models
         public long Activated { get; set; }
         public string Token { get; set; }
         public string Reset { get; set; }
-        public async Task<ICollection<Photo>> Photos() => await _photosDataContext.GetAllForUser(Id);
-        public async Task<ICollection<Like>> Likers() => await _likesDataContext.GetLikers(Id);
-        public async Task<ICollection<Like>> Likees() => await _likesDataContext.GetLikees(Id);
-        public async Task<ICollection<Message>> MessagesSent() => await _messagesDataContext.GetOutbox(Id);
-        public async Task<ICollection<Message>> MessagesReceived() => await _messagesDataContext.GetInbox(Id);
+        public virtual ICollection<Photo> PhotosFromSeed { get; set; }
+        public async Task<ICollection<Photo>> Photos()
+        {
+            if (_photosDataContext != null)
+                return await _photosDataContext.GetAllForUser(Id);
+            else
+                return new List<Photo>();
+        }
+
+        public async Task<ICollection<Like>> Likers()
+        {
+            if (_likesDataContext != null)
+                return await _likesDataContext.GetLikers(Id);
+            else
+                return new List<Like>();
+        }
+
+        public async Task<ICollection<Like>> Likees()
+        {
+            if (_likesDataContext != null)
+                return await _likesDataContext.GetLikees(Id);
+            else
+                return new List<Like>();
+        }
+
+        public async Task<ICollection<Message>> MessagesSent()
+        {
+            if (_messagesDataContext != null)
+                return await _messagesDataContext.GetOutbox(Id);
+            else
+                return new List<Message>();
+        }
+
+        public async Task<ICollection<Message>> MessagesReceived()
+        {
+            if (_messagesDataContext != null)
+                return await _messagesDataContext.GetInbox(Id);
+            else
+                return new List<Message>();
+        }
     }
 }
