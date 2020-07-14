@@ -55,8 +55,8 @@ namespace Matcha.API.Data
             FameRating = (long)objArr[17],
             Deactivated = (long)objArr[18],
             Activated = (long)objArr[19],
-            Token = (string)objArr[20],
-            Reset = (string)objArr[21]
+            Token = (objArr[20].GetType() == typeof(string)) ? (string)objArr[20] : null,
+            Reset = (objArr[21].GetType() == typeof(string)) ? (string)objArr[21] : null
         };
 
         public async Task<User> GetById(long id)

@@ -34,9 +34,9 @@ namespace Matcha.API.Data
             Id = (long)objArr[0],
             SenderId = (long)objArr[1],
             RecipientId = (long)objArr[2],
-            Content = (string)objArr[3],
+            Content = (objArr[3].GetType() == typeof(string)) ? (string)objArr[3] : null,
             IsRead = (bool)objArr[4],
-            DateRead = DateTime.Parse((string)objArr[5]),
+            DateRead = (objArr[5].GetType() == typeof(DateTime)) ? DateTime.Parse((string)objArr[5]) : (DateTime?)null,
             MessageSent = DateTime.Parse((string)objArr[6]),
             SenderDeleted = (bool)objArr[7],
             RecipientDeleted = (bool)objArr[8]

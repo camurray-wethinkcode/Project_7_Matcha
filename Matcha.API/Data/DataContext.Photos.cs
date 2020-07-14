@@ -27,12 +27,12 @@ namespace Matcha.API.Data
         private Photo MapObjArrToPhoto(object[] objArr) => new Photo
         {
             Id = (long)objArr[0],
-            Url = (string)objArr[1],
-            Description = (string)objArr[2],
+            Url = (objArr[1].GetType() == typeof(string)) ? (string)objArr[1] : null,
+            Description = (objArr[2].GetType() == typeof(string)) ? (string)objArr[2] : null,
             DateAdded = DateTime.Parse((string)objArr[3]),
             IsMain = (bool)objArr[4],
             UserId = (long)objArr[5],
-            PublicId = (string)objArr[6]
+            PublicId = (objArr[6].GetType() == typeof(string)) ? (string)objArr[6] : null
         };
 
         public async Task<Photo> GetById(long id)
