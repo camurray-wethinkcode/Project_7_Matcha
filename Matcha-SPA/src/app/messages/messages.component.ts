@@ -30,6 +30,9 @@ export class MessagesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    if (this.i === 0) {
+      window.location.reload();
+    }
     this.route.data.subscribe(data => {
       this.messages = data['messages'].result;
       if (this.messages[0] === undefined) {
