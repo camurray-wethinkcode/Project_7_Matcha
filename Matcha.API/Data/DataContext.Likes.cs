@@ -20,16 +20,16 @@ namespace Matcha.API.Data
             _dbAccess = dbAccess;
         }
 
-        private const string _likesDBValues = "`LikerId`, `LikeeId`";
+        private const string _likesDBValues = "`LikerId`, `LikeeId` ";
 
         public async Task<Like> Get(long likerId, long likeeId)
         {
-            var values = await _dbAccess.SelectOne("SELECT" + _likesDBValues +
-                "FROM `Likes`" +
-                "WHERE" +
-                "   `LikerId` = @LikerId" +
-                "AND" +
-                "   `LikeeId` = @LikeeId",
+            var values = await _dbAccess.SelectOne("SELECT " + _likesDBValues +
+                "FROM `Likes` " +
+                "WHERE " +
+                "   `LikerId` = @LikerId " +
+                "AND " +
+                "   `LikeeId` = @LikeeId ",
                 new DBParam("LikerId", likerId),
                 new DBParam("LikeeId", likeeId));
 
@@ -51,7 +51,7 @@ namespace Matcha.API.Data
         public async Task<bool> Update(Like like)
         {
             var updateAmount = await _dbAccess.Update("UPDATE `Users` SET " +
-                "   `LikerId` = @LikerId, `LikeeId` = @LikeeId" +
+                "   `LikerId` = @LikerId, `LikeeId` = @LikeeId " +
                 "WHERE `Id` = @Id",
                 new DBParam("LikerId", like.LikerId), new DBParam("LikeeId", like.LikeeId));
 
@@ -60,10 +60,10 @@ namespace Matcha.API.Data
 
         public async Task<bool> Delete(long likerId, long likeeId)
         {
-            return await _dbAccess.Delete("DELETE FROM `Likes` WHERE" +
-                "   `LikerId` = @LikerId" +
+            return await _dbAccess.Delete("DELETE FROM `Likes` WHERE " +
+                "   `LikerId` = @LikerId " +
                 "AND" +
-                "   `LikeeId` = @LikeeId",
+                "   `LikeeId` = @LikeeId ",
                 new DBParam("LikerId", likerId),
                 new DBParam("LikeeId", likeeId));
         }

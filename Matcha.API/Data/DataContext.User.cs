@@ -31,7 +31,7 @@ namespace Matcha.API.Data
             "`Sexuality`,  `DateOfBirth`,  `Name`,         `Surname`,      `Created`,  " +
             "`LastActive`, `Introduction`, `LookingFor`,   `Email`,        `Interests`," +
             "`City`,       `Country`,      `FameRating`,   `Deactivated`,  `Activated`," +
-            "`Token`,      `Reset`";
+            "`Token`,      `Reset` ";
 
         private User MapObjArrToUser(object[] objArr) => new User
         {
@@ -61,8 +61,8 @@ namespace Matcha.API.Data
 
         public async Task<User> GetById(long id)
         {
-            var values = await _dbAccess.SelectOne("SELECT" + _userDBValues +
-                "FROM `Users`" +
+            var values = await _dbAccess.SelectOne("SELECT " + _userDBValues +
+                "FROM `Users` " +
                 "WHERE `Id` = @id", new DBParam("id", id));
 
             return MapObjArrToUser(values);
@@ -70,8 +70,8 @@ namespace Matcha.API.Data
 
         public async Task<User> GetByUsername(string username)
         {
-            var values = await _dbAccess.SelectOne("SELECT" + _userDBValues +
-                "FROM `Users`" +
+            var values = await _dbAccess.SelectOne("SELECT " + _userDBValues +
+                "FROM `Users` " +
                 "WHERE `Username` = @username", new DBParam("username", username));
 
             return MapObjArrToUser(values);
@@ -79,8 +79,8 @@ namespace Matcha.API.Data
 
         public async Task<User> GetByEmail(string email)
         {
-            var values = await _dbAccess.SelectOne("SELECT" + _userDBValues +
-                "FROM `Users`" +
+            var values = await _dbAccess.SelectOne("SELECT " + _userDBValues +
+                "FROM `Users` " +
                 "WHERE `Email` = @email", new DBParam("email", email));
 
             return MapObjArrToUser(values);
@@ -88,8 +88,8 @@ namespace Matcha.API.Data
 
         public async Task<User> GetByVerifyToken(string token)
         {
-            var values = await _dbAccess.SelectOne("SELECT" + _userDBValues +
-                "FROM `Users`" +
+            var values = await _dbAccess.SelectOne("SELECT " + _userDBValues +
+                "FROM `Users` " +
                 "WHERE `Token` = @verifyToken", new DBParam("verifyToken", token));
 
             return MapObjArrToUser(values);
@@ -97,8 +97,8 @@ namespace Matcha.API.Data
 
         public async Task<User> GetByResetToken(string token)
         {
-            var values = await _dbAccess.SelectOne("SELECT" + _userDBValues +
-                "FROM `Users`" +
+            var values = await _dbAccess.SelectOne("SELECT " + _userDBValues +
+                "FROM `Users` " +
                 "WHERE `Reset` = @resetToken", new DBParam("resetToken", token));
 
             return MapObjArrToUser(values);
@@ -128,7 +128,7 @@ namespace Matcha.API.Data
                 "`Sexuality` = @Sexuality, `DateOfBirth` = @DateOfBirth, `Name` = @Name, `Surname` = @Surname, `Created` = @Created, " +
                 "`LastActive` = @LastActive, `Introduction` = @Introduction, `LookingFor` = @LookingFor, `Email` = @Email, `Interests` = @Interests, " +
                 "`City` = @City, `Country` = @Country, `FameRating` = @FameRating, `Deactivated` = @Deactivated, `Activated` = @Activated, " +
-                "`Token` = @Token, `Reset` = @Reset" +
+                "`Token` = @Token, `Reset` = @Reset " +
                 "WHERE `Id` = @Id",
                 new DBParam("Id", user.Id), new DBParam("Username", user.Username), new DBParam("PasswordHash", user.PasswordHash), new DBParam("PasswordSalt", user.PasswordSalt), new DBParam("Gender", user.Gender),
                 new DBParam("Sexuality", user.Sexuality), new DBParam("DateOfBirth", user.DateOfBirth), new DBParam("Name", user.Name), new DBParam("Surname", user.Surname), new DBParam("Created", user.Created),

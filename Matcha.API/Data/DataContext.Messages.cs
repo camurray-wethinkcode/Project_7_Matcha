@@ -27,7 +27,7 @@ namespace Matcha.API.Data
             _dbAccess = dbAccess;
         }
 
-        private const string _messagesDBValues = "`Id`, `SenderId`, `RecipientId`, `Content`, `IsRead`, `DateRead`, `MessageSent`, `SenderDeleted`, `RecipientDeleted`";
+        private const string _messagesDBValues = "`Id`, `SenderId`, `RecipientId`, `Content`, `IsRead`, `DateRead`, `MessageSent`, `SenderDeleted`, `RecipientDeleted` ";
 
         private Message MapObjArrToMessage(object[] objArr) => new Message
         {
@@ -44,8 +44,8 @@ namespace Matcha.API.Data
 
         public async Task<Message> GetById(long id)
         {
-            var values = await _dbAccess.SelectOne("SELECT" + _messagesDBValues +
-                "FROM `Messages`" +
+            var values = await _dbAccess.SelectOne("SELECT " + _messagesDBValues +
+                "FROM `Messages` " +
                 "WHERE `Id` = @Id",
                 new DBParam("Id", id));
 
@@ -54,10 +54,10 @@ namespace Matcha.API.Data
 
         public async Task<List<Message>> GetInbox(long recipientId)
         {
-            var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
-                "FROM `Messages`" +
-                "WHERE `RecipientId` = @RecipientId" +
-                "AND `RecipientDeleted` = 0",
+            var results = await _dbAccess.Select("SELECT " + _messagesDBValues +
+                "FROM `Messages` " +
+                "WHERE `RecipientId` = @RecipientId " +
+                "AND `RecipientDeleted` = 0 ",
                 new DBParam("RecipientId", recipientId));
 
             var list = results[0];
@@ -73,9 +73,9 @@ namespace Matcha.API.Data
 
         public async Task<List<Message>> GetOutbox(long senderId)
         {
-            var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
-                "FROM `Messages`" +
-                "WHERE `SenderId` = @SenderId" +
+            var results = await _dbAccess.Select("SELECT " + _messagesDBValues +
+                "FROM `Messages` " +
+                "WHERE `SenderId` = @SenderId " +
                 "AND `SenderDeleted` = 0",
                 new DBParam("SenderId", senderId));
 
@@ -92,11 +92,11 @@ namespace Matcha.API.Data
 
         public async Task<List<Message>> GetUnread(long recipientId)
         {
-            var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
-                "FROM `Messages`" +
-                "WHERE `RecipientId` = @RecipientId" +
-                "AND `RecipientDeleted` = 0" +
-                "AND `IsRead` = 0",
+            var results = await _dbAccess.Select("SELECT " + _messagesDBValues +
+                "FROM `Messages` " +
+                "WHERE `RecipientId` = @RecipientId " +
+                "AND `RecipientDeleted` = 0 " +
+                "AND `IsRead` = 0 ",
                 new DBParam("RecipientId", recipientId));
 
             var list = results[0];
@@ -110,13 +110,13 @@ namespace Matcha.API.Data
 
         public async Task<List<Message>> GetThread(long senderId, long recipientId)
         {
-            var results = await _dbAccess.Select("SELECT" + _messagesDBValues +
-                "FROM `Messages`" +
-                "WHERE" +
-                "   (`SenderId` = @SenderId AND `RecipientId` = @RecipientId AND `SenderDeleted` = 0)" +
-                "OR" +
-                "   (`RecipientId` = @SenderId AND `SenderId` = @RecipientId AND `RecipientDeleted` = 0)" +
-                "ORDER BY" +
+            var results = await _dbAccess.Select("SELECT " + _messagesDBValues +
+                "FROM `Messages` " +
+                "WHERE " +
+                "   (`SenderId` = @SenderId AND `RecipientId` = @RecipientId AND `SenderDeleted` = 0) " +
+                "OR " +
+                "   (`RecipientId` = @SenderId AND `SenderId` = @RecipientId AND `RecipientDeleted` = 0) " +
+                "ORDER BY " +
                 "   `MessageSent` DESC;",
                 new DBParam("SenderId", senderId),
                 new DBParam("RecipientId", recipientId));
