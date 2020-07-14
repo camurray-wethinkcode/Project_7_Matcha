@@ -40,7 +40,6 @@ export class MemberDetailComponent implements OnInit {
       this.user = data['user'];
       if (localStorage.getItem('liketoggle') === 'null') {
         this.likeName = 'Like';
-        console.log('null');
       }
       else if (localStorage.getItem('liketoggle') === this.user.id.toString()) {
         this.likeName = 'Unlike';
