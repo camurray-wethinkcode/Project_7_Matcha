@@ -21,10 +21,7 @@ namespace Matcha.API.Data
     {
         private readonly IDbAccess _dbAccess;
 
-        public UserDataContext(IDbAccess dbAccess)
-        {
-            _dbAccess = dbAccess;
-        }
+        public UserDataContext(IDbAccess dbAccess) => _dbAccess = dbAccess;
 
         private const string _userDBValues = 
             "`Id`,         `Username`,     `PasswordHash`, `PasswordSalt`, `Gender`,   " +
@@ -33,31 +30,58 @@ namespace Matcha.API.Data
             "`City`,       `Country`,      `FameRating`,   `Deactivated`,  `Activated`," +
             "`Token`,      `Reset` ";
 
-        private User MapObjArrToUser(object[] objArr) => new User
+        private User MapObjArrToUser(object[] objArr)
         {
-            Id = (long)objArr[0],
-            Username = (string)objArr[1],
-            PasswordHash = (byte[])objArr[2],
-            PasswordSalt = (byte[])objArr[3],
-            Gender = (string)objArr[4],
-            Sexuality = (string)objArr[5],
-            DateOfBirth = DateTime.Parse((string)objArr[6]),
-            Name = (string)objArr[7],
-            Surname = (string)objArr[8],
-            Created = DateTime.Parse((string)objArr[9]),
-            LastActive = DateTime.Parse((string)objArr[10]),
-            Introduction = (string)objArr[11],
-            LookingFor = (string)objArr[12],
-            Email = (string)objArr[13],
-            Interests = (string)objArr[14],
-            City = (string)objArr[15],
-            Country = (string)objArr[16],
-            FameRating = (long)objArr[17],
-            Deactivated = (long)objArr[18],
-            Activated = (long)objArr[19],
-            Token = (objArr[20].GetType() == typeof(string)) ? (string)objArr[20] : null,
-            Reset = (objArr[21].GetType() == typeof(string)) ? (string)objArr[21] : null
-        };
+            if (objArr[0].GetType() != typeof(long)) throw new Exception("Id of wrong type: " + objArr[0].GetType().FullName);
+            if (objArr[1].GetType() != typeof(string)) throw new Exception("Username of wrong type: " + objArr[1].GetType().FullName);
+            if (objArr[2].GetType() != typeof(byte[])) throw new Exception("PasswordHash of wrong type: " + objArr[2].GetType().FullName);
+            if (objArr[3].GetType() != typeof(byte[])) throw new Exception("PasswordSalt of wrong type: " + objArr[3].GetType().FullName);
+            if (objArr[4].GetType() != typeof(string)) throw new Exception("Gender of wrong type: " + objArr[4].GetType().FullName);
+            if (objArr[5].GetType() != typeof(string)) throw new Exception("Sexuality of wrong type: " + objArr[5].GetType().FullName);
+            if (objArr[6].GetType() != typeof(string)) throw new Exception("DateOfBirth of wrong type: " + objArr[6].GetType().FullName);
+            if (objArr[7].GetType() != typeof(string)) throw new Exception("Name of wrong type: " + objArr[7].GetType().FullName);
+            if (objArr[8].GetType() != typeof(string)) throw new Exception("Surname of wrong type: " + objArr[8].GetType().FullName);
+            if (objArr[9].GetType() != typeof(string)) throw new Exception("Created of wrong type: " + objArr[9].GetType().FullName);
+            if (objArr[10].GetType() != typeof(string)) throw new Exception("LastActive of wrong type: " + objArr[10].GetType().FullName);
+            if (objArr[11].GetType() != typeof(string)) throw new Exception("Introduction of wrong type: " + objArr[11].GetType().FullName);
+            if (objArr[12].GetType() != typeof(string)) throw new Exception("LookingFor of wrong type: " + objArr[12].GetType().FullName);
+            if (objArr[13].GetType() != typeof(string)) throw new Exception("Email of wrong type: " + objArr[13].GetType().FullName);
+            if (objArr[14].GetType() != typeof(string)) throw new Exception("Interests of wrong type: " + objArr[14].GetType().FullName);
+            if (objArr[15].GetType() != typeof(string)) throw new Exception("City of wrong type: " + objArr[15].GetType().FullName);
+            if (objArr[16].GetType() != typeof(string)) throw new Exception("Country of wrong type: " + objArr[16].GetType().FullName);
+            if (objArr[17].GetType() != typeof(long)) throw new Exception("FameRating of wrong type: " + objArr[17].GetType().FullName);
+            if (objArr[18].GetType() != typeof(long)) throw new Exception("Deactivated of wrong type: " + objArr[18].GetType().FullName);
+            if (objArr[19].GetType() != typeof(long)) throw new Exception("Activated of wrong type: " + objArr[19].GetType().FullName);
+            if (objArr[20].GetType() != typeof(string) &&
+                objArr[20].GetType() != typeof(DBNull)) throw new Exception("Token of wrong type: " + objArr[20].GetType().FullName);
+            if (objArr[21].GetType() != typeof(string) &&
+                objArr[21].GetType() != typeof(DBNull)) throw new Exception("Reset of wrong type: " + objArr[21].GetType().FullName);
+            return new User
+            {
+                Id = (long)objArr[0],
+                Username = (string)objArr[1],
+                PasswordHash = (byte[])objArr[2],
+                PasswordSalt = (byte[])objArr[3],
+                Gender = (string)objArr[4],
+                Sexuality = (string)objArr[5],
+                DateOfBirth = DateTime.Parse((string)objArr[6]),
+                Name = (string)objArr[7],
+                Surname = (string)objArr[8],
+                Created = DateTime.Parse((string)objArr[9]),
+                LastActive = DateTime.Parse((string)objArr[10]),
+                Introduction = (string)objArr[11],
+                LookingFor = (string)objArr[12],
+                Email = (string)objArr[13],
+                Interests = (string)objArr[14],
+                City = (string)objArr[15],
+                Country = (string)objArr[16],
+                FameRating = (long)objArr[17],
+                Deactivated = (long)objArr[18],
+                Activated = (long)objArr[19],
+                Token = (objArr[20].GetType() == typeof(string)) ? (string)objArr[20] : null,
+                Reset = (objArr[21].GetType() == typeof(string)) ? (string)objArr[21] : null
+            };
+        }
 
         public async Task<User> GetById(long id)
         {

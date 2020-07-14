@@ -17,10 +17,7 @@ namespace Matcha.API.Data
     {
         private readonly IDbAccess _dbAccess;
 
-        public PhotosDataContext(IDbAccess dbAccess)
-        {
-            _dbAccess = dbAccess;
-        }
+        public PhotosDataContext(IDbAccess dbAccess) => _dbAccess = dbAccess;
 
         private const string _photosDBValues = "`Id`, `Url`, `Description`, `DateAdded`, `IsMain`, `UserId`, `PublicId` ";
 

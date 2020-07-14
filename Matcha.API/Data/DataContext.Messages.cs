@@ -22,10 +22,7 @@ namespace Matcha.API.Data
     {
         private readonly IDbAccess _dbAccess;
 
-        public MessagesDataContext(IDbAccess dbAccess)
-        {
-            _dbAccess = dbAccess;
-        }
+        public MessagesDataContext(IDbAccess dbAccess) => _dbAccess = dbAccess;
 
         private const string _messagesDBValues = "`Id`, `SenderId`, `RecipientId`, `Content`, `IsRead`, `DateRead`, `MessageSent`, `SenderDeleted`, `RecipientDeleted` ";
 
