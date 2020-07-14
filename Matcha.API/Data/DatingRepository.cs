@@ -134,11 +134,11 @@ namespace Matcha.API.Data
 
             if (likers)
             {
-                return user.Likers.Where(u => u.LikeeId == id).Select(i => i.LikerId);
+                return (await user.Likers()).Where(u => u.LikeeId == id).Select(i => i.LikerId);
             }
             else
             {
-                return user.Likees.Where(u => u.LikerId == id).Select(i => i.LikeeId);
+                return (await user.Likees()).Where(u => u.LikerId == id).Select(i => i.LikeeId);
             }
         }
 

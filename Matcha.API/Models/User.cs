@@ -8,10 +8,17 @@ namespace Matcha.API.Models
     public class User
     {
         private readonly IPhotosDataContext _photosDataContext;
+        private readonly ILikesDataContext _likesDataContext;
+        private readonly IMessagesDataContext _messagesDataContext;
 
-        public User(IPhotosDataContext photosDataContext)
+        public User(
+            IPhotosDataContext photosDataContext,
+            ILikesDataContext likesDataContext,
+            IMessagesDataContext messagesDataContext)
         {
             _photosDataContext = photosDataContext;
+            _likesDataContext = likesDataContext;
+            _messagesDataContext = messagesDataContext;
         }
 
         public long Id { get; set; }
@@ -37,9 +44,9 @@ namespace Matcha.API.Models
         public string Token { get; set; }
         public string Reset { get; set; }
         public async Task<ICollection<Photo>> Photos() => await _photosDataContext.GetAllForUser(Id);
-        public virtual ICollection<Like> Likers { get; set; }
-        public virtual ICollection<Like> Likees { get; set; }
-        public virtual ICollection<Message> MessagesSent { get; set; }
-        public virtual ICollection<Message> MessagesReceived { get; set; }
+        public async Task<ICollection<Like>> Likers() => await _likesDataContext.GetLikers(Id);
+        public async Task<ICollection<Like>> Likees() => await _likesDataContext.GetLikees(Id);
+        public async Task<ICollection<Message>> MessagesSent() => await _messagesDataContext.GetOutbox(Id);
+        public async Task<ICollection<Message>> MessagesReceived() => await _messagesDataContext.GetInbox(Id);
     }
 }

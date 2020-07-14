@@ -23,11 +23,19 @@ namespace Matcha.API.Data
     {
         private readonly IDbAccess _dbAccess;
         private readonly IPhotosDataContext _photosDataContext;
+        private readonly IMessagesDataContext _messagesDataContext;
+        private readonly ILikesDataContext _likesDataContext;
 
-        public UserDataContext(IDbAccess dbAccess, IPhotosDataContext photosDataContext)
+        public UserDataContext(
+            IDbAccess dbAccess,
+            IPhotosDataContext photosDataContext,
+            IMessagesDataContext messagesDataContext,
+            ILikesDataContext likesDataContext)
         {
             _dbAccess = dbAccess;
             _photosDataContext = photosDataContext;
+            _messagesDataContext = messagesDataContext;
+            _likesDataContext = likesDataContext;
         }
 
         private const string _userDBValues = 
@@ -63,7 +71,7 @@ namespace Matcha.API.Data
                 objArr[20].GetType() != typeof(DBNull)) throw new Exception("Token is of wrong type: " + objArr[20].GetType().FullName);
             if (objArr[21].GetType() != typeof(string) &&
                 objArr[21].GetType() != typeof(DBNull)) throw new Exception("Reset is of wrong type: " + objArr[21].GetType().FullName);
-            return new User(_photosDataContext)
+            return new User(_photosDataContext, _likesDataContext, _messagesDataContext)
             {
                 Id = (long)objArr[0],
                 Username = (string)objArr[1],

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Matcha.API.Models;
 
@@ -6,6 +7,9 @@ namespace Matcha.API.Data
     public interface ILikesDataContext
     {
         public Task<Like> Get(long likerId, long likeeId);
+        public Task<List<Like>> GetLikers(long likeeId);
+        public Task<List<Like>> GetLikees(long likerId);
+
         public Task<bool> Add(Like like);
         public Task<bool> Update(Like like);
         public Task<bool> Delete(long likerId, long likeeId);
@@ -37,6 +41,52 @@ namespace Matcha.API.Data
                 LikerId = (long)values[0],
                 LikeeId = (long)values[1]
             };
+        }
+
+        public async Task<List<Like>> GetLikers(long likeeId)
+        {
+            var results = await _dbAccess.Select("SELECT " + _likesDBValues +
+                "FROM `Likes` " +
+                "WHERE " +
+                "   `LikeeId` = @LikeeId",
+                new DBParam("LikeeId", likeeId));
+
+            if (results.Count == 0) return new List<Like>();
+
+            var list = results[0];
+            var rtn = new List<Like>();
+
+            foreach (var like in list)
+                rtn.Add(new Like
+                {
+                    LikerId = (long)like[0],
+                    LikeeId = (long)like[1]
+                });
+
+            return rtn;
+        }
+
+        public async Task<List<Like>> GetLikees(long likerId)
+        {
+            var results = await _dbAccess.Select("SELECT " + _likesDBValues +
+                "FROM `Likes` " +
+                "WHERE " +
+                "   `LikerId` = @LikerId",
+                new DBParam("LikerId", likerId));
+
+            if (results.Count == 0) return new List<Like>();
+
+            var list = results[0];
+            var rtn = new List<Like>();
+
+            foreach (var like in list)
+                rtn.Add(new Like
+                {
+                    LikerId = (long)like[0],
+                    LikeeId = (long)like[1]
+                });
+
+            return rtn;
         }
 
         public async Task<bool> Add(Like like)
