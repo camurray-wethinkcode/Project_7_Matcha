@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Matcha.API.Models;
 
@@ -11,6 +12,7 @@ namespace Matcha.API.Data
         public Task<User> GetByEmail(string email);
         public Task<User> GetByVerifyToken(string token);
         public Task<User> GetByResetToken(string token);
+        public Task<List<User>> GetAllUsersByLastActive();
 
         public Task<bool> Add(User user);
         public Task<bool> Update(User user);
@@ -32,30 +34,30 @@ namespace Matcha.API.Data
 
         private User MapObjArrToUser(object[] objArr)
         {
-            if (objArr[0].GetType() != typeof(long)) throw new Exception("Id of wrong type: " + objArr[0].GetType().FullName);
-            if (objArr[1].GetType() != typeof(string)) throw new Exception("Username of wrong type: " + objArr[1].GetType().FullName);
-            if (objArr[2].GetType() != typeof(byte[])) throw new Exception("PasswordHash of wrong type: " + objArr[2].GetType().FullName);
-            if (objArr[3].GetType() != typeof(byte[])) throw new Exception("PasswordSalt of wrong type: " + objArr[3].GetType().FullName);
-            if (objArr[4].GetType() != typeof(string)) throw new Exception("Gender of wrong type: " + objArr[4].GetType().FullName);
-            if (objArr[5].GetType() != typeof(string)) throw new Exception("Sexuality of wrong type: " + objArr[5].GetType().FullName);
-            if (objArr[6].GetType() != typeof(string)) throw new Exception("DateOfBirth of wrong type: " + objArr[6].GetType().FullName);
-            if (objArr[7].GetType() != typeof(string)) throw new Exception("Name of wrong type: " + objArr[7].GetType().FullName);
-            if (objArr[8].GetType() != typeof(string)) throw new Exception("Surname of wrong type: " + objArr[8].GetType().FullName);
-            if (objArr[9].GetType() != typeof(string)) throw new Exception("Created of wrong type: " + objArr[9].GetType().FullName);
-            if (objArr[10].GetType() != typeof(string)) throw new Exception("LastActive of wrong type: " + objArr[10].GetType().FullName);
-            if (objArr[11].GetType() != typeof(string)) throw new Exception("Introduction of wrong type: " + objArr[11].GetType().FullName);
-            if (objArr[12].GetType() != typeof(string)) throw new Exception("LookingFor of wrong type: " + objArr[12].GetType().FullName);
-            if (objArr[13].GetType() != typeof(string)) throw new Exception("Email of wrong type: " + objArr[13].GetType().FullName);
-            if (objArr[14].GetType() != typeof(string)) throw new Exception("Interests of wrong type: " + objArr[14].GetType().FullName);
-            if (objArr[15].GetType() != typeof(string)) throw new Exception("City of wrong type: " + objArr[15].GetType().FullName);
-            if (objArr[16].GetType() != typeof(string)) throw new Exception("Country of wrong type: " + objArr[16].GetType().FullName);
-            if (objArr[17].GetType() != typeof(long)) throw new Exception("FameRating of wrong type: " + objArr[17].GetType().FullName);
-            if (objArr[18].GetType() != typeof(long)) throw new Exception("Deactivated of wrong type: " + objArr[18].GetType().FullName);
-            if (objArr[19].GetType() != typeof(long)) throw new Exception("Activated of wrong type: " + objArr[19].GetType().FullName);
+            if (objArr[0].GetType() != typeof(long)) throw new Exception("Id is of wrong type: " + objArr[0].GetType().FullName);
+            if (objArr[1].GetType() != typeof(string)) throw new Exception("Username is of wrong type: " + objArr[1].GetType().FullName);
+            if (objArr[2].GetType() != typeof(byte[])) throw new Exception("PasswordHash is of wrong type: " + objArr[2].GetType().FullName);
+            if (objArr[3].GetType() != typeof(byte[])) throw new Exception("PasswordSalt is of wrong type: " + objArr[3].GetType().FullName);
+            if (objArr[4].GetType() != typeof(string)) throw new Exception("Gender is of wrong type: " + objArr[4].GetType().FullName);
+            if (objArr[5].GetType() != typeof(string)) throw new Exception("Sexuality is of wrong type: " + objArr[5].GetType().FullName);
+            if (objArr[6].GetType() != typeof(string)) throw new Exception("DateOfBirth is of wrong type: " + objArr[6].GetType().FullName);
+            if (objArr[7].GetType() != typeof(string)) throw new Exception("Name is of wrong type: " + objArr[7].GetType().FullName);
+            if (objArr[8].GetType() != typeof(string)) throw new Exception("Surname is of wrong type: " + objArr[8].GetType().FullName);
+            if (objArr[9].GetType() != typeof(string)) throw new Exception("Created is of wrong type: " + objArr[9].GetType().FullName);
+            if (objArr[10].GetType() != typeof(string)) throw new Exception("LastActive is of wrong type: " + objArr[10].GetType().FullName);
+            if (objArr[11].GetType() != typeof(string)) throw new Exception("Introduction is of wrong type: " + objArr[11].GetType().FullName);
+            if (objArr[12].GetType() != typeof(string)) throw new Exception("LookingFor is of wrong type: " + objArr[12].GetType().FullName);
+            if (objArr[13].GetType() != typeof(string)) throw new Exception("Email is of wrong type: " + objArr[13].GetType().FullName);
+            if (objArr[14].GetType() != typeof(string)) throw new Exception("Interests is of wrong type: " + objArr[14].GetType().FullName);
+            if (objArr[15].GetType() != typeof(string)) throw new Exception("City is of wrong type: " + objArr[15].GetType().FullName);
+            if (objArr[16].GetType() != typeof(string)) throw new Exception("Country is of wrong type: " + objArr[16].GetType().FullName);
+            if (objArr[17].GetType() != typeof(long)) throw new Exception("FameRating is of wrong type: " + objArr[17].GetType().FullName);
+            if (objArr[18].GetType() != typeof(long)) throw new Exception("Deactivated is of wrong type: " + objArr[18].GetType().FullName);
+            if (objArr[19].GetType() != typeof(long)) throw new Exception("Activated is of wrong type: " + objArr[19].GetType().FullName);
             if (objArr[20].GetType() != typeof(string) &&
-                objArr[20].GetType() != typeof(DBNull)) throw new Exception("Token of wrong type: " + objArr[20].GetType().FullName);
+                objArr[20].GetType() != typeof(DBNull)) throw new Exception("Token is of wrong type: " + objArr[20].GetType().FullName);
             if (objArr[21].GetType() != typeof(string) &&
-                objArr[21].GetType() != typeof(DBNull)) throw new Exception("Reset of wrong type: " + objArr[21].GetType().FullName);
+                objArr[21].GetType() != typeof(DBNull)) throw new Exception("Reset is of wrong type: " + objArr[21].GetType().FullName);
             return new User
             {
                 Id = (long)objArr[0],
@@ -136,6 +138,23 @@ namespace Matcha.API.Data
             if (values == null) return null;
 
             return MapObjArrToUser(values);
+        }
+        public async Task<List<User>> GetAllUsersByLastActive()
+        {
+            var results = await _dbAccess.Select("SELECT " + _userDBValues +
+                "FROM `Users` " +
+                "ORDER BY " +
+                "   `LastActive` DESC;");
+
+            if (results.Count == 0) return new List<User>();
+
+            var list = results[0];
+            var rtn = new List<User>();
+
+            foreach (var user in list)
+                rtn.Add(MapObjArrToUser(user));
+
+            return rtn;
         }
 
         public async Task<bool> Add(User user)
