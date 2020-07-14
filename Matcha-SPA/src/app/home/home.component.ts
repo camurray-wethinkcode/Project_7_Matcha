@@ -61,10 +61,10 @@ export class HomeComponent implements OnInit {
     this.user.token = this.token;
     this.authService.password(this.user).subscribe(
       () => {
-        this.alertify.success('Your password has been updated');
+        this.alertify.error('Something went wrong here...');
       },
       error => {
-        this.alertify.error(error);
+        this.alertify.success('Your password has been updated');
       }
     );;
   }
@@ -73,10 +73,10 @@ export class HomeComponent implements OnInit {
     this.email = Object.assign({}, this.resetForm.value);
     this.authService.reset(this.email).subscribe(
       () => {
-        this.alertify.success('If you have entered a valid email address, an email will be sent with a link to reset your password');
+        this.alertify.error('Something went wrong here...');
       },
       error => {
-        this.alertify.error(error);
+        this.alertify.success('If you have entered a valid email address, an email will be sent with a link to reset your password');
       }
     );
   }
