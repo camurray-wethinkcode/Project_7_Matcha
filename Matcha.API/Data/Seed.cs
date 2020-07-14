@@ -7,7 +7,7 @@ namespace Matcha.API.Data
 {
     public class Seed
     {
-        public static void SeedUsers(IUserDataContext context)
+        public static void SeedUsers(IUserDataContext context, IPhotosDataContext photosDataContext)
         {
             if (!context.GetAllUsersByLastActive().Result.Any())
             {
@@ -23,6 +23,9 @@ namespace Matcha.API.Data
                     user.PasswordSalt = passwordSalt;
                     user.Username = user.Username.ToLower();
                     context.Add(user);
+
+                    foreach (var photo in user.PhotosFromSeed)
+                        photosDataContext.Add(photo);
                 }
                 System.Console.WriteLine("User Seed complete.");
             }

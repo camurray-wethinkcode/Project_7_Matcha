@@ -27,7 +27,8 @@ namespace Matcha.API
                     }
 
                     var userDataContext = services.GetRequiredService<IUserDataContext>();
-                    Seed.SeedUsers(userDataContext);
+                    var photosDataContext = services.GetRequiredService<IPhotosDataContext>();
+                    Seed.SeedUsers(userDataContext, photosDataContext);
                 }
                 catch (Exception ex)
                 {
