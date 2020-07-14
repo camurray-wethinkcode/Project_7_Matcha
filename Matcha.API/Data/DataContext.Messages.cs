@@ -35,11 +35,11 @@ namespace Matcha.API.Data
             SenderId = (long)objArr[1],
             RecipientId = (long)objArr[2],
             Content = (objArr[3].GetType() == typeof(string)) ? (string)objArr[3] : null,
-            IsRead = (bool)objArr[4],
+            IsRead = Convert.ToBoolean((long)objArr[4]),
             DateRead = (objArr[5].GetType() == typeof(DateTime)) ? DateTime.Parse((string)objArr[5]) : (DateTime?)null,
             MessageSent = DateTime.Parse((string)objArr[6]),
-            SenderDeleted = (bool)objArr[7],
-            RecipientDeleted = (bool)objArr[8]
+            SenderDeleted = Convert.ToBoolean((long)objArr[7]),
+            RecipientDeleted = Convert.ToBoolean((long)objArr[8])
         };
 
         public async Task<Message> GetById(long id)

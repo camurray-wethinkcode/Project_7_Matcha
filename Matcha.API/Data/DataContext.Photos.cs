@@ -30,7 +30,7 @@ namespace Matcha.API.Data
             Url = (objArr[1].GetType() == typeof(string)) ? (string)objArr[1] : null,
             Description = (objArr[2].GetType() == typeof(string)) ? (string)objArr[2] : null,
             DateAdded = DateTime.Parse((string)objArr[3]),
-            IsMain = (bool)objArr[4],
+            IsMain = Convert.ToBoolean((long)objArr[4]),
             UserId = (long)objArr[5],
             PublicId = (objArr[6].GetType() == typeof(string)) ? (string)objArr[6] : null
         };

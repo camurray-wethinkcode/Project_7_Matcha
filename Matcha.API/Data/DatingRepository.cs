@@ -186,8 +186,7 @@ namespace Matcha.API.Data
 
             var orderedMessages = messages.OrderByDescending(d => d.MessageSent);
 
-            throw new NotImplementedException();
-            //return await PagedList<Message>.CreateAsync(orderedMessages, messageParams.PageNumber, messageParams.PageSize);
+            return PagedList<Message>.Create(orderedMessages, messageParams.PageNumber, messageParams.PageSize);
         }
 
         public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
