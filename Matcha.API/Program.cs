@@ -15,18 +15,17 @@ namespace Matcha.API
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                // no EntityFramework DataContext anymore, so we can't use it to seed users
-                //try
-                //{
-                //    var context = services.GetRequiredService<DataContext>();
-                //    context.Database.Migrate();
-                //    Seed.SeedUsers(context);
-                //}
-                //catch (Exception ex)
-                //{
-                //    var logger = services.GetRequiredService<ILogger<Program>>();
-                //    logger.LogError(ex, "An error occured during migration");
-                //}
+                try
+                {
+                    var context = services.GetRequiredService<UserDataContext>();
+                    //context.Database.Migrate();
+                    Seed.SeedUsers(context);
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occured during migration");
+                }
             }
 
             host.Run();
